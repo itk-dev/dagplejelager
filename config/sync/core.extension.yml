@@ -1,0 +1,52 @@
+module:
+  address: 0
+  block: 0
+  breakpoint: 0
+  commerce: 0
+  commerce_cart: 0
+  commerce_checkout: 0
+  commerce_number_pattern: 0
+  commerce_order: 0
+  commerce_price: 0
+  commerce_product: 0
+  commerce_store: 0
+  datetime: 0
+  dblog: 0
+  dynamic_page_cache: 0
+  entity: 0
+  entity_reference_revisions: 0
+  field: 0
+  file: 0
+  filter: 0
+  gin_toolbar: 0
+  image: 0
+  inline_entity_form: 0
+  language: 0
+  link: 0
+  locale: 0
+  node: 0
+  options: 0
+  page_cache: 0
+  path: 0
+  path_alias: 0
+  profile: 0
+  state_machine: 0
+  system: 0
+  telephone: 0
+  text: 0
+  token: 0
+  toolbar: 0
+  update: 0
+  user: 0
+  views: 10
+  minimal: 1000
+theme:
+  stark: 0
+  claro: 0
+  gin: 0
+  bartik: 0
+  dagplejelager_theme: 0
+profile: minimal
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: da

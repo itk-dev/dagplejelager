@@ -1,0 +1,22 @@
+uuid: 4b13a5fe-665f-4bd8-a87e-858b0875dcd5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: dagplejelager_theme_messages
+theme: dagplejelager_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
