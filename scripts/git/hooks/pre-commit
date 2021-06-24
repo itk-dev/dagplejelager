@@ -14,8 +14,9 @@ EOF
   exit 1
 fi
 
-exit 0
-
 cat >&2 << EOF
 Have your changes been added to CHANGELOG.md ? Should they ?
 EOF
+
+exit 0
+
