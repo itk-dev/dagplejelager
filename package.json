@@ -1,0 +1,16 @@
+{
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "markdownlint-cli": "^0.26.0",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "coding-standards-check/markdownlint": "markdownlint README.md 'docs/**/*.md' 'web/modules/custom/**/*.md'",
+    "coding-standards-check/prettier": "prettier --check 'web/themes/custom/dagplejelager_theme/assets/**/*.{js,scss}'",
+    "coding-standards-check": "yarn coding-standards-check/markdownlint && yarn coding-standards-check/prettier",
+    "coding-standards-apply/markdownlint": "markdownlint --fix README.md 'docs/**/*.md' 'web/modules/custom/**/*.md'",
+    "coding-standards-apply/prettier": "prettier --write 'web/themes/custom/dagplejelager_theme/assets/**/*.{js,scss}'",
+    "coding-standards-apply": "yarn coding-standards-apply/markdownlint && yarn coding-standards-apply/prettier"
+  }
+}

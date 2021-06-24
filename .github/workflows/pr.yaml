@@ -1,0 +1,208 @@
+on: pull_request
+name: PR Review
+jobs:
+  test-composer-files:
+    name: Validate composer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: ctype, dom, iconv, json, zip, gd, soap
+          coverage: none
+          tools: composer:v2
+      # https://github.com/shivammathur/setup-php#cache-composer-dependencies
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Validate composer files
+        run: |
+          composer validate composer.json
+
+  phpcs:
+    name: PHP - Check Coding Standards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: ctype, dom, iconv, json, zip, gd, soap
+          coverage: none
+          tools: composer:v2
+      # https://github.com/shivammathur/setup-php#cache-composer-dependencies
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install Dependencies
+        run: |
+          # Using `--no-scripts` breaks something with mglaman/drupal-check.
+          composer install --no-interaction --no-progress
+          # @see https://github.com/Dealerdirect/phpcodesniffer-composer-installer#calling-the-plugin-directly
+          composer run-script install-codestandards
+      - name: PHPCS
+        run: |
+          composer coding-standards-check
+
+  yarncs:
+    name: Yarn - Check Coding Standards (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '14', '15' ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: |
+          yarn install
+          yarn coding-standards-check
+
+  site-install-dev:
+    name: (Dev) Verify Drupal install and fixtures
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.4
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_USER: db
+          MYSQL_PASSWORD: db
+          MYSQL_DATABASE: db
+          MYSQL_ROOT_PASSWORD: db
+        options:
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: ctype, dom, iconv, json, zip, gd, soap
+          coverage: none
+          tools: composer:v2
+      # https://github.com/shivammathur/setup-php#cache-composer-dependencies
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Write 'settings.local.php'
+        run: |
+          cat <<'EOF' > web/sites/default/settings.local.php
+          <?php
+          $databases['default']['default'] = [
+            'database' => 'db',
+            'username' => 'db',
+            'password' => 'db',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'driver' => 'mysql',
+            'prefix' => '',
+          ];
+          EOF
+      - name: Install Drupal with config
+        run: |
+          composer install
+          vendor/bin/drush --yes site:install os2loop --existing-config
+      - name: Verify db schema
+        run: |
+          vendor/bin/drush updatedb:status
+      - name: Verify config sync
+        run: |
+          vendor/bin/drush config:status
+      - name: Load fixtures
+        run: |
+          # Find and enable all fixtures modules
+          vendor/bin/drush --yes pm:enable $(find web/profiles/custom/os2loop/modules/ -type f -name 'os2loop_*_fixtures.info.yml' -exec basename -s .info.yml {} \;)
+          # Load the fixtures
+          vendor/bin/drush --yes content-fixtures:load
+          # Uninstall all fixtures modules
+          vendor/bin/drush --yes pm:uninstall content_fixtures
+
+  site-install-prod:
+    name: (Prod) Verify Drupal install
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.4
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_USER: db
+          MYSQL_PASSWORD: db
+          MYSQL_DATABASE: db
+          MYSQL_ROOT_PASSWORD: db
+        options:
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: ctype, dom, iconv, json, zip, gd, soap
+          coverage: none
+          tools: composer:v2
+      # https://github.com/shivammathur/setup-php#cache-composer-dependencies
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Write 'settings.local.php'
+        run: |
+          cat <<'EOF' > web/sites/default/settings.local.php
+          <?php
+          $databases['default']['default'] = [
+            'database' => 'db',
+            'username' => 'db',
+            'password' => 'db',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'driver' => 'mysql',
+            'prefix' => '',
+          ];
+          EOF
+      - name: Install Drupal with config
+        run: |
+          composer install --no-dev --optimize-autoloader
+          vendor/bin/drush --yes site:install os2loop --existing-config
+      - name: Verify db schema
+        run: |
+          vendor/bin/drush updatedb:status
+      - name: Verify config sync
+        run: |
+          vendor/bin/drush config:status
