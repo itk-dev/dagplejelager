@@ -2901,17 +2901,17 @@
         },
         {
             "name": "drupal/state_machine",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/state_machine.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "9a649a2eccd24e14107e4673945c396cbd3393b6"
+                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "822ef31950aa2d1042eb3592cf9b981822a87a92"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
@@ -2920,8 +2920,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1623863802",
+                    "version": "8.x-1.3",
+                    "datestamp": "1624520738",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2930,7 +2930,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {

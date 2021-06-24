@@ -7,3 +7,6 @@ and this project adheres to [Semantic
 Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+- [DAGPLEJ-21](https://jira.itkdev.dk/browse/DAGPLEJ-21):
+  Added Drupal Core, base config and Drupal Commerce.

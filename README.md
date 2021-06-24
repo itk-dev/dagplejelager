@@ -56,8 +56,6 @@ symfony composer install
 symfony php vendor/bin/drush --yes site:install minimal --existing-config
 # Start the server
 symfony local:server:start --port=8000 --daemon
-# Get the site url
-echo "http://127.0.0.1:8000"
 # Get admin sign in url
 symfony php vendor/bin/drush --uri=https://127.0.0.1:8000 user:login
 ```
