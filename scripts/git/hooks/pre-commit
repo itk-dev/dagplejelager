@@ -19,7 +19,7 @@ EOF
   exit 1
 fi
 
-echo -e "${yellow}Git hook was SUCCESSFUL!${no_color}\n"
+echo -e "\n${yellow}Have your changes been added to CHANGELOG.md ? Should they ?${no_color}\n"
 
 exit 0
 
