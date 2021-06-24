@@ -19,9 +19,7 @@ EOF
   exit 1
 fi
 
-cat >&2 << EOF
-\n${yellow}Have your changes been added to CHANGELOG.md ? Should they ?${no_color}\n
-EOF
+echo -e "${yellow}Git hook was SUCCESSFUL!${no_color}\n"
 
 exit 0
 
