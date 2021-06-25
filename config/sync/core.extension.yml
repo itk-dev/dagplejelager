@@ -10,12 +10,19 @@ module:
   commerce_price: 0
   commerce_product: 0
   commerce_store: 0
+  config_filter: 0
+  config_ignore: 0
+  content_fixtures: 0
   datetime: 0
   dblog: 0
+  dfl_product: 0
+  dfl_store: 0
+  dfl_store_fixtures: 0
   dynamic_page_cache: 0
   entity: 0
   entity_reference_revisions: 0
   field: 0
+  field_ui: 0
   file: 0
   filter: 0
   gin_toolbar: 0

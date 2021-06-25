@@ -4,6 +4,7 @@ url:
   source: path_prefix
   prefixes:
     da: da
+    '': null
   domains:
     da: ''
 selected_langcode: site_default

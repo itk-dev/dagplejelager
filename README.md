@@ -73,6 +73,21 @@ docker run --volume ${PWD}:/app --workdir /app node:latest yarn coding-standards
 docker run --volume ${PWD}:/app --workdir /app node:latest yarn coding-standards-apply
 ```
 
+### Fixtures
+
+We have fixtures for content types and content entities.
+
+To load all fixtures, run:
+
+```sh
+# Find and enable all fixtures modules
+vendor/bin/drush --yes pm:enable $(find web/modules/custom/ -type f -name 'dfl_*_fixtures.info.yml' -exec basename -s .info.yml {} \;)
+# Load the fixtures
+vendor/bin/drush --yes content-fixtures:load
+# Uninstall all fixtures modules
+vendor/bin/drush --yes pm:uninstall content_fixtures
+```
+
 ### GitHub Actions
 
 We use [GitHub Actions](https://github.com/features/actions) to check coding

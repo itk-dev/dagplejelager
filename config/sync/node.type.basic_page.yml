@@ -1,0 +1,11 @@
+uuid: 86886915-8177-4f61-b3cd-c9049e5d559d
+langcode: da
+status: true
+dependencies: {  }
+name: 'Statisk side'
+type: basic_page
+description: 'A basic page'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
