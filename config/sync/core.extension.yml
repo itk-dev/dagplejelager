@@ -16,7 +16,6 @@ module:
   dblog: 0
   dfl_product: 0
   dfl_store: 0
-  dfl_store_fixtures: 0
   dynamic_page_cache: 0
   entity: 0
   entity_reference_revisions: 0
