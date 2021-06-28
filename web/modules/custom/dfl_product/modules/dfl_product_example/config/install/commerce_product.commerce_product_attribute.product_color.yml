@@ -1,0 +1,9 @@
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - dfl_product_example
+id: product_color
+label: Farve
+elementType: select

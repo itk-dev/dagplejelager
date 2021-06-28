@@ -1,0 +1,12 @@
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - dfl_product_example
+id: t_shirt
+label: T-shirt
+orderItemType: default
+generateTitle: true
+traits: {  }
+locked: false
