@@ -17,6 +17,7 @@
     "require": {
         "php": "~7.4.0 || ~8.0.0",
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/commerce": "^2.24",
         "drupal/config_ignore": "^2.3",
         "drupal/console": "^1.9",
@@ -25,6 +26,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/openid_connect": "2.x-dev@dev",
         "drupal/twig_tweak": "^3.1",
         "drush/drush": "^10.5"
     },
@@ -42,13 +44,9 @@
         "coding-standards-check/phpcs": [
             "vendor/bin/phpcs --standard=phpcs.xml.dist"
         ],
-        "coding-standards-check/twigcs": [
-            "twigcs web/themes/custom/dagplejelager_theme/templates"
-        ],
         "coding-standards-check": [
             "@coding-standards-check/phpcs",
-            "@coding-standards-check/drupal-check",
-            "@coding-standards-check/twigcs"
+            "@coding-standards-check/drupal-check"
         ],
         "coding-standards-apply/phpcs": [
             "vendor/bin/phpcbf --standard=phpcs.xml.dist"
@@ -120,6 +118,12 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/openid_connect": {
+                "Revoking group access does not reflect on applied roles (https://www.drupal.org/project/openid_connect/issues/3224128)": "https://git.drupalcode.org/project/openid_connect/-/merge_requests/31.diff"
+            }
         }
     },
     "require-dev": {
