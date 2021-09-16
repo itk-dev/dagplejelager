@@ -63,14 +63,14 @@ symfony php vendor/bin/drush --uri=https://127.0.0.1:8000 user:login
 ## Coding standards
 
 ```sh
-composer coding-standards-check
-composer coding-standards-apply
+docker-compose exec phpfpm composer coding-standards-check
+docker-compose exec phpfpm composer coding-standards-apply
 ```
 
 ```sh
-docker run --volume ${PWD}:/app --workdir /app node:latest yarn install
-docker run --volume ${PWD}:/app --workdir /app node:latest yarn coding-standards-check
-docker run --volume ${PWD}:/app --workdir /app node:latest yarn coding-standards-apply
+docker-compose run node yarn --cwd /app install
+docker-compose run node yarn --cwd /app coding-standards-check
+docker-compose run node yarn --cwd /app coding-standards-apply
 ```
 
 ### Fixtures
