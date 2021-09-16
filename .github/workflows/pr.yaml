@@ -4,12 +4,16 @@ jobs:
   test-composer-files:
     name: Validate composer
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: [ '7.4', '8.0' ]
+        dependency-version: [ prefer-lowest, prefer-stable ]
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: ${{ matrix.php-versions }}
           extensions: ctype, dom, iconv, json, zip, gd, soap
           coverage: none
           tools: composer:v2
@@ -25,17 +29,23 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
       - name: Validate composer files
         run: |
-          composer validate composer.json
+          composer validate --strict composer.json
+          # Check that dependencies resolve.
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
   phpcs:
     name: PHP - Check Coding Standards
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: [ '7.4', '8.0' ]
+        dependency-version: [ prefer-lowest, prefer-stable ]
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: ${{ matrix.php-versions }}
           extensions: ctype, dom, iconv, json, zip, gd, soap
           coverage: none
           tools: composer:v2
@@ -64,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '14', '15' ]
+        node: [ '14', '16' ]
     steps:
       - uses: actions/checkout@v2
       - name: Setup node
@@ -93,12 +103,15 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
+    strategy:
+      matrix:
+        php-versions: [ '7.4', '8.0' ]
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: ${{ matrix.php-versions }}
           extensions: ctype, dom, iconv, json, zip, gd, soap
           coverage: none
           tools: composer:v2
@@ -129,7 +142,7 @@ jobs:
       - name: Install Drupal with config
         run: |
           composer install
-          vendor/bin/drush --yes site:install os2loop --existing-config
+          vendor/bin/drush --yes site:install minimal --existing-config
       - name: Verify db schema
         run: |
           vendor/bin/drush updatedb:status
@@ -139,7 +152,7 @@ jobs:
       - name: Load fixtures
         run: |
           # Find and enable all fixtures modules
-          vendor/bin/drush --yes pm:enable $(find web/profiles/custom/os2loop/modules/ -type f -name 'os2loop_*_fixtures.info.yml' -exec basename -s .info.yml {} \;)
+          vendor/bin/drush --yes pm:enable $(find web/modules/custom/ -type f -name 'dfl_*_fixtures.info.yml' -exec basename -s .info.yml {} \;)
           # Load the fixtures
           vendor/bin/drush --yes content-fixtures:load
           # Uninstall all fixtures modules
@@ -163,12 +176,15 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
+    strategy:
+      matrix:
+        php-versions: [ '7.4', '8.0' ]
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: ${{ matrix.php-versions }}
           extensions: ctype, dom, iconv, json, zip, gd, soap
           coverage: none
           tools: composer:v2
@@ -199,7 +215,7 @@ jobs:
       - name: Install Drupal with config
         run: |
           composer install --no-dev --optimize-autoloader
-          vendor/bin/drush --yes site:install os2loop --existing-config
+          vendor/bin/drush --yes site:install minimal --existing-config
       - name: Verify db schema
         run: |
           vendor/bin/drush updatedb:status

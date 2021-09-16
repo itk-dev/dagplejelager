@@ -69,6 +69,11 @@ services:
       - "1025"
       - "8025"
 
+  node:
+    image: node:14
+    volumes:
+      - .:/app:delegated
+
 # Drush cache volume to persist cache between runs.
 volumes:
   drush-cache:
