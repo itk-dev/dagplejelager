@@ -34,6 +34,7 @@ vendor/bin/drush --yes locale:update
 Edit `settings.local.php` to configure the OpenID Connect client:
 
 ```php
+// Get these values from your OpenID Connect discovery document.
 $config['openid_connect.client.generic']['settings']['authorization_endpoint'] = '';
 $config['openid_connect.client.generic']['settings']['token_endpoint'] = '';
 $config['openid_connect.client.generic']['settings']['client_id'] = '';
