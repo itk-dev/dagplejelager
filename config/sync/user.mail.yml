@@ -64,7 +64,7 @@ register_no_approval_required:
   subject: 'Kontoinformationer for [user:display-name] på [site:name] (blokeret)'
 register_pending_approval:
   body: |-
-    [bruger:vist navn],
+    [user:display-name],
 
     Tak for din tilmelding på [site:name]. Din ansøgning om en konto afventer i øjeblikket godkendelse. Når den er godkendt, modtager du en anden e-mail med oplysninger om, hvordan du logger ind, angiver din adgangskode og andre detaljer.
 
