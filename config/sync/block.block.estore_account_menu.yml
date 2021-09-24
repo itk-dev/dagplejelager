@@ -1,0 +1,27 @@
+uuid: 28198171-de13-4a49-8d64-53b2d8c3c19f
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: boibEk1B6AiUYReC9SfbP669WfCxa4NLCUcuAw1QznU
+id: estore_account_menu
+theme: estore
+region: top_header_right
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

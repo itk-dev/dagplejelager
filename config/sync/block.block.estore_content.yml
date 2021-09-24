@@ -1,0 +1,22 @@
+uuid: 77d09888-3d60-4058-aa3d-f4ddaf69f797
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: p9UmXGPmQyDcvjpp8YHlhuRMPojsM6c9r836rCQFhmM
+id: estore_content
+theme: estore
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

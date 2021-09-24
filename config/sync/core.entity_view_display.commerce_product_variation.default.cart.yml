@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
     - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.default.attribute_product_attribute
   enforced:
     module:
       - commerce_cart
@@ -36,6 +37,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  attribute_product_attribute: true
   langcode: true
   price: true
   sku: true

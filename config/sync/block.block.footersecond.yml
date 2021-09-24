@@ -1,0 +1,27 @@
+uuid: 49269908-ddaf-43d9-a50c-3433ae15838b
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.footer-second
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: p5wwECbXysmA1Pjs4gimcXBxTl7FyixATwYYfxo2E3U
+id: footersecond
+theme: estore
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-second'
+settings:
+  id: 'system_menu_block:footer-second'
+  label: 'Footer second'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

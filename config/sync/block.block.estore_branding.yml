@@ -1,0 +1,25 @@
+uuid: 90c93180-2698-4f7d-9ed3-913dcdf05c8d
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: hMfQl6CMpriwtgN9kPcmtOvzKv7ri_YfAcPgUzXaX6M
+id: estore_branding
+theme: estore
+region: left_middle_header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

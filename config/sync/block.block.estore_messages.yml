@@ -1,0 +1,22 @@
+uuid: d267668d-2e35-409f-a6fa-87591eb3d87b
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: j5x3tv63rbT-NwE8ArW2PnQd5R3ZzgLZHxxi86fM_RM
+id: estore_messages
+theme: estore
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

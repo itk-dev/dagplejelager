@@ -1,5 +1,5 @@
 admin: gin
-default: dagplejelager_theme
+default: estore
 _core:
   default_config_hash: 6lQ55NXM9ysybMQ6NzJj4dtiQ1dAkOYxdDompa-r_kk
 langcode: da

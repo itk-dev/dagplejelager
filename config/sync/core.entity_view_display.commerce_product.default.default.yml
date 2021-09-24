@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_images
   module:
     - commerce_product
     - text
@@ -42,6 +43,7 @@ content:
     region: content
 hidden:
   created: true
+  field_images: true
   langcode: true
   stores: true
   uid: true
