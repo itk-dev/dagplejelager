@@ -27,6 +27,26 @@ vendor/bin/drush --yes site:install minimal --existing-config
 vendor/bin/drush --yes locale:update
 ```
 
+#### Configuration
+
+##### OpenID Connect
+
+Edit `settings.local.php` to configure the OpenID Connect client:
+
+```php
+// Get these values from your OpenID Connect discovery document.
+$config['openid_connect.client.generic']['settings']['authorization_endpoint'] = '';
+$config['openid_connect.client.generic']['settings']['token_endpoint'] = '';
+$config['openid_connect.client.generic']['settings']['client_id'] = '';
+$config['openid_connect.client.generic']['settings']['client_secret'] = '';
+```
+
+AD groups to Drupal roles mapping:
+
+```php
+$config['openid_connect.settings']['role_mappings']['Drupal role] = ['AD group'];
+```
+
 ### Development
 
 ```sh
