@@ -1,0 +1,5 @@
+services:
+  dagplejelager_fixtures.user_fixture:
+    class: Drupal\dagplejelager_fixtures\Fixture\UserFixture
+    tags:
+      - { name: content_fixture }

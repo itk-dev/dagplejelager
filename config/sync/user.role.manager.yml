@@ -1,10 +1,10 @@
-uuid: 278fac12-c03c-466f-bc58-84addb5f0a6e
+uuid: 05cd523b-5102-4aa3-9b5a-ea5be8ce6251
 langcode: da
 status: true
 dependencies: {  }
-id: administrator
-label: Administrator
-weight: 2
+id: manager
+label: Manager
+weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -13,6 +13,5 @@ permissions:
   - 'access commerce_product overview'
   - 'access commerce_product_attribute overview'
   - 'access toolbar'
-  - 'masquerade as authenticated'
   - 'view commerce_order'
   - 'view default commerce_order'
