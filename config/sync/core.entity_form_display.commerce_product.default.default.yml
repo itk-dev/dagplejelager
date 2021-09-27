@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_brand
     - field.field.commerce_product.default.field_images
   module:
     - commerce
@@ -32,6 +33,14 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_brand:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

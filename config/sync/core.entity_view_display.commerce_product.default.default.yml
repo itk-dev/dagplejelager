@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_brand
     - field.field.commerce_product.default.field_images
   module:
     - commerce_product
@@ -22,6 +23,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_brand:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   title:
     label: hidden
@@ -45,5 +54,6 @@ hidden:
   created: true
   field_images: true
   langcode: true
+  search_api_excerpt: true
   stores: true
   uid: true

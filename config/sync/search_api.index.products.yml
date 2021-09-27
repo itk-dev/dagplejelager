@@ -3,16 +3,37 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.storage.commerce_product.field_brand
     - field.storage.commerce_product.body
+    - field.storage.commerce_product_variation.attribute_product_attribute
     - search_api.server.database
   module:
     - commerce_product
+    - commerce_store
     - search_api
 id: products
 name: Products
 description: ''
 read_only: false
 field_settings:
+  field_brand:
+    label: Brand
+    datasource_id: 'entity:commerce_product'
+    property_path: field_brand
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_brand
+  name:
+    label: 'Default variation » Product variation » product attribute » Product attribute value » Navn'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'default_variation:entity:attribute_product_attribute:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product_variation.attribute_product_attribute
+      module:
+        - commerce_product
   processed:
     label: 'Brødtekst » Behandlet tekst'
     datasource_id: 'entity:commerce_product'
@@ -30,6 +51,15 @@ field_settings:
     dependencies:
       module:
         - commerce_product
+  store_id:
+    label: 'Stores » Store » ID'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'stores:entity:store_id'
+    type: integer
+    dependencies:
+      module:
+        - commerce_product
+        - commerce_store
   title:
     label: 'Variations » Product variation » Titel'
     datasource_id: 'entity:commerce_product'

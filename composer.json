@@ -26,10 +26,12 @@
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
         "drupal/estore": "^1.14",
+        "drupal/facets": "^1.8",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/openid_connect": "^2.0",
         "drupal/search_api": "^1.20",
+        "drupal/search_api_autocomplete": "^1.5",
         "drupal/twig_tweak": "^3.1",
         "drush/drush": "^10.5"
     },

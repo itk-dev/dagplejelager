@@ -1,0 +1,19 @@
+uuid: 97c10a22-49ba-4b1c-868e-48ecd5cdcec8
+langcode: da
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.attribute_brand
+field_name: attribute_brand
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: commerce_product_attribute_value
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

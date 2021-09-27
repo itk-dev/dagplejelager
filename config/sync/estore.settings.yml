@@ -43,13 +43,14 @@ breadcrumb_home: 1
 cdn_provider: ''
 _core:
   default_config_hash: nBvtdYEfrjsFNzHkDC4qOfqkxg62YrshURc59BAyLd8
-logo:
-  path: ''
-  url: ''
-  use_default: true
 cdn_theme: ''
 cdn_cache_ttl_versions: 0
 cdn_cache_ttl_themes: 0
 cdn_cache_ttl_assets: 0
 cdn_cache_ttl_library: 0
 reset_http_request_cache: ''
+logo:
+  path: ''
+  url: ''
+  use_default: true
+langcode: da
