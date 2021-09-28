@@ -12,3 +12,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
   Added OpenID Connect module and configuration.
 - [DAGPLEJ-21](https://jira.itkdev.dk/browse/DAGPLEJ-21):
   Added Drupal Core, base config and Drupal Commerce.
+- [DAGPLEJ-30](https://jira.itkdev.dk/browse/DAGPLEJ-30):
+  - Added eStore theme, and default product entity.
+  - Added front page view
+  - Added product category

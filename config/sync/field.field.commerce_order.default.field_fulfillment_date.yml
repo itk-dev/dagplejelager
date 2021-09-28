@@ -1,0 +1,21 @@
+uuid: 0c2c1d1e-0ed9-4e9c-9226-c4d4273255d1
+langcode: da
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_fulfillment_date
+  module:
+    - datetime
+id: commerce_order.default.field_fulfillment_date
+field_name: field_fulfillment_date
+entity_type: commerce_order
+bundle: default
+label: 'fulfillment date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

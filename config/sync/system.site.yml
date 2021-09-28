@@ -5,10 +5,10 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /forside
 admin_compact_mode: false
 weight_select_max: 100
 langcode: da
-default_langcode: da
+default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

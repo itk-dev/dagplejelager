@@ -6,4 +6,13 @@ id: administrator
 label: Administrator
 weight: 2
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access commerce administration pages'
+  - 'access commerce_order overview'
+  - 'access commerce_product overview'
+  - 'access commerce_product_attribute overview'
+  - 'access toolbar'
+  - 'masquerade as authenticated'
+  - 'view commerce_order'
+  - 'view default commerce_order'

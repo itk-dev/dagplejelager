@@ -101,7 +101,7 @@ To load all fixtures, run:
 
 ```sh
 # Find and enable all fixtures modules
-vendor/bin/drush --yes pm:enable $(find web/modules/custom/ -type f -name 'dfl_*_fixtures.info.yml' -exec basename -s .info.yml {} \;)
+vendor/bin/drush --yes pm:enable dagplejelager_fixtures
 # Load the fixtures
 vendor/bin/drush --yes content-fixtures:load
 # Uninstall all fixtures modules

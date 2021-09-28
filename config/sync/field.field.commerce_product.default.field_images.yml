@@ -1,0 +1,40 @@
+uuid: c0107a83-2a64-4396-915c-d31ac5a9e6d7
+langcode: da
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_images
+  module:
+    - image
+_core:
+  default_config_hash: kxxCJ1Q6bOaCdoWNLpTZJrTdLBbBOnKmf3FbKCPLv8U
+id: commerce_product.default.field_images
+field_name: field_images
+entity_type: commerce_product
+bundle: default
+label: Images
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: products/images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: 902d0aaf-f811-4b26-a76b-cf438a217258
+    alt: 'Baby carriage'
+    title: 'Baby carriage'
+    width: 227
+    height: 225
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,5 +1,5 @@
-uuid: 6ab0f439-6aec-46fa-813f-7438467b80c7
-langcode: da
+uuid: 9b3596f6-0a80-4141-af6e-3174e3b4b5b1
+langcode: en
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Primært sideindhold'
+  label: 'Main page content'
   provider: system
   label_display: '0'
 visibility: {  }

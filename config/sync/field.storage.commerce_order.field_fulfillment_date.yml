@@ -1,0 +1,20 @@
+uuid: a7d78f87-bb9f-458f-8961-e3449b4d8237
+langcode: da
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - datetime
+id: commerce_order.field_fulfillment_date
+field_name: field_fulfillment_date
+entity_type: commerce_order
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

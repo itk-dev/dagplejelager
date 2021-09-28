@@ -1,0 +1,22 @@
+uuid: 65496a69-68fd-4ba8-87d4-34ea44bdf0a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: 6hpxgVt4l8qOzkuVj-b-ytXo16v2Hk0WxOQsE32JIAY
+id: estore_breadcrumbs
+theme: estore
+region: header
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

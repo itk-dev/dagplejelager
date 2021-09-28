@@ -1,0 +1,6 @@
+label: Default
+configuration:
+  panes:
+    completion_message:
+      message:
+        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."

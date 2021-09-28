@@ -1,0 +1,22 @@
+uuid: 847fd812-8f54-4b84-b362-3fb26bc742e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: rMX0UNyha0MBL4P-Z7lyzXs_MljBMmrQR2S0Upzn9_E
+id: estore_powered
+theme: estore
+region: footer_bottom_right
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

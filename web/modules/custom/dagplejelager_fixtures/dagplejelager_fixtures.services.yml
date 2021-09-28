@@ -1,0 +1,14 @@
+services:
+  Drupal\dagplejelager_fixtures\Fixture\StoreFixture:
+    arguments:
+      - '@commerce_price.currency_importer'
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\ProductFixture:
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\UserFixture:
+    tags:
+      - { name: content_fixture }

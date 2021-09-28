@@ -1,0 +1,10 @@
+uuid: ad398d55-7140-4e9c-a08d-53343862f9bf
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1m6UUCQt1r6JfMPCKzpQI_7HLfOhyyxm15MiMRNZGOo
+id: footer-second
+label: 'Sidefod anden'
+description: ''
+locked: true

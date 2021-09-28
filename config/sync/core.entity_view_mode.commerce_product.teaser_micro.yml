@@ -1,0 +1,12 @@
+uuid: ec7b6e7b-3601-44c6-9774-f550c04489b9
+langcode: da
+status: true
+dependencies:
+  module:
+    - commerce_product
+_core:
+  default_config_hash: FaSyD5_qnmtMkWURJaKYRfeLsd8HzWPdQukeDNKNh0Q
+id: commerce_product.teaser_micro
+label: 'Teaser micro'
+targetEntityType: commerce_product
+cache: true
