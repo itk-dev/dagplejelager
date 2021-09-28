@@ -1,7 +1,0 @@
-uuid: c65fa24d-9e18-4570-92c8-0ba08e888410
-langcode: da
-status: true
-dependencies: {  }
-id: brand
-label: brand
-elementType: select
