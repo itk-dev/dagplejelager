@@ -3,13 +3,9 @@
 namespace Drupal\dagplejelager_fixtures\Fixture;
 
 use Drupal\commerce_price\CurrencyImporterInterface;
-use Drupal\commerce_price\Price;
-use Drupal\commerce_product\Entity\Product;
-use Drupal\commerce_product\Entity\ProductVariation;
 use Drupal\commerce_store\Entity\Store;
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\content_fixtures\Fixture\FixtureGroupInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Store fixture.
@@ -18,26 +14,23 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
  */
 class StoreFixture extends AbstractFixture implements FixtureGroupInterface {
   /**
-   * @var CurrencyImporterInterface
+   * The currency importer.
+   *
+   * @var \Drupal\commerce_price\CurrencyImporterInterface
    */
   private $currencyImporter;
 
   /**
-   * @var \Drupal\Core\Entity\EntityStorageInterface
+   * {@inheritdoc}
    */
-  private $storeStorage;
-
-  public function __construct(CurrencyImporterInterface $currencyImporter, EntityTypeManagerInterface $entityTypeManager)
-  {
+  public function __construct(CurrencyImporterInterface $currencyImporter) {
     $this->currencyImporter = $currencyImporter;
-    $this->storeStorage = $entityTypeManager->getStorage('commerce_store');
   }
 
   /**
    * {@inheritdoc}
    */
-  public function load()
-  {
+  public function load() {
     $address = [
       'country_code' => 'US',
       'address_line1' => '123 Street Drive',
@@ -61,10 +54,8 @@ class StoreFixture extends AbstractFixture implements FixtureGroupInterface {
       'default_currency' => $currency,
       'billing_countries' => ['DK'],
     ]);
+    $store->setDefault(TRUE);
     $store->save();
-
-    // If needed, this sets the store as the default store.
-    $this->storeStorage->markAsDefault($store);
     $this->setReference('store:default', $store);
   }
 

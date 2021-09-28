@@ -2,7 +2,6 @@ services:
   Drupal\dagplejelager_fixtures\Fixture\StoreFixture:
     arguments:
       - '@commerce_price.currency_importer'
-      - '@entity_type.manager'
     tags:
       - { name: content_fixture }
 
