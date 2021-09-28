@@ -53,9 +53,11 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
     $this->setReference('product:bicycle', $product);
   }
 
-  public function getDependencies()
-  {
-   return [StoreFixture::class];
+  /**
+   * {@inheritdoc}
+   */
+  public function getDependencies() {
+    return [StoreFixture::class];
   }
 
   /**
