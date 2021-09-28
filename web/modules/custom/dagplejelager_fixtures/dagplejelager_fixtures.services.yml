@@ -1,5 +1,15 @@
 services:
-  dagplejelager_fixtures.user_fixture:
-    class: Drupal\dagplejelager_fixtures\Fixture\UserFixture
+  Drupal\dagplejelager_fixtures\Fixture\StoreFixture:
+    arguments:
+      - '@commerce_price.currency_importer'
+      - '@entity_type.manager'
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\ProductFixture:
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\UserFixture:
     tags:
       - { name: content_fixture }
