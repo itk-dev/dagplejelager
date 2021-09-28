@@ -10,6 +10,10 @@
     },
     "repositories": [
         {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/hook_event_dispatcher-3199174"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -21,6 +25,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/coffee": "^1.2",
         "drupal/commerce": "^2.24",
+        "drupal/commerce_checkout_order_fields": "^1.1",
         "drupal/config_ignore": "^2.3",
         "drupal/console": "^1.9",
         "drupal/core-composer-scaffold": "^9.2",
@@ -31,6 +36,7 @@
         "drupal/facets": "^1.8",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/hook_event_dispatcher": "dev-3199174-drupal-9.1-",
         "drupal/masquerade": "^2.0@beta",
         "drupal/openid_connect": "^2.0",
         "drupal/search_api": "^1.20",
@@ -42,7 +48,6 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "ln -sf ../../scripts/git/hooks/pre-commit .git/hooks/pre-commit",
             "@install-codestandards"
         ],
         "install-codestandards": [

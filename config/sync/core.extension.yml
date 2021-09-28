@@ -6,6 +6,7 @@ module:
   commerce: 0
   commerce_cart: 0
   commerce_checkout: 0
+  commerce_checkout_order_fields: 0
   commerce_number_pattern: 0
   commerce_order: 0
   commerce_price: 0
@@ -13,7 +14,9 @@ module:
   commerce_store: 0
   config_filter: 0
   config_ignore: 0
+  core_event_dispatcher: 0
   csv_serialization: 0
+  dagplejelager_form: 0
   date_popup: 0
   datetime: 0
   dblog: 0
@@ -28,6 +31,7 @@ module:
   file: 0
   filter: 0
   gin_toolbar: 0
+  hook_event_dispatcher: 0
   image: 0
   inline_entity_form: 0
   language: 0

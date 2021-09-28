@@ -2,6 +2,10 @@
 
 ## Installation
 
+Note: Uses a patched version of
+[hook_event_dispatcher](https://www.drupal.org/project/hook_event_dispatcher):
+<https://git.drupalcode.org/project/hook_event_dispatcher/-/merge_requests/7/diffs?diff_id=59188&start_sha=570948a169d494a0f2e32bf0200644727ed9aff8#diff-content-4a0ca4f66345e5744406f8af848a255f7f6cf1d0>
+
 ### Production
 
 Create local settings file with database connection:
