@@ -30,11 +30,11 @@ display:
         options:
           submit_button: Filter
           reset_button: true
-          reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Stigende
-          sort_desc_label: Faldende
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         type: full
         options:
@@ -569,7 +569,7 @@ display:
           1: AND
       display_extenders: {  }
     display_plugin: default
-    display_title: Standard
+    display_title: Default
     id: default
     position: 0
     cache_metadata:
@@ -601,7 +601,7 @@ display:
         weight: -10
       display_extenders: {  }
     display_plugin: page
-    display_title: Side
+    display_title: Page
     id: page_1
     position: 1
     cache_metadata:

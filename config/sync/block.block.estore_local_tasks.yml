@@ -1,5 +1,5 @@
-uuid: f013c410-dd3f-487b-86a1-f22d5dd4109c
-langcode: da
+uuid: 602ee016-ce29-46b2-be63-c7d5343394b0
+langcode: en
 status: true
 dependencies:
   theme:
@@ -9,7 +9,7 @@ _core:
 id: estore_local_tasks
 theme: estore
 region: content
-weight: -6
+weight: -9
 provider: null
 plugin: local_tasks_block
 settings:

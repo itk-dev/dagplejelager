@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: zyTJjisGAiNCmSVzU73UWGY2joBWA3QXvlcjDDIuWcs
 id: order_default
-label: Standard
+label: Default
 targetEntityType: commerce_order
 plugin: infinite
 configuration:

@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: 1m6UUCQt1r6JfMPCKzpQI_7HLfOhyyxm15MiMRNZGOo
 id: footer-second
-label: 'Footer second'
+label: 'Sidefod anden'
 description: ''
 locked: true

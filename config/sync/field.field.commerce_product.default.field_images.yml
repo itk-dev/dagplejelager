@@ -20,7 +20,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: 'products/[date:custom:Y]-[date:custom:m]'
+  file_directory: products/images
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
@@ -30,11 +30,11 @@ settings:
   title_field: true
   title_field_required: false
   default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
+    uuid: 902d0aaf-f811-4b26-a76b-cf438a217258
+    alt: 'Baby carriage'
+    title: 'Baby carriage'
+    width: 227
+    height: 225
   handler: 'default:file'
   handler_settings: {  }
 field_type: image

@@ -1,5 +1,5 @@
-uuid: 77d09888-3d60-4058-aa3d-f4ddaf69f797
-langcode: da
+uuid: 264b71d1-8438-4509-b2c0-b077bb1cf825
+langcode: en
 status: true
 dependencies:
   module:
@@ -11,7 +11,7 @@ _core:
 id: estore_content
 theme: estore
 region: content
-weight: -4
+weight: -8
 provider: null
 plugin: system_main_block
 settings:

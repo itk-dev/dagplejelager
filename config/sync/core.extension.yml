@@ -13,7 +13,9 @@ module:
   commerce_store: 0
   config_filter: 0
   config_ignore: 0
+  content_fixtures: 0
   csv_serialization: 0
+  dagplejelager_fixtures: 0
   date_popup: 0
   datetime: 0
   dblog: 0
@@ -48,6 +50,7 @@ module:
   serialization: 0
   state_machine: 0
   system: 0
+  taxonomy: 0
   telephone: 0
   text: 0
   token: 0
@@ -61,11 +64,9 @@ module:
   views: 10
   minimal: 1000
 theme:
-  stark: 0
   claro: 0
-  gin: 0
   bartik: 0
-  dagplejelager_theme: 0
+  gin: 0
   bootstrap: 0
   estore: 0
 profile: minimal

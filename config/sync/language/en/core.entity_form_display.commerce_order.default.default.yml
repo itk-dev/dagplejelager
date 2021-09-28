@@ -1,0 +1,5 @@
+content:
+  order_items:
+    settings:
+      label_singular: 'order item'
+      label_plural: 'order items'
