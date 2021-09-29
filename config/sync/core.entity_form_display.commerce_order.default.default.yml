@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_order.commerce_order_type.default
     - field.field.commerce_order.default.field_fulfillment_date
+    - field.field.commerce_order.default.field_institution_id
   module:
     - commerce_order
     - datetime
@@ -41,6 +42,14 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_institution_id:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   order_items:
     type: inline_entity_form_complex
     weight: 1
@@ -52,6 +61,10 @@ content:
       match_operator: CONTAINS
       allow_existing: false
       form_mode: default
+      revision: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
     region: content
 hidden:

@@ -1,0 +1,37 @@
+uuid: 6edb1b35-ff01-4da4-9276-635a4e859604
+langcode: da
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - core.entity_form_mode.commerce_order.checkout
+    - field.field.commerce_order.default.field_fulfillment_date
+    - field.field.commerce_order.default.field_institution_id
+_core:
+  default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
+id: commerce_order.default.checkout
+targetEntityType: commerce_order
+bundle: default
+mode: checkout
+content:
+  field_institution_id:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  adjustments: true
+  billing_profile: true
+  cart: true
+  created: true
+  field_fulfillment_date: true
+  ip_address: true
+  mail: true
+  order_items: true
+  order_number: true
+  state: true
+  store_id: true
+  uid: true

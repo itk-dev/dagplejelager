@@ -1,7 +1,9 @@
 uuid: 20d112f3-d90e-4397-ac68-9b68fb473ec4
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - commerce_checkout_order_fields
 _core:
   default_config_hash: 5BYvSDemm8xYwB9rMGFuEuGK6FxVheqtXEUxnpKO2N4
 id: default
@@ -25,14 +27,22 @@ configuration:
       weight: 2
     review:
       step: review
-      weight: 3
+      weight: 4
     completion_message:
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
       step: complete
-      weight: 4
+      weight: 5
     order_summary:
       view: null
       step: _sidebar
-      weight: 5
+      weight: 7
+    completion_register:
+      step: complete
+      weight: 6
+    'order_fields:checkout':
+      wrapper_element: fieldset
+      display_label: 'Order fields'
+      step: order_information
+      weight: 3
