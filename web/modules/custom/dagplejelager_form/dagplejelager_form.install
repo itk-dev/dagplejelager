@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for dagplejelager_form.
+ */
+
+use Drupal\dagplejelager_form\Helper\DayCarerHelper;
+
+/**
+ * Implements hook_schema().
+ *
+ * @see \Drupal\dagplejelager_form\Helper\DayCarerHelper::schema()
+ */
+function dagplejelager_form_schema() {
+  return Drupal::service(DayCarerHelper::class)->schema();
+}

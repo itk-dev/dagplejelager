@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- [DAGPLEJ-62](https://jira.itkdev.dk/browse/DAGPLEJ-62)
+  Added day carer name and address lookup.
 - [DAGPLEJ-20](https://jira.itkdev.dk/browse/DAGPLEJ-20):
   Added OpenID Connect module and configuration.
 - [DAGPLEJ-21](https://jira.itkdev.dk/browse/DAGPLEJ-21):
