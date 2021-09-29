@@ -3,11 +3,12 @@ langcode: da
 status: true
 dependencies:
   config:
-    - commerce_product.commerce_product_type.default
     - field.storage.commerce_product.field_category
+    - taxonomy.vocabulary.product_category
   module:
-    - commerce
     - commerce_product
+    - taxonomy
+    - user
 id: forside
 label: Forside
 module: views
@@ -23,8 +24,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -410,28 +412,26 @@ display:
           fields:
             title: title
           plugin_id: combine
-        type:
-          id: type
-          table: commerce_product_field_data
-          field: type
+        field_category_target_id:
+          id: field_category_target_id
+          table: commerce_product__field_category
+          field: field_category_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            all: all
-            default: default
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
-            label: Type
+            operator_id: field_category_target_id_op
+            label: Category
             description: ''
             use_operator: false
-            operator: type_op
+            operator: field_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: type
+            identifier: field_category_target_id
             required: false
             remember: false
             multiple: false
@@ -441,7 +441,6 @@ display:
               administrator: '0'
               manager: '0'
             reduce: false
-            hide_single_bundle: false
           is_grouped: false
           group_info:
             label: ''
@@ -454,9 +453,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: commerce_product
-          entity_field: type
-          plugin_id: commerce_entity_bundle
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: product_category
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts: {  }
       title: Forside
       header: {  }
@@ -477,6 +480,10 @@ display:
       arguments: {  }
       display_extenders: {  }
       use_ajax: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -484,6 +491,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
+        - user.permissions
       tags:
         - 'config:field.storage.commerce_product.field_category'
   page_1:
@@ -501,5 +510,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
+        - user.permissions
       tags:
         - 'config:field.storage.commerce_product.field_category'

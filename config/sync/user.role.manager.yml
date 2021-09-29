@@ -4,14 +4,11 @@ status: true
 dependencies: {  }
 id: manager
 label: Manager
-weight: 3
+weight: -8
 is_admin: null
 permissions:
-  - 'access administration pages'
+  - 'access checkout'
   - 'access commerce administration pages'
-  - 'access commerce_order overview'
-  - 'access commerce_product overview'
-  - 'access commerce_product_attribute overview'
-  - 'access toolbar'
-  - 'view commerce_order'
+  - 'view commerce_product'
   - 'view default commerce_order'
+  - 'view own commerce_order'
