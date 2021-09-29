@@ -3,8 +3,8 @@ connect_existing_users: true
 override_registration_settings: true
 end_session_enabled: false
 user_login_display: above
-redirect_login: ''
-redirect_logout: ''
+redirect_login: /
+redirect_logout: /user
 userinfo_mappings:
   timezone: zoneinfo
 _core:
@@ -12,3 +12,4 @@ _core:
 langcode: da
 role_mappings:
   administrator: {  }
+  manager: {  }
