@@ -5,11 +5,8 @@ dependencies: {  }
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
-label: 'Godkendt bruger'
-weight: 1
+label: 'Authenticated user'
+weight: -9
 is_admin: false
 permissions:
-  - 'access checkout'
   - 'access content'
-  - 'view commerce_product'
-  - 'view own commerce_order'

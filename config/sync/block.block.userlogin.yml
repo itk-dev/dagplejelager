@@ -1,0 +1,32 @@
+uuid: cbc950c6-6354-44f0-a622-0ca56d8b79bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - estore
+id: userlogin
+theme: estore
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/password\r\n/user/register"
+    negate: true
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -4,15 +4,20 @@ status: true
 dependencies: {  }
 id: administrator
 label: Administrator
-weight: 2
+weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access commerce administration pages'
   - 'access commerce_order overview'
   - 'access commerce_product overview'
-  - 'access commerce_product_attribute overview'
   - 'access toolbar'
+  - 'create terms in product_category'
+  - 'edit terms in product_category'
   - 'masquerade as authenticated'
+  - 'translate interface'
   - 'view commerce_order'
+  - 'view commerce_product'
+  - 'view commerce_store'
   - 'view default commerce_order'
+  - 'view the administration theme'
