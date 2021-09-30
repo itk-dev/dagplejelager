@@ -48,7 +48,8 @@ class FormEventSubscriber implements EventSubscriberInterface {
 
     // Don't copy billing address to address book.
     if (isset($form['copy_to_address_book'])) {
-      $form['copy_to_address_book']['#access'] = FALSE;
+      $form['copy_to_address_book']['#default_value'] = FALSE;
+      $form['copy_to_address_book']['#type'] = 'hidden';
     }
   }
 
