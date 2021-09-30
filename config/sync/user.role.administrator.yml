@@ -11,6 +11,7 @@ permissions:
   - 'access commerce administration pages'
   - 'access commerce_order overview'
   - 'access commerce_product overview'
+  - 'access day carer lookup'
   - 'access toolbar'
   - 'create terms in product_category'
   - 'edit terms in product_category'
