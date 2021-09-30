@@ -18,8 +18,8 @@ module:
   config_translation: 0
   core_event_dispatcher: 0
   csv_serialization: 0
-  dagplejelager_form: 0
   dagplejelager_actions: 0
+  dagplejelager_form: 0
   date_popup: 0
   datetime: 0
   dblog: 0

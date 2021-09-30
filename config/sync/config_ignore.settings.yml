@@ -1,15 +1,4 @@
-ignored_config_entities:
-  - 'commerce_product.commerce_product_attribute.*'
-  - 'commerce_product.commerce_product_type.*'
-  - 'commerce_product.commerce_product_variation_type.*'
-  - 'core.entity_form_display.commerce_product.*'
-  - 'core.entity_form_display.commerce_product_variation.*'
-  - 'core.entity_view_display.commerce_product.*'
-  - 'field.field.commerce_product.t_shirt.*'
-  - 'field.field.commerce_product_variation.*'
-  - 'field.storage.commerce_product_variation.*'
-  - 'language.content_settings.commerce_product.*'
-  - 'language.content_settings.commerce_product_variation.*'
+ignored_config_entities: null
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 langcode: da
