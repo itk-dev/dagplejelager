@@ -1,0 +1,24 @@
+uuid: 16f519c6-9f07-4965-9d7f-2b00039ccba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_institution_id
+    - profile.type.customer
+  module:
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.customer.field_institution_id
+field_name: field_institution_id
+entity_type: profile
+bundle: customer
+label: 'Institution id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

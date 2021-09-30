@@ -29,7 +29,7 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
         ProductVariation::create([
           'type' => 'default',
           'sku' => 'hest',
-          'price' => new Price('87.00', 'DKK'),
+          'price' => new Price('0.00', 'DKK'),
         ]),
       ],
       'stores' => [$this->getReference('store:default')],
@@ -45,9 +45,10 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
         ProductVariation::create([
           'type' => 'default',
           'sku' => 'bicycle',
-          'price' => new Price('42.00', 'DKK'),
+          'price' => new Price('0.00', 'DKK'),
         ]),
       ],
+      'stores' => [$this->getReference('store:default')],
     ]);
     $product->save();
     $this->setReference('product:bicycle', $product);

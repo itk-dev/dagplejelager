@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.profile.customer.address
+    - field.field.profile.customer.field_institution_id
+    - field.field.profile.customer.field_telephone_number
     - profile.type.customer
   enforced:
     module:
@@ -22,6 +24,22 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_institution_id:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone_number:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   is_default: true

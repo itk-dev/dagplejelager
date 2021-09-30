@@ -203,7 +203,7 @@ class DayCarerHelper {
         $schema['dagplejelager_form_day_carer']['fields'],
         static function ($definition) {
           // Search only text fields.
-          return 'varchar' === $definition['type'] && ('datetime' !== $definition['mysql_type'] ?? NULL);
+          return 'varchar' === $definition['type'] && ('datetime' !== ($definition['mysql_type'] ?? NULL));
         }
       )
     );

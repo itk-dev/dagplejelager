@@ -15,7 +15,7 @@
           }
           if (ui.item.institution) {
             for (const [key, value] of Object.entries(ui.item.institution)) {
-              $('[name="order_fields:checkout[field_institution_'+key+'][0][value]"]').val(value)
+              $('[name="billing_information[profile][field_institution_'+key+'][0][value]"]').val(value)
             }
           }
         }
