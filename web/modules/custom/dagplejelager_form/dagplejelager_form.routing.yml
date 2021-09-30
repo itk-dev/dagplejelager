@@ -4,4 +4,4 @@ dagplejelager_form.autocomplete.day_carer:
     _controller: '\Drupal\dagplejelager_form\Controller\DayCarerAutoCompleteController::autocomplete'
     _format: json
   requirements:
-    _permission: 'access content'
+    _permission: 'access day carer lookup'

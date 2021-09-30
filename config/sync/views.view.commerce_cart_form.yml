@@ -2,13 +2,15 @@ uuid: 0f599adb-feff-4706-899d-bc7b891731aa
 langcode: da
 status: true
 dependencies:
+  config:
+    - field.storage.commerce_order_item.field_handling
   enforced:
     module:
       - commerce_cart
   module:
     - commerce_cart
     - commerce_order
-    - commerce_price
+    - options
 _core:
   default_config_hash: 5aCvI0j7w2fKsWcMEiLXM1CWuaKm5ndfOnCATVUMPGM
 id: commerce_cart_form
@@ -65,9 +67,37 @@ display:
           summary: ''
           description: ''
           columns:
-            order_number: order_number
+            purchased_entity: purchased_entity
+            unit_price__number: unit_price__number
+            edit_quantity: edit_quantity
+            remove_button: remove_button
+            total_price__number: total_price__number
           info:
-            order_number:
+            purchased_entity:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            unit_price__number:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            edit_quantity:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            remove_button:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            total_price__number:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -149,14 +179,14 @@ display:
           entity_type: commerce_order_item
           entity_field: purchased_entity
           plugin_id: field
-        unit_price__number:
-          id: unit_price__number
-          table: commerce_order_item
-          field: unit_price__number
+        field_handling:
+          id: field_handling
+          table: commerce_order_item__field_handling
+          field: field_handling
           relationship: order_items
           group_type: group
           admin_label: ''
-          label: Pris
+          label: Handling
           exclude: false
           alter:
             alter_text: false
@@ -197,12 +227,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: number
-          type: commerce_price_default
-          settings:
-            strip_trailing_zeroes: false
-            currency_display: symbol
-          group_column: ''
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -212,8 +240,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order_item
-          entity_field: unit_price
           plugin_id: field
         edit_quantity:
           id: edit_quantity
@@ -273,7 +299,7 @@ display:
           relationship: order_items
           group_type: group
           admin_label: ''
-          label: Fjern
+          label: 'Fjern '
           exclude: false
           alter:
             alter_text: false
@@ -316,99 +342,10 @@ display:
           hide_alter_empty: true
           entity_type: commerce_order_item
           plugin_id: commerce_order_item_remove_button
-        total_price__number:
-          id: total_price__number
-          table: commerce_order_item
-          field: total_price__number
-          relationship: order_items
-          group_type: group
-          admin_label: ''
-          label: 'I alt'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: number
-          type: commerce_price_default
-          settings:
-            strip_trailing_zeroes: false
-            currency_display: symbol
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order_item
-          entity_field: total_price
-          plugin_id: field
       filters: {  }
-      sorts:
-        order_item_id:
-          id: order_item_id
-          table: commerce_order_item
-          field: order_item_id
-          relationship: order_items
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: commerce_order_item
-          entity_field: order_item_id
-          plugin_id: standard
+      sorts: {  }
       header: {  }
-      footer:
-        commerce_order_total:
-          id: commerce_order_total
-          table: views
-          field: commerce_order_total
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          plugin_id: commerce_order_total
+      footer: {  }
       empty: {  }
       relationships:
         order_items:
@@ -461,10 +398,13 @@ display:
           entity_field: order_id
           plugin_id: numeric
       display_extenders: {  }
+      title: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-      tags: {  }
+        - url.query_args
+      tags:
+        - 'config:field.storage.commerce_order_item.field_handling'

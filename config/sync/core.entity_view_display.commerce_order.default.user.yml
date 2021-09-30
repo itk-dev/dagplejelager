@@ -6,7 +6,7 @@ dependencies:
     - commerce_order.commerce_order_type.default
     - core.entity_view_mode.commerce_order.user
     - field.field.commerce_order.default.field_fulfillment_date
-    - field.field.commerce_order.default.field_institution_id
+    - field.field.commerce_order.default.field_order_notes
   module:
     - commerce_order
     - entity_reference_revisions
@@ -87,7 +87,7 @@ hidden:
   balance: true
   changed: true
   field_fulfillment_date: true
-  field_institution_id: true
+  field_order_notes: true
   ip_address: true
   search_api_excerpt: true
   store_id: true

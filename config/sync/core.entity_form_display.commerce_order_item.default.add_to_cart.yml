@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_order.commerce_order_item_type.default
     - core.entity_form_mode.commerce_order_item.add_to_cart
+    - field.field.commerce_order_item.default.field_handling
   enforced:
     module:
       - commerce_cart
@@ -18,6 +19,12 @@ targetEntityType: commerce_order_item
 bundle: default
 mode: add_to_cart
 content:
+  field_handling:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   purchased_entity:
     type: commerce_product_variation_attributes
     weight: 0
@@ -26,6 +33,7 @@ content:
     region: content
 hidden:
   created: true
+  field_type: true
   quantity: true
   status: true
   uid: true
