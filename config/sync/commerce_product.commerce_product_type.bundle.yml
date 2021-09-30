@@ -1,0 +1,12 @@
+uuid: dc89806c-28ca-40b4-bf31-dd5b43025d87
+langcode: en
+status: true
+dependencies: {  }
+id: bundle
+label: Bundle
+description: ''
+variationType: default
+multipleVariations: false
+injectVariationFields: false
+traits: {  }
+locked: false
