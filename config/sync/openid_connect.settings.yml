@@ -9,7 +9,7 @@ userinfo_mappings:
   timezone: zoneinfo
 _core:
   default_config_hash: yb6wo2M1jLJ_sG3dDzfjXLSMUFIEDNh5j59LWsHzcV0
-langcode: da
+langcode: en
 role_mappings:
   administrator: {  }
   manager: {  }

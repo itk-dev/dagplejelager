@@ -90,6 +90,6 @@ status_canceled:
 
     --  [site:name] holdet
   subject: 'Kontoinformationer for [user:display-name] på [site:name] (opsagt)'
-langcode: da
+langcode: en
 _core:
   default_config_hash: XcgosOepJxgEPlITLHaf0iS0kKeA_-Zus_XcQGrN-Rg
