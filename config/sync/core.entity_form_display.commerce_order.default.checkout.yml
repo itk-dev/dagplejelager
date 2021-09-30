@@ -7,6 +7,8 @@ dependencies:
     - core.entity_form_mode.commerce_order.checkout
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_institution_id
+    - field.field.commerce_order.default.field_order_notes
+    - field.field.commerce_order.default.field_telephone_number
 _core:
   default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
 id: commerce_order.default.checkout
@@ -15,13 +17,29 @@ bundle: default
 mode: checkout
 content:
   field_institution_id:
-    weight: 22
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_order_notes:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_telephone_number:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   adjustments: true
   billing_profile: true

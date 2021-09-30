@@ -45,6 +45,11 @@ class FormEventSubscriber implements EventSubscriberInterface {
       '#autocomplete_route_name' => 'dagplejelager_form.autocomplete.day_carer',
     ];
     $form['#attached']['library'][] = 'dagplejelager_form/billing-information-profile';
+
+    // Don't copy billing address to address book.
+    if (isset($form['copy_to_address_book'])) {
+      $form['copy_to_address_book']['#access'] = FALSE;
+    }
   }
 
   /**

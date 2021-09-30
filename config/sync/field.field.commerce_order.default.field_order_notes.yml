@@ -1,0 +1,19 @@
+uuid: e5964e3f-1625-493d-901f-c845b9f30d17
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_order_notes
+id: commerce_order.default.field_order_notes
+field_name: field_order_notes
+entity_type: commerce_order
+bundle: default
+label: 'order notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
