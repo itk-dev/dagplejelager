@@ -1,0 +1,11 @@
+koba_booking.action_refuse:
+  path: '/dagplejelager_actions/add_bundle/{commerce_product}'
+  defaults:
+    _controller: '\Drupal\dagplejelager_actions\Controller\DagplejelagerActionsController::actionAddBundle'
+    _title: 'Add bundle'
+  requirements:
+    _permission: 'use product bundle action'
+  options:
+    parameters:
+      commerce_product:
+        type: entity:commerce_product

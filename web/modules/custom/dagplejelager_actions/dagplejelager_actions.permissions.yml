@@ -1,0 +1,3 @@
+'use product bundle action':
+  title: Use product bundle action.
+  restrict access: true
