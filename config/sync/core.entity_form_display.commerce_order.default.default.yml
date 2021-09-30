@@ -5,9 +5,7 @@ dependencies:
   config:
     - commerce_order.commerce_order_type.default
     - field.field.commerce_order.default.field_fulfillment_date
-    - field.field.commerce_order.default.field_institution_id
     - field.field.commerce_order.default.field_order_notes
-    - field.field.commerce_order.default.field_telephone_number
   module:
     - commerce_order
     - datetime
@@ -44,14 +42,6 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_institution_id:
-    weight: 22
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_order_notes:
     weight: 23
     settings:
@@ -59,14 +49,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_telephone_number:
-    weight: 24
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   order_items:
     type: inline_entity_form_complex

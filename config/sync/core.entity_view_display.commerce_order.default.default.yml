@@ -5,9 +5,7 @@ dependencies:
   config:
     - commerce_order.commerce_order_type.default
     - field.field.commerce_order.default.field_fulfillment_date
-    - field.field.commerce_order.default.field_institution_id
     - field.field.commerce_order.default.field_order_notes
-    - field.field.commerce_order.default.field_telephone_number
   module:
     - commerce_order
     - commerce_price
@@ -59,28 +57,12 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_institution_id:
-    weight: 11
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_order_notes:
     weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_telephone_number:
-    weight: 13
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   ip_address:
     label: inline

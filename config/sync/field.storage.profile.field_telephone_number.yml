@@ -1,12 +1,12 @@
-uuid: 5beaf9b8-19d5-48f9-9be6-90323954f17a
+uuid: 99584d82-b17e-4f53-893a-39b84ae18e0a
 langcode: en
 status: true
 dependencies:
   module:
-    - commerce_order
-id: commerce_order.field_institution_id
-field_name: field_institution_id
-entity_type: commerce_order
+    - profile
+id: profile.field_telephone_number
+field_name: field_telephone_number
+entity_type: profile
 type: string
 settings:
   max_length: 255

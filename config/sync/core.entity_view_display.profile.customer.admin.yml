@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.profile.admin
     - field.field.profile.customer.address
+    - field.field.profile.customer.field_institution_id
+    - field.field.profile.customer.field_telephone_number
     - profile.type.customer
   enforced:
     module:
@@ -25,5 +27,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_institution_id:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_telephone_number:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   search_api_excerpt: true
