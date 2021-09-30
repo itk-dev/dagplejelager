@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\dagplejelager_actions\Controller\DagplejelagerActionsController
- */
 
 namespace Drupal\dagplejelager_actions\Controller;
 
@@ -11,7 +7,6 @@ use Drupal\commerce_cart\CartProviderInterface;
 use Drupal\commerce_order\Entity\OrderInterface;
 use Drupal\commerce_product\Entity\Product;
 use Drupal\commerce_product\Entity\ProductInterface;
-use Drupal\commerce_store\Entity\StoreInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -19,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * DagplejelagerActionsController.
+ * Provide actions for Dagplejelager.
  */
 class DagplejelagerActionsController extends ControllerBase {
 
@@ -33,7 +28,7 @@ class DagplejelagerActionsController extends ControllerBase {
   /**
    * The cart provider.
    *
-   * @var CartProviderInterface
+   * @var \Drupal\commerce_cart\CartProviderInterface
    */
   protected $cartProvider;
 
@@ -47,11 +42,11 @@ class DagplejelagerActionsController extends ControllerBase {
   /**
    * Constructs a new CartController object.
    *
-   * @param CartManagerInterface $cart_manager
+   * @param \Drupal\commerce_cart\CartManagerInterface $cart_manager
    *   The cart manager.
-   * @param CartProviderInterface $cart_provider
+   * @param \Drupal\commerce_cart\CartProviderInterface $cart_provider
    *   The cart provider.
-   * @param EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity type manager.
    */
   public function __construct(CartManagerInterface $cart_manager, CartProviderInterface $cart_provider, EntityTypeManagerInterface $entityTypeManager) {
@@ -74,11 +69,12 @@ class DagplejelagerActionsController extends ControllerBase {
   /**
    * Add a bundle of products to the cart.
    *
-   * @param ProductInterface $commerce_product
-   *   The product bundle
-   * @param Request $request
+   * @param \Drupal\commerce_product\Entity\ProductInterface $commerce_product
+   *   The product bundle.
+   * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request.
-   * @return RedirectResponse
+   *
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse
    *   The redirect.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -90,12 +86,12 @@ class DagplejelagerActionsController extends ControllerBase {
       ->getStorage('commerce_store')
       ->load($storeId);
 
-    /** @var StoreInterface|void $store */
+    /** @var \Drupal\commerce_store\Entity\StoreInterface|void $store */
     $cart = $this->cartProvider->getCart('default', $store);
     if (!$cart) {
       $cart = $this->cartProvider->createCart('default', $store);
     }
-    if($commerce_product->hasField('field_product_reference') && !empty($commerce_product->field_product_reference->getValue())) {
+    if ($commerce_product->hasField('field_product_reference') && !empty($commerce_product->field_product_reference->getValue())) {
       foreach ($commerce_product->field_product_reference->getValue() as $product_id) {
         $this->addProductVariationToCart($product_id['target_id'], $cart);
       }
@@ -111,15 +107,15 @@ class DagplejelagerActionsController extends ControllerBase {
   /**
    * Add a product variation to the cart.
    *
-   * @param $product_id int
+   * @param int $product_id
    *   THe product id.
-   * @param $cart OrderInterface|null
+   * @param \Drupal\commerce_order\Entity\OrderInterface $cart
    *   The cart entity.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  private function addProductVariationToCart (int $product_id, OrderInterface $cart) {
+  private function addProductVariationToCart(int $product_id, OrderInterface $cart) {
     $productObj = Product::load($product_id);
     $product_variation_id = $productObj->get('variations')->getValue()[0]['target_id'];
     $variationObject = $this->entityTypeManager()
@@ -129,4 +125,5 @@ class DagplejelagerActionsController extends ControllerBase {
     /** @var \Drupal\commerce\PurchasableEntityInterface $variationObject */
     $this->cartManager->addEntity($cart, $variationObject);
   }
+
 }
