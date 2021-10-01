@@ -1,0 +1,32 @@
+uuid: c5a07bda-5e9f-430e-b1ab-e4668db44718
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - dagplejelager_theme
+id: dagplejelager_theme_userlogin
+theme: dagplejelager_theme
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/password\r\n/user/register"
+    negate: true
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

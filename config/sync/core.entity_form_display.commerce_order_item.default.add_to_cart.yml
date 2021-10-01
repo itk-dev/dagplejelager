@@ -20,7 +20,7 @@ bundle: default
 mode: add_to_cart
 content:
   field_handling:
-    type: options_select
+    type: options_buttons
     weight: 1
     region: content
     settings: {  }

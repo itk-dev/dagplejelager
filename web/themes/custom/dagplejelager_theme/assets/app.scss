@@ -1,0 +1,19 @@
+.field--name-field-handling {
+  legend {
+    display: none;
+  }
+
+  .form-type-radio {
+    display: inline-block;
+
+    & + .form-type-radio {
+      margin-left: 1em;
+    }
+  }
+}
+
+.checkout-order-summary {
+  table {
+    width: 100%;
+  }
+}

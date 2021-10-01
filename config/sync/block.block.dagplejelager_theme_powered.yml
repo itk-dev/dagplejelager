@@ -1,0 +1,22 @@
+uuid: f4732cac-32d7-42d7-8237-06cd3509b31b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: rMX0UNyha0MBL4P-Z7lyzXs_MljBMmrQR2S0Upzn9_E
+id: dagplejelager_theme_powered
+theme: dagplejelager_theme
+region: footer_bottom_right
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -9,7 +9,7 @@ id: commerce_order.default.field_order_notes
 field_name: field_order_notes
 entity_type: commerce_order
 bundle: default
-label: 'order notes'
+label: 'Order notes'
 description: ''
 required: false
 translatable: false
