@@ -104,11 +104,11 @@ We have fixtures for content types and content entities.
 To load all fixtures, run:
 
 ```sh
-# Find and enable all fixtures modules
+# Enable our fixtures modules
 vendor/bin/drush --yes pm:enable dagplejelager_fixtures
 # Load the fixtures
 vendor/bin/drush --yes content-fixtures:load
-# Uninstall all fixtures modules
+# Uninstall fixtures modules
 vendor/bin/drush --yes pm:uninstall content_fixtures
 ```
 

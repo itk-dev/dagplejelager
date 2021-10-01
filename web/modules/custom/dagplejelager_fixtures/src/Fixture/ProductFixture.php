@@ -24,7 +24,7 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
       'type' => 'default',
       'title' => 'Horse',
       'body' => 'This is a nice horse.',
-      'field_brand' => 'Acme',
+      'field_category' => $this->getReference('product_category:animal'),
       'variations' => [
         ProductVariation::create([
           'type' => 'default',
@@ -39,8 +39,25 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
 
     $product = Product::create([
       'type' => 'default',
+      'title' => 'Zebra',
+      'body' => 'It has stripes!',
+      'field_category' => $this->getReference('product_category:animal'),
+      'variations' => [
+        ProductVariation::create([
+          'type' => 'default',
+          'sku' => 'zebra',
+          'price' => new Price('0.00', 'DKK'),
+        ]),
+      ],
+      'stores' => [$this->getReference('store:default')],
+    ]);
+    $product->save();
+    $this->setReference('product:zebra', $product);
+
+    $product = Product::create([
+      'type' => 'default',
       'title' => 'Bicycle',
-      'field_brand' => 'Ajax',
+      'field_category' => $this->getReference('product_category:misc'),
       'variations' => [
         ProductVariation::create([
           'type' => 'default',
@@ -58,7 +75,7 @@ class ProductFixture extends AbstractFixture implements DependentFixtureInterfac
    * {@inheritdoc}
    */
   public function getDependencies() {
-    return [StoreFixture::class];
+    return [StoreFixture::class, ProductCategoryFixture::class];
   }
 
   /**
