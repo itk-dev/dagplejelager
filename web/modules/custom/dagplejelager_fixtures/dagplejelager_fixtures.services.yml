@@ -17,6 +17,10 @@ services:
     tags:
       - { name: content_fixture }
 
+  Drupal\dagplejelager_fixtures\Fixture\OrderFixture:
+    tags:
+      - { name: content_fixture }
+
   Drupal\dagplejelager_fixtures\Fixture\UserFixture:
     tags:
       - { name: content_fixture }
