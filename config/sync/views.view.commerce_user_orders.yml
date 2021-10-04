@@ -2,9 +2,12 @@ uuid: f92f01d8-80b2-40a7-9d7c-28a2ed86278a
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.commerce_order.field_delivery_status
+    - field.storage.commerce_order.field_fulfillment_date
   module:
     - commerce_order
-    - commerce_price
+    - datetime
     - options
     - state_machine
     - user
@@ -265,7 +268,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Dato
+          label: 'Order created date'
           exclude: false
           alter:
             alter_text: false
@@ -325,72 +328,6 @@ display:
           entity_type: commerce_order
           entity_field: placed
           plugin_id: field
-        total_price__number:
-          id: total_price__number
-          table: commerce_order
-          field: total_price__number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'I alt'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: number
-          type: commerce_price_default
-          settings:
-            strip_trailing_zeroes: false
-            currency_display: symbol
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: total_price
-          plugin_id: field
         state:
           id: state
           table: commerce_order
@@ -398,7 +335,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: 'Order status'
           exclude: false
           alter:
             alter_text: false
@@ -454,6 +391,132 @@ display:
           field_api_classes: false
           entity_type: commerce_order
           entity_field: state
+          plugin_id: field
+        field_fulfillment_date:
+          id: field_fulfillment_date
+          table: commerce_order__field_fulfillment_date
+          field: field_fulfillment_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Delivery date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: medium
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_delivery_status:
+          id: field_delivery_status
+          table: commerce_order__field_delivery_status
+          field: field_delivery_status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Delivery status'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
       filters:
         state:
@@ -566,7 +629,9 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.commerce_order.field_delivery_status'
+        - 'config:field.storage.commerce_order.field_fulfillment_date'
   order_page:
     display_plugin: page
     id: order_page
@@ -594,4 +659,6 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.commerce_order.field_delivery_status'
+        - 'config:field.storage.commerce_order.field_fulfillment_date'
