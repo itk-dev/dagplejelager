@@ -85,6 +85,25 @@ jobs:
           yarn install
           yarn coding-standards-check
 
+  check-theme-assets:
+    name: Yarn - Check theme assets are built and up-to-date
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '16' ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: |
+          # Build theme assets
+          docker-compose run node yarn --cwd /app/web/themes/custom/dagplejelager_theme install
+          docker-compose run node yarn --cwd /app/web/themes/custom/dagplejelager_theme encore prod
+          # Check that build assets matches committed assets.
+          git diff --exit-code
+
   site-install-dev:
     name: (Dev) Verify Drupal install and fixtures
     runs-on: ubuntu-latest

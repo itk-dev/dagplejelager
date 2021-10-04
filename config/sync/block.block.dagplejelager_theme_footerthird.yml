@@ -1,0 +1,27 @@
+uuid: 2b2b9169-9f27-47c2-ab47-8b2e34371892
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-third
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: L84eslnjPTbuW053G4oubBIi9QcUFp-0S7bdkD984eg
+id: dagplejelager_theme_footerthird
+theme: dagplejelager_theme
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-third'
+settings:
+  id: 'system_menu_block:footer-third'
+  label: 'Footer third'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

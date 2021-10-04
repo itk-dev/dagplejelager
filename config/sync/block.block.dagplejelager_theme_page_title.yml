@@ -1,0 +1,20 @@
+uuid: 3dcf9533-fe9e-4897-b533-fe7b63baba68
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: I5peIo_gKUAudsDOB1oMviIm3xYmVjhfTkWHPpJT_oU
+id: dagplejelager_theme_page_title
+theme: dagplejelager_theme
+region: header
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 3899ec42-2988-4cef-bc07-a810e01a3817
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: fMVUpsA6aRcR910kdtDQB4iu65kLY2b-2LjjRQaPVzg
+id: dagplejelager_theme_local_actions
+theme: dagplejelager_theme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
