@@ -1,0 +1,30 @@
+uuid: 35aa7aaa-e8f5-46b6-b394-62d222039de9
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order.field_delivery_status
+field_name: field_delivery_status
+entity_type: commerce_order
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: packaged
+      label: Packaged
+    -
+      value: planned
+      label: Planned
+    -
+      value: delivered
+      label: Delivered
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
