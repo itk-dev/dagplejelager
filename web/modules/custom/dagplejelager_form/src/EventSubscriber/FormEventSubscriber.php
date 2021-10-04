@@ -23,12 +23,21 @@ class FormEventSubscriber implements EventSubscriberInterface {
     $form = &$event->getForm();
 
     switch ($event->getFormId()) {
-      case 'commerce_checkout_flow_multistep_default':
 
+      case 'commerce_checkout_flow_multistep_default':
         if (isset($form['billing_information']['profile'])) {
           $this->alterBillingInformationProfileForm($form['billing_information']['profile']);
           break;
         }
+    }
+
+    // Handle product forms.
+    if (preg_match('/^commerce_product_(.+)_(add|edit)_form$/', $event->getFormId())) {
+      // Hide product (variation) price.
+      $form['variations']['widget']['entity']['list_price']['#access'] = FALSE;
+      $form['variations']['widget']['entity']['price']['#access'] = FALSE;
+      // Hide variation status (it's published by default).
+      $form['variations']['widget']['entity']['status']['#access'] = FALSE;
     }
   }
 
