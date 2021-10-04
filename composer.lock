@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ecff5f4bc9be77ff19ef13215981699",
+    "content-hash": "dc887e660dab78a7ddbbc6f17327fe9a",
     "packages": [
         {
             "name": "adodb/adodb-php",
@@ -2090,7 +2090,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-2.24",
-                    "datestamp": "1612928996",
+                    "datestamp": "1632333931",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

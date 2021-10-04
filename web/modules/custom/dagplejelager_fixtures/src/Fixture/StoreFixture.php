@@ -46,8 +46,7 @@ class StoreFixture extends AbstractFixture implements FixtureGroupInterface {
     $this->currencyImporter->import($currency);
 
     $store = Store::create([
-      'type' => 'custom_store_type',
-      'uid' => 1,
+      'type' => 'online',
       'name' => 'My Store',
       'mail' => 'admin@example.com',
       'address' => $address,

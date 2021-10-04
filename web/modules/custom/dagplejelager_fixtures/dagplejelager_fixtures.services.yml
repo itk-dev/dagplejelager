@@ -5,7 +5,19 @@ services:
     tags:
       - { name: content_fixture }
 
+  Drupal\dagplejelager_fixtures\Fixture\ProductCategoryFixture:
+    tags:
+      - { name: content_fixture }
+
   Drupal\dagplejelager_fixtures\Fixture\ProductFixture:
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\ProductBundleFixture:
+    tags:
+      - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\OrderFixture:
     tags:
       - { name: content_fixture }
 
