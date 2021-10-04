@@ -10,6 +10,7 @@ permissions:
   - 'access checkout'
   - 'access commerce administration pages'
   - 'access day carer lookup'
+  - 'use product bundle action'
   - 'view commerce_product'
   - 'view default commerce_order'
   - 'view own commerce_order'
