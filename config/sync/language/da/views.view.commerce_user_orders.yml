@@ -30,9 +30,6 @@ display:
         placed:
           label: Dato
           separator: ', '
-        total_price__number:
-          label: 'I alt'
-          separator: ', '
         state:
           label: Status
           separator: ', '

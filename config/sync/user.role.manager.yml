@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access checkout'
   - 'access commerce administration pages'
+  - 'access content'
   - 'access day carer lookup'
   - 'use product bundle action'
   - 'view commerce_product'
