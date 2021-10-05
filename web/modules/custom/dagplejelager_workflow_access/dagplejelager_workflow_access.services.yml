@@ -1,0 +1,6 @@
+services:
+  dagplejelager_workflow_access.user_transition_permission:
+    class: Drupal\dagplejelager_workflow_access\Guard\UserTransitionPermission
+    arguments: ['@current_user']
+    tags:
+      - { name: state_machine.guard, group: commerce_order }

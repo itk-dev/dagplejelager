@@ -1,0 +1,5 @@
+name: 'Dagplejelager workflow access'
+type: module
+description: 'Modify access to workflow actions and change order form'
+core_version_requirement: ^9
+package: Dagplejelager
