@@ -3,20 +3,49 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-01 13:32+0000\n"
-"PO-Revision-Date: 2021-10-01 13:32+0000\n"
+"POT-Creation-Date: 2021-10-05 13:17+0000\n"
+"PO-Revision-Date: 2021-10-05 15:19+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: da\n"
+"X-Generator: Poedit 2.4.2\n"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Operations"
+msgstr "Handlinger"
+
+msgid "Reset"
+msgstr "Nulstil"
+
+msgid "Updated"
+msgstr "Opdateret"
+
+msgid "Filter"
+msgstr "Filter"
 
 msgid "Add to cart"
 msgstr "Læg i kurv"
 
+msgid "Cart block"
+msgstr "Indkøbskurvblok"
+
+msgid "Item"
+msgstr "Titel"
+
 msgid "Quantity"
 msgstr "Antal"
+
+msgid "With selection"
+msgstr "Handling"
 
 msgid "Store"
 msgstr "Butik"
@@ -27,82 +56,74 @@ msgstr "Kunde"
 msgid "Total"
 msgstr "I alt"
 
+msgid "No orders available."
+msgstr "Ingen tilgængelige ordrer."
+
 msgid ""
 "Your order number is [commerce_order:order_number].\r\n"
-"You can view "
-"your order on your account page when logged in."
+"You can view your order on your account page when "
+"logged in."
 msgstr "Dit ordrenummer er [commerce_order:order_number]."
 
 msgid "Checkout"
-msgstr "Gå til kassen"
+msgstr "Til kassen"
 
 msgid "Billing"
-msgstr "Betaling"
+msgstr "Fakturering"
 
-msgid "Cart"
-msgstr "Kurv"
+msgid "Admin"
+msgstr "Administration"
 
-msgid "Billing information"
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Customer information"
 msgstr "Kundeoplysninger"
 
-msgid "Cart is empty."
-msgstr "Kurven er tom."
+msgid "Unit price"
+msgstr "Enhedspris"
 
-msgid "@entity added to <a href=\":url\">your cart</a>."
-msgstr "@entity lagt i <a href=\":url\">din kurv</a>. "
+msgid "Total price"
+msgstr "Pris i alt"
+
+msgid "Orders"
+msgstr "Ordrer"
+
+msgid "Order number"
+msgstr "Ordrenummer"
+
+msgid "Manage your orders."
+msgstr "Behandl dine ordrer."
+
+msgid "You have not placed any orders with us yet."
+msgstr "Du har ikke handlet hos os endnu."
+
+msgid "Delete product"
+msgstr "Slet produkt"
+
+msgid "Publish product"
+msgstr "Publicér produkt"
+
+msgid "Unpublish product"
+msgstr "Afpublicér produkt"
+
+msgid "Products"
+msgstr "Produkter"
+
+msgid "No products available."
+msgstr "Ingen produkter matcher dit filter."
+
+msgid "Profiles"
+msgstr "Profiler"
+
+msgid "User page"
+msgstr "Brugerside"
+
+msgid "Cart"
+msgstr "Indkøbskurv"
+
+msgid "Images"
+msgstr "Billeder"
 
 msgid "Update cart"
 msgstr "Opdater kurv"
-
-msgid "Search for a name or an address"
-msgstr "Søg efter navn eller adresse"
-
-msgctxt "Address label"
-msgid "First name"
-msgstr "Fornavn"
-
-msgctxt "Address label"
-msgid "Last name"
-msgstr "Efternavn"
-
-msgctxt "Address label"
-msgid "Company"
-msgstr "Institution"
-
-msgctxt "Address label"
-msgid "Street address"
-msgstr "Adresse"
-
-msgctxt "Address label"
-msgid "Postal code"
-msgstr "Postnummer"
-
-msgctxt "Address label"
-msgid "City"
-msgstr "By"
-
-msgid "Order Summary"
-msgstr "Ordreoverblik"
-
-msgid "Continue to review"
-msgstr "Fortsæt til bekræftelse"
-
-msgid "Order information"
-msgstr "Ordreinformation"
-
-msgid "Go back"
-msgstr "Gå tilbage"
-
-msgid "Contact information"
-msgstr "Kontaktoplysninger"
-
-msgid "Complete checkout"
-msgstr "Bekræft ordre"
-
-msgid "Review"
-msgstr "Bekræftelse"
-
-msgid "Complete"
-msgstr "Ordre bekræftet"
-
-
