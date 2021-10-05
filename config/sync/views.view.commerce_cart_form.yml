@@ -68,10 +68,9 @@ display:
           description: ''
           columns:
             purchased_entity: purchased_entity
-            unit_price__number: unit_price__number
+            field_handling: field_handling
             edit_quantity: edit_quantity
             remove_button: remove_button
-            total_price__number: total_price__number
           info:
             purchased_entity:
               sortable: true
@@ -80,7 +79,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            unit_price__number:
+            field_handling:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -93,13 +92,6 @@ display:
               empty_column: false
               responsive: ''
             remove_button:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            total_price__number:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -121,7 +113,7 @@ display:
           relationship: order_items
           group_type: group
           admin_label: ''
-          label: Element
+          label: Title
           exclude: false
           alter:
             alter_text: false
@@ -248,7 +240,7 @@ display:
           relationship: order_items
           group_type: group
           admin_label: ''
-          label: Mængde
+          label: Quantity
           exclude: false
           alter:
             alter_text: false
@@ -299,7 +291,7 @@ display:
           relationship: order_items
           group_type: group
           admin_label: ''
-          label: 'Fjern '
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -332,7 +324,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
