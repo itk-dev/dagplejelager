@@ -13,9 +13,6 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-      header:
-        result:
-          content: 'Viser @start–@end af @total'
       empty:
         display_link:
           label: 'Ingen ordrer matcher dine filtre.'
@@ -45,6 +42,9 @@ display:
           label: Produkter
         state:
           label: Status
+      footer:
+        result:
+          content: 'Viser @start–@end af @total'
   page_1:
     display_title: Side
     display_options:

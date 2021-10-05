@@ -21,7 +21,7 @@ dependencies:
 _core:
   default_config_hash: HFX6ZqjZ-Ph27nJoRvTzBtYCqiDzUaPdz-yRGWiQJtE
 id: commerce_orders
-label: Ordrer
+label: Orders
 module: views
 description: ''
 tag: Commerce
@@ -1108,7 +1108,8 @@ display:
           plugin_id: date
       sorts: {  }
       title: Ordrer
-      header:
+      header: {  }
+      footer:
         result:
           id: result
           table: views
@@ -1119,7 +1120,6 @@ display:
           empty: false
           content: 'Displaying @start–@end of @total'
           plugin_id: result
-      footer: {  }
       empty:
         display_link:
           id: display_link
