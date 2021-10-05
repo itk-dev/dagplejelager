@@ -1,12 +1,9 @@
-label: Ordrer
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
-          reset_button_label: Gendan
+          reset_button_label: Nulstil
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
@@ -16,58 +13,44 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-          tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
+      empty:
+        display_link:
+          label: 'Ingen ordrer matcher dine filtre.'
+      filters:
+        combine:
+          expose:
+            label: Søg
+            placeholder: 'Søg på ordrenr. eller kunde'
+        placed_1:
+          expose:
+            label: 'Dato (fra)'
+        placed:
+          expose:
+            label: 'Dato (til)'
       fields:
-        commerce_order_bulk_form:
-          action_title: Handling
-        order_number:
-          label: '#'
-          separator: ', '
         placed:
           label: Dato
-          separator: ', '
-        type:
-          label: Type
-          separator: ', '
         store_id:
           label: Butik
-          separator: ', '
         uid:
           label: Kunde
-          separator: ', '
         mail:
           label: E-mail
-          separator: ', '
-        state:
-          label: Status
-          separator: ', '
-        total_price__number:
-          label: 'I alt'
-          separator: ', '
         operations:
           label: Handlinger
-      filters:
-        order_number:
-          expose:
-            label: Ordrenummer
-        type:
-          expose:
-            label: Type
+        order_items_target_id:
+          label: Produkter
         state:
-          expose:
-            label: Status
-      title: Ordrer
-      empty:
-        area_text_custom:
-          content: 'Ingen tilgængelige ordrer'
+          label: Status
+      footer:
+        result:
+          content: 'Viser @start–@end af @total'
   page_1:
     display_title: Side
     display_options:
-      menu:
-        title: Ordrer
       tab_options:
-        title: Ordrer
+        description: 'Behandl dine ordrer.'
+  data_export_1:
+    display_title: 'Dateeksport (CSV)'
+  data_export_2:
+    display_title: 'Dataeksport (XLSX)'

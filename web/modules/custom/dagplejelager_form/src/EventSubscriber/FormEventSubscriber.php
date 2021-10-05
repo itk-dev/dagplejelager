@@ -5,6 +5,7 @@ namespace Drupal\dagplejelager_form\EventSubscriber;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\core_event_dispatcher\Event\Form\FormAlterEvent;
 use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+use Drupal\views\ViewExecutable;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -21,14 +22,41 @@ class FormEventSubscriber implements EventSubscriberInterface {
    */
   public function alterForm(FormAlterEvent $event): void {
     $form = &$event->getForm();
-
     switch ($event->getFormId()) {
 
       case 'commerce_checkout_flow_multistep_default':
         if (isset($form['billing_information']['profile'])) {
           $this->alterBillingInformationProfileForm($form['billing_information']['profile']);
-          break;
         }
+        break;
+
+      case 'views_exposed_form':
+        $view = $event->getFormState()->get('view');
+        assert($view instanceof ViewExecutable);
+        if ('commerce_orders' === $view->id()) {
+          $form['product_id'] = [
+            '#type' => 'entity_autocomplete',
+            '#tags' => TRUE,
+            '#target_type' => 'commerce_product',
+            '#selection_settings' => [
+              'target_bundles' => ['default'],
+            ],
+            '#placeholder' => $this->t('Search for a product'),
+            '#description' => $this->t('Separate multiple products by comma. When searching for multiple products, only orders containing <em>all</em> products are shown.'),
+          ];
+
+          $form['product_category_id'] = [
+            '#type' => 'entity_autocomplete',
+            '#tags' => TRUE,
+            '#target_type' => 'taxonomy_term',
+            '#selection_settings' => [
+              'target_bundles' => ['product_category'],
+            ],
+            '#placeholder' => $this->t('Search for a product category'),
+            '#description' => $this->t('Separate multiple categories by comma. When searching for multiple categories, only orders containing <em>all</em> categories are shown.'),
+          ];
+        }
+        break;
     }
 
     // Handle product forms.
