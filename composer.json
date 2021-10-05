@@ -48,8 +48,18 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@install-codestandards"
+            "@install-codestandards",
+            "@install-estore-libraries"
         ],
+        "//": "https://www.drupal.org/docs/contributed-themes/estore-user-guide/installation#installation--expanded",
+        "install-estore-libraries": [
+            "mkdir -p web/libraries",
+            "curl --silent --location https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip > web/libraries/bootstrap.zip",
+            "(cd web/libraries && rm -fr bootstrap && unzip -q bootstrap.zip && mv *bootstrap-* bootstrap && rm bootstrap.zip)",
+            "curl --silent --location https://github.com/johnpolacek/stacktable.js/zipball/master/ > web/libraries/stacktable.js.zip",
+            "(cd web/libraries && rm -fr stacktable.js && unzip -q stacktable.js.zip && mv *stacktable.js-* stacktable.js && rm stacktable.js.zip)"
+        ],
+
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
