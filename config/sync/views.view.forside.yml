@@ -372,7 +372,7 @@ display:
           click_sort_column: target_id
           type: commerce_add_to_cart
           settings:
-            combine: false
+            combine: true
           group_column: target_id
           group_columns: {  }
           group_rows: true
