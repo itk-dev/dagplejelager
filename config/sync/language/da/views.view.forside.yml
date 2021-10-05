@@ -1,0 +1,29 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrér
+          reset_button_label: Nulstil
+          exposed_sorts_label: 'Sorter efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      fields:
+        title:
+          label: Titel
+        body:
+          label: Beskrivelse
+        field_category:
+          label: Kategori
+        view_commerce_product:
+          text: 'Se mere'
+      filters:
+        combine:
+          expose:
+            label: Søg
+        field_category_target_id:
+          expose:
+            label: Kategori
+      header:
+        area_text_custom:
+          content: '<h3>Produkter</h3>'
