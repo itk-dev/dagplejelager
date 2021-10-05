@@ -3,6 +3,12 @@ services:
     tags:
       - { name: event_subscriber }
 
+  Drupal\dagplejelager_form\EventSubscriber\ViewsEventSubscriber:
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      - { name: event_subscriber }
+
   Drupal\dagplejelager_form\Helper\DayCarerHelper:
     arguments:
       - '@database'

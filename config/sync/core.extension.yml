@@ -63,6 +63,7 @@ module:
   update: 0
   user: 0
   views_data_export: 0
+  views_event_dispatcher: 0
   views_ui: 0
   xls_serialization: 0
   externalauth: 10

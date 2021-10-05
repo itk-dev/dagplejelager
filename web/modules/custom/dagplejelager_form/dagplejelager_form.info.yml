@@ -8,3 +8,4 @@ package: Dagplejelager
 dependencies:
   - drupal:commerce_checkout_order_fields
   - drupal:core_event_dispatcher
+  - drupal:views_event_dispatcher
