@@ -3,14 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.commerce_order.field_delivery_status
     - field.storage.commerce_order.field_fulfillment_date
     - field.storage.commerce_order.field_urgent
   module:
     - commerce_order
     - datetime
     - options
-    - state_machine
     - user
 _core:
   default_config_hash: ixfojlMdSpKQCFLyPcNv8yfWcracf58Oxi0O5Kzu_EE
@@ -539,14 +537,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_delivery_status:
-          id: field_delivery_status
-          table: commerce_order__field_delivery_status
-          field: field_delivery_status
+        edit_commerce_order:
+          id: edit_commerce_order
+          table: commerce_order
+          field: edit_commerce_order
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Delivery status'
+          label: 'Link to edit Order'
           exclude: false
           alter:
             alter_text: false
@@ -587,63 +585,12 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-      filters:
-        state:
-          id: state
-          table: commerce_order
-          field: state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not in'
-          value:
-            draft: draft
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            operator_limit_selection: false
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+          text: edit
+          output_url_as_text: false
+          absolute: false
           entity_type: commerce_order
-          entity_field: state
-          plugin_id: state_machine_state
+          plugin_id: entity_link_edit
+      filters: {  }
       sorts: {  }
       title: Ordrer
       header: {  }
@@ -703,6 +650,9 @@ display:
           entity_field: uid
           plugin_id: numeric
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -713,7 +663,6 @@ display:
         - user
         - user.permissions
       tags:
-        - 'config:field.storage.commerce_order.field_delivery_status'
         - 'config:field.storage.commerce_order.field_fulfillment_date'
         - 'config:field.storage.commerce_order.field_urgent'
   order_page:
@@ -744,6 +693,5 @@ display:
         - user
         - user.permissions
       tags:
-        - 'config:field.storage.commerce_order.field_delivery_status'
         - 'config:field.storage.commerce_order.field_fulfillment_date'
         - 'config:field.storage.commerce_order.field_urgent'
