@@ -7,6 +7,7 @@ dependencies:
     - field.field.commerce_order.default.field_delivery_status
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_order_notes
+    - field.field.commerce_order.default.field_urgent
   module:
     - commerce_order
     - datetime
@@ -50,6 +51,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_urgent:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   order_items:
     type: inline_entity_form_complex
