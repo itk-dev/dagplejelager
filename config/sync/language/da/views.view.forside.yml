@@ -1,0 +1,42 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrér
+          reset_button_label: Nulstil
+          exposed_sorts_label: 'Sorter efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      fields:
+        title:
+          label: Titel
+        body:
+          label: Beskrivelse
+        field_category:
+          label: Kategori
+      filters:
+        combine:
+          expose:
+            label: Søg
+        field_category_target_id:
+          expose:
+            label: Kategori
+      header:
+        area_text_custom:
+          content: '<h3>Produkter</h3>'
+      title: Forside
+  attachment_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: '<h3>Produktsamlinger</h3>'
+      fields:
+        field_product_reference:
+          label: Produkter
+        title:
+          label: Titel
+        nothing:
+          alter:
+            text: '<a class="button button--primary btn-success btn" href="/dagplejelager_actions/add_bundle/{{ product_id }}">Læg i kurv</a>'
+label: Forside

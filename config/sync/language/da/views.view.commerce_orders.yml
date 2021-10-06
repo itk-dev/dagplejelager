@@ -42,6 +42,8 @@ display:
           label: Produkter
         state:
           label: Status
+        field_urgent:
+          label: Haster
       footer:
         result:
           content: 'Viser @start–@end af @total'

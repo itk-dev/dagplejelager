@@ -14,8 +14,6 @@ display:
           separator: ', '
         title:
           separator: ', '
-        total_price__number:
-          separator: ', '
       arguments:
         order_id:
           exception:

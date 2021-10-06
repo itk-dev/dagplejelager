@@ -7,6 +7,7 @@ dependencies:
     - field.field.commerce_order.default.field_delivery_status
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_order_notes
+    - field.field.commerce_order.default.field_urgent
   module:
     - commerce_order
     - commerce_price
@@ -72,6 +73,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_urgent:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   ip_address:
     label: inline

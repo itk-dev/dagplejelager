@@ -2,12 +2,14 @@ uuid: 0a84288e-e5ca-46b9-a083-018ba5b5835e
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.commerce_order_item.field_handling
   enforced:
     module:
       - commerce_cart
   module:
     - commerce_order
-    - commerce_price
+    - options
 _core:
   default_config_hash: sTKMNZJ4DVegYkx0Lake4yfkpxD7y_g2bQO28xTs5co
 id: commerce_cart_block
@@ -216,10 +218,10 @@ display:
           entity_type: commerce_order_item
           entity_field: title
           plugin_id: field
-        total_price__number:
-          id: total_price__number
-          table: commerce_order_item
-          field: total_price__number
+        field_handling:
+          id: field_handling
+          table: commerce_order_item__field_handling
+          field: field_handling
           relationship: order_items
           group_type: group
           admin_label: ''
@@ -264,12 +266,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: number
-          type: commerce_price_default
-          settings:
-            strip_trailing_zeroes: false
-            currency_display: symbol
-          group_column: ''
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -279,8 +279,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order_item
-          entity_field: total_price
           plugin_id: field
       filters:
         cart:
@@ -398,4 +396,20 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-      tags: {  }
+      tags:
+        - 'config:field.storage.commerce_order_item.field_handling'
+  attachment_1:
+    display_plugin: attachment
+    id: attachment_1
+    display_title: Attachment
+    position: 1
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+      tags:
+        - 'config:field.storage.commerce_order_item.field_handling'

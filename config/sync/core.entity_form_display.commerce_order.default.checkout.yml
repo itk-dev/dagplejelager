@@ -8,6 +8,7 @@ dependencies:
     - field.field.commerce_order.default.field_delivery_status
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_order_notes
+    - field.field.commerce_order.default.field_urgent
 _core:
   default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
 id: commerce_order.default.checkout
@@ -22,6 +23,13 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_urgent:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   adjustments: true

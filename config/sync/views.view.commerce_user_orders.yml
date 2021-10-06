@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.commerce_order.field_delivery_status
     - field.storage.commerce_order.field_fulfillment_date
+    - field.storage.commerce_order.field_urgent
   module:
     - commerce_order
     - datetime
@@ -85,19 +86,22 @@ display:
           summary: ''
           description: ''
           columns:
+            order_id: order_id
             order_number: order_number
             placed: placed
-            total_price__number: total_price__number
+            field_urgent: field_urgent
             state: state
+            field_fulfillment_date: field_fulfillment_date
+            field_delivery_status: field_delivery_status
           info:
-            order_number:
-              sortable: true
-              default_sort_order: desc
+            order_id:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            created:
+            order_number:
               sortable: true
               default_sort_order: desc
               align: ''
@@ -111,8 +115,8 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            total_price__number:
-              sortable: false
+            field_urgent:
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -120,6 +124,20 @@ display:
               responsive: ''
             state:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_fulfillment_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_delivery_status:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -327,6 +345,71 @@ display:
           field_api_classes: false
           entity_type: commerce_order
           entity_field: placed
+          plugin_id: field
+        field_urgent:
+          id: field_urgent
+          table: commerce_order__field_urgent
+          field: field_urgent
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Urgent
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
         state:
           id: state
@@ -632,6 +715,7 @@ display:
       tags:
         - 'config:field.storage.commerce_order.field_delivery_status'
         - 'config:field.storage.commerce_order.field_fulfillment_date'
+        - 'config:field.storage.commerce_order.field_urgent'
   order_page:
     display_plugin: page
     id: order_page
@@ -662,3 +746,4 @@ display:
       tags:
         - 'config:field.storage.commerce_order.field_delivery_status'
         - 'config:field.storage.commerce_order.field_fulfillment_date'
+        - 'config:field.storage.commerce_order.field_urgent'
