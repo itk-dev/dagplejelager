@@ -11,8 +11,6 @@ dependencies:
     - field.field.commerce_order.default.field_urgent
   module:
     - commerce_order
-    - entity_reference_revisions
-    - options
 _core:
   default_config_hash: XRgGhXKcDeqhvgwHROyCDmRx7wfApZmGqxYl_9fE7SU
 id: commerce_order.default.user
@@ -20,80 +18,44 @@ targetEntityType: commerce_order
 bundle: default
 mode: user
 content:
-  billing_profile:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  completed:
-    label: inline
-    type: timestamp
-    weight: 2
-    settings:
-      date_format: short
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    region: content
-  mail:
-    label: inline
+  field_order_notes:
     type: basic_string
     weight: 1
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
+  field_urgent:
+    type: boolean
+    weight: 2
     region: content
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   order_items:
     type: commerce_order_item_table
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    label: hidden
-    region: content
-  order_number:
-    type: string
     weight: 0
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     region: content
-  placed:
-    label: inline
-    type: timestamp
-    weight: 3
-    settings:
-      date_format: short
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    region: content
-  state:
-    type: list_default
-    weight: 4
-    label: inline
+    label: above
     settings: {  }
     third_party_settings: {  }
-    region: content
-  total_price:
-    type: commerce_order_total_summary
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    label: hidden
-    region: content
 hidden:
   balance: true
+  billing_profile: true
   changed: true
+  completed: true
   field_delivery_status: true
   field_fulfillment_date: true
-  field_order_notes: true
-  field_urgent: true
   ip_address: true
+  mail: true
+  order_number: true
+  placed: true
   search_api_excerpt: true
+  state: true
   store_id: true
   total_paid: true
+  total_price: true
   uid: true
