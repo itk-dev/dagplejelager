@@ -31,6 +31,7 @@ permissions:
   - 'update any bundle commerce_product'
   - 'update any default commerce_product'
   - 'update default commerce_order'
+  - 'use convert to cart action'
   - 'use product bundle action'
   - 'view commerce_order'
   - 'view commerce_product'

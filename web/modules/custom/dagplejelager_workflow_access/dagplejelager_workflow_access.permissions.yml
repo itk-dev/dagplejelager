@@ -1,3 +1,0 @@
-'change order workflow states':
-  title: Change workflow states of an order.
-  restrict access: true
