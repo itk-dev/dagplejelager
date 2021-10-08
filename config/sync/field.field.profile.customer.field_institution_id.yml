@@ -5,11 +5,6 @@ dependencies:
   config:
     - field.storage.profile.field_institution_id
     - profile.type.customer
-  module:
-    - profile
-third_party_settings:
-  profile:
-    profile_private: true
 id: profile.customer.field_institution_id
 field_name: field_institution_id
 entity_type: profile

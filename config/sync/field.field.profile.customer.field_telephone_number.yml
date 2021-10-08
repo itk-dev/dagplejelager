@@ -5,11 +5,6 @@ dependencies:
   config:
     - field.storage.profile.field_telephone_number
     - profile.type.customer
-  module:
-    - profile
-third_party_settings:
-  profile:
-    profile_private: true
 id: profile.customer.field_telephone_number
 field_name: field_telephone_number
 entity_type: profile
