@@ -28,7 +28,7 @@ content:
     region: content
   field_institution_id:
     weight: 2
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -36,7 +36,7 @@ content:
     region: content
   field_telephone_number:
     weight: 1
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
