@@ -22,7 +22,7 @@ services:
       com.symfony.server.service-prefix: 'DATABASE'
 
   phpfpm:
-    image: itkdev/php7.4-fpm:latest
+    build: ./.docker/phpfpm
     networks:
       - app
     environment:
