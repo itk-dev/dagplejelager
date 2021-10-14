@@ -1,6 +1,9 @@
+# itk-version: 1.0.0
 version: "3"
 
 networks:
+  frontend:
+    external: true
   app:
     driver: bridge
     internal: false
@@ -22,7 +25,7 @@ services:
       com.symfony.server.service-prefix: 'DATABASE'
 
   phpfpm:
-    build: ./.docker/phpfpm
+    build: ./.docker/development/phpfpm
     networks:
       - app
     environment:
@@ -44,6 +47,7 @@ services:
     image: nginx:latest
     networks:
       - app
+      - frontend
     depends_on:
       - phpfpm
     ports:
@@ -51,6 +55,10 @@ services:
     volumes:
       - ${PWD}/.docker/vhost.conf:/etc/nginx/conf.d/default.conf:ro
       - ./:/app:delegated
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_DOMAIN}`)"
 
   memcached:
     image: 'memcached:latest'

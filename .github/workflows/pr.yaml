@@ -99,6 +99,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: |
           # Build theme assets
+          docker network create frontend
           docker-compose run node yarn --cwd /app/web/themes/custom/dagplejelager_theme install
           docker-compose run node yarn --cwd /app/web/themes/custom/dagplejelager_theme encore prod
           # Check that build assets matches committed assets.
