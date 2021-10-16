@@ -1,19 +1,21 @@
 FROM itkdev/php7.4-fpm:alpine
 
-# https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#ubuntu17
-# https://docs.microsoft.com/en-us/sql/connect/php/installation-tutorial-linux-mac?view=sql-server-ver15#installing-on-ubuntu
-
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
-    && curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-RUN apt-get update -y \
-    && ACCEPT_EULA=Y apt-get install -y \
-    msodbcsql17 \
-    php7.4-dev \
-    php7.4-xml \
+# Install dependencies for building packages
+RUN apk --update add --no-cache --virtual .build-deps \
+    autoconf \
+    g++ \
+    make \
+    gnupg \
     unixodbc-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && pecl install sqlsrv pdo_sqlsrv
-
-RUN bash -c 'printf "; priority=20\nextension=sqlsrv.so\n" > /etc/php/7.4/mods-available/sqlsrv.ini' \
-    && bash -c 'printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/7.4/mods-available/pdo_sqlsrv.ini' \
-    && phpenmod sqlsrv pdo_sqlsrv
+# https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#alpine17
+    && curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.8.1.1-1_amd64.apk \
+    && curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.8.1.1-1_amd64.sig \
+    && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --import - \
+    && gpg --verify msodbcsql17_17.8.1.1-1_amd64.sig msodbcsql17_17.8.1.1-1_amd64.apk \
+# Reply "yes" to accept the license
+    && yes | apk add --allow-untrusted msodbcsql17_17.8.1.1-1_amd64.apk \
+    && pecl install sqlsrv pdo_sqlsrv \
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv \
+    && apk del .build-deps \
+# Clean up
+    && rm msodbcsql17_17.8.1.1-1_amd64.*

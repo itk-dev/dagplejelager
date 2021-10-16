@@ -51,6 +51,19 @@ AD groups to Drupal roles mapping:
 $config['openid_connect.settings']['role_mappings']['Drupal role] = ['AD group'];
 ```
 
+#### Docker compose
+
+Create `.env.docker.local`:
+
+```env
+COMPOSE_PROJECT_NAME=dagplejelager
+COMPOSE_SERVER_DOMAIN=dagplejelager.some.domain
+```
+
+```sh
+docker-compose --env-file .env.docker.local --file docker-compose.server.yml up --detach --build
+```
+
 ### Development
 
 We use a [custom Dockerfile](.docker/development/phpfpm/Dockerfile) to install
