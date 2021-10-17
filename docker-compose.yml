@@ -41,7 +41,6 @@ services:
       - memcached
     volumes:
       - .:/app:delegated
-      - drush-cache:/root/.drush
 
   nginx:
     image: nginx:latest
@@ -81,7 +80,3 @@ services:
     image: node:14
     volumes:
       - .:/app:delegated
-
-# Drush cache volume to persist cache between runs.
-volumes:
-  drush-cache:
