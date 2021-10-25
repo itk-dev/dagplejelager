@@ -51,10 +51,30 @@ AD groups to Drupal roles mapping:
 $config['openid_connect.settings']['role_mappings']['Drupal role] = ['AD group'];
 ```
 
-### Development
+#### Docker compose
+
+Create `.env.docker.local`:
+
+```env
+COMPOSE_PROJECT_NAME=dagplejelager
+COMPOSE_SERVER_DOMAIN=dagplejelager.some.domain
+```
 
 ```sh
-docker-compose up --detach
+docker-compose --env-file .env.docker.local --file docker-compose.server.yml up --detach --build
+```
+
+### Development
+
+We use a [custom Dockerfile](.docker/development/phpfpm/Dockerfile) to install
+[Microsoft SQL Server Functions
+(PDO_SQLSRV)](https://www.php.net/manual/en/ref.pdo-sqlsrv.php) in the `phpfpm`
+container.
+
+Use `docker-compose up --detach --build` to (re)build the custom docker image.
+
+```sh
+docker-compose up --detach --build
 docker-compose exec phpfpm composer install
 docker-compose exec phpfpm vendor/bin/drush --yes site:install minimal --existing-config
 # Get the site url

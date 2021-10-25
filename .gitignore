@@ -168,3 +168,4 @@ private-files/
 node_modules/
 yarn-error.log
 *.mo
+.env.docker.local
