@@ -8,13 +8,12 @@ display:
           exposed_sorts_label: 'Sorter efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
+          text_input_required: 'Søg efter et produkt eller vælg en kategori af produkter.'
       fields:
         title:
           label: Titel
         body:
           label: Beskrivelse
-        field_category:
-          label: Kategori
       filters:
         combine:
           expose:
@@ -26,6 +25,11 @@ display:
         area_text_custom:
           content: '<h3>Produkter</h3>'
       title: Forside
+      empty:
+        area:
+          content:
+            value: 'Kunne ikke finde nogle produkter.'
+            format: plain_text
   attachment_1:
     display_options:
       header:
