@@ -21,6 +21,8 @@ display:
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
       fields:
+        fid:
+          label: Fid
         filename:
           label: Navn
           separator: ', '
@@ -32,6 +34,7 @@ display:
           label: Status
           settings:
             format_custom_false: Midlertidig
+            format_custom_true: Permanent
         created:
           label: Upload-dato
         changed:
@@ -58,6 +61,7 @@ display:
       menu:
         title: Filer
   page_2:
+    display_title: 'File usage'
     display_options:
       pager:
         options:
@@ -77,6 +81,7 @@ display:
           label: 'Registrerer modul'
         count:
           label: 'Brug antal'
+      title: 'File usage'
       arguments:
         fid:
           exception:

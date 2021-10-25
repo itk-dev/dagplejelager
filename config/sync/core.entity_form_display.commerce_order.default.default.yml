@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - commerce_order.commerce_order_type.default
+    - field.field.commerce_order.default.field_delivery_status
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_order_notes
     - field.field.commerce_order.default.field_urgent
@@ -31,6 +32,12 @@ content:
     weight: 2
     region: content
     third_party_settings: {  }
+  field_delivery_status:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_fulfillment_date:
     weight: 3
     settings: {  }
@@ -38,7 +45,7 @@ content:
     type: datetime_default
     region: content
   field_order_notes:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''

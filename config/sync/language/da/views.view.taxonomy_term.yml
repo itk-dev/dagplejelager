@@ -25,5 +25,7 @@ display:
           exception:
             title: Alle
           title: '{{ arguments.tid }}'
+  feed_1:
+    display_title: Feed
   page_1:
     display_title: Side

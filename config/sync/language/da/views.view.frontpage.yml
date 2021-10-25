@@ -25,5 +25,7 @@ display:
             first: '« Første'
             last: 'Sidste »'
     display_title: Standard
+  feed_1:
+    display_title: Feed
   page_1:
     display_title: Side
