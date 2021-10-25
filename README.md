@@ -8,6 +8,13 @@ Note: Uses a patched version of
 
 ### Production
 
+Create `.env.docker.local`:
+
+```sh
+COMPOSE_PROJECT_NAME=dagplejelager
+COMPOSE_SERVER_DOMAIN=dagplejelager.some.domain
+```
+
 Create local settings file with database connection:
 
 ```sh
@@ -25,10 +32,34 @@ $databases['default']['default'] = [
 EOF
 ```
 
+We'll run behind a proxy, so tell Drupal that we actually use `https`:
+
+```php
+# settings.local.php
+// @see https://www.drupal.org/node/425990
+$settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy_addresses'][] = $_SERVER['REMOTE_ADDR'];
+// See https://symfony.com/doc/current/deployment/proxies.html.
+$settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL;
+```
+
+Install the site:
+
 ```sh
-composer install --no-dev --optimize-autoloader
-vendor/bin/drush --yes site:install minimal --existing-config
-vendor/bin/drush --yes locale:update
+./scripts/server/install
+```
+
+Update the site:
+
+```sh
+git pull
+./scripts/server/update
+```
+
+Talk to the site:
+
+```sh
+./scripts/server/drush
 ```
 
 #### Configuration
