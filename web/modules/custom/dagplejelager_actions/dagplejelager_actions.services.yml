@@ -1,4 +1,8 @@
 services:
+  Drupal\dagplejelager_actions\EventSubscriber\EntityEventSubscriber:
+    tags:
+      - { name: event_subscriber }
+
   Drupal\dagplejelager_actions\TwigExtension\TwigExtension:
     arguments:
       - '@current_user'

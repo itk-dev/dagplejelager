@@ -82,7 +82,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'store_id' => $this->getReference('store:default')->id(),
       'order_items' => [$item0, $item1],
       'placed' => (new \DateTimeImmutable('2021-05-23'))->getTimestamp(),
-      'state' => 'draft',
+      'state' => 'validation',
     ]);
     $order->recalculateTotalPrice();
     $order->save();
@@ -98,7 +98,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'store_id' => $this->getReference('store:default')->id(),
       'order_items' => [$item0, $item1],
       'placed' => (new \DateTimeImmutable('2021-12-24'))->getTimestamp(),
-      'state' => 'draft',
+      'state' => 'validation',
     ]);
     $order->recalculateTotalPrice();
     $order->save();
