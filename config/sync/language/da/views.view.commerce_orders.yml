@@ -33,7 +33,7 @@ display:
         store_id:
           label: Butik
         uid:
-          label: Kunde
+          label: Dagplejer
         mail:
           label: E-mail
         operations:
@@ -44,6 +44,8 @@ display:
           label: Status
         field_urgent:
           label: Haster
+        billing_profile__target_id:
+          label: Adresse
       footer:
         result:
           content: 'Viser @start–@end af @total'
