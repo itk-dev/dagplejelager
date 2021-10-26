@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+real_docker_compose=$(which docker-compose)
+
+function docker-compose() {
+  eval "$real_docker_compose" --env-file .env.docker.local --file docker-compose.server.yml "$@"
+}
+
+function composer() {
+  docker run --rm --interactive --tty \
+         --volume "$PWD":/app \
+         --volume "${COMPOSER_HOME:-$HOME/.composer}":/tmp \
+         composer "$@"
+}
+
+function drush() {
+  docker-compose exec --user deploy phpfpm vendor/bin/drush "$@"
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$script_dir"/inc/functions
+
+# Get COMPOSE_SERVER_DOMAIN
+source "$script_dir"/../../.env.docker.local
+
+docker-compose exec --user deploy phpfpm vendor/bin/drush --uri=https://"$COMPOSE_SERVER_DOMAIN" "$@"
