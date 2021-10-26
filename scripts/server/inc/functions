@@ -3,7 +3,7 @@
 real_docker_compose=$(which docker-compose)
 
 function docker-compose() {
-  eval "$real_docker_compose" --env-file .env.docker.local --file docker-compose.server.yml "$@"
+  eval "$real_docker_compose" --env-file "$script_dir"/../../.env.docker.local --file "$script_dir"/../../docker-compose.server.yml "$@"
 }
 
 function composer() {
