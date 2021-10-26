@@ -20,6 +20,7 @@ module:
   csv_serialization: 0
   dagplejelager_actions: 0
   dagplejelager_form: 0
+  dagplejelager_user: 0
   date_popup: 0
   datetime: 0
   dblog: 0
