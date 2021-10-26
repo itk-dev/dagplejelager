@@ -8,6 +8,7 @@ use Drupal\commerce_order\Entity\OrderInterface;
 use Drupal\commerce_product\Entity\ProductInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
+use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -93,6 +94,36 @@ class DagplejelagerActionsController extends ControllerBase {
     $response = new RedirectResponse($referer);
 
     return $response;
+  }
+
+  /**
+   * Convert an order to a cart.
+   *
+   * @param \Drupal\commerce_order\Entity\OrderInterface $order
+   *   The order.
+   *
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse
+   *   The redirect.
+   */
+  public function convertOrderToCart(OrderInterface $order) {
+    if ('validation' !== $order->getState()->getId()) {
+      $this->messenger()->addError($this->t('Only orders with state "validation" can be edited'));
+      $url = Url::fromRoute('entity.commerce_order.user_view', [
+        'user' => $order->getCustomerId(),
+        'commerce_order' => $order->id(),
+      ]);
+    }
+    else {
+      $order
+        ->set('state', 'draft')
+        ->set('cart', TRUE)
+        ->set('checkout_step', NULL)
+        ->save();
+
+      $url = Url::fromRoute('commerce_cart.page');
+    }
+
+    return new RedirectResponse($url->toString());
   }
 
   /**

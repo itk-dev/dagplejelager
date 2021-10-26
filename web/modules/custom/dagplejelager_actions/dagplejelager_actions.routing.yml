@@ -1,4 +1,4 @@
-koba_booking.action_refuse:
+dagplejelager_actions.add_bundle:
   path: '/dagplejelager_actions/add_bundle/{commerce_product}'
   defaults:
     _controller: '\Drupal\dagplejelager_actions\Controller\DagplejelagerActionsController::actionAddBundle'
@@ -9,3 +9,17 @@ koba_booking.action_refuse:
     parameters:
       commerce_product:
         type: entity:commerce_product
+
+dagplejelager_actions.convert_to_cart:
+  path: '/dagplejelager_actions/convert_to_cart/{order}'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\dagplejelager_actions\Controller\DagplejelagerActionsController::convertOrderToCart'
+    _title: 'Convert to cart'
+  requirements:
+    _permission: 'use convert to cart action'
+
+  options:
+    parameters:
+      order:
+        type: entity:commerce_order

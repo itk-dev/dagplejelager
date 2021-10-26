@@ -82,7 +82,23 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'store_id' => $this->getReference('store:default')->id(),
       'order_items' => [$item0, $item1],
       'placed' => (new \DateTimeImmutable('2021-05-23'))->getTimestamp(),
-      'state' => 'draft',
+      'state' => 'validation',
+    ]);
+    $order->recalculateTotalPrice();
+    $order->save();
+    $order->set('order_number', $order->id());
+    $order->save();
+
+    $user = $this->getReference('user:manager1');
+    assert($user instanceof UserInterface);
+    $order = Order::create([
+      'type' => 'default',
+      'mail' => $user->getEmail(),
+      'uid' => $user->id(),
+      'store_id' => $this->getReference('store:default')->id(),
+      'order_items' => [$item0, $item1],
+      'placed' => (new \DateTimeImmutable('2021-12-24'))->getTimestamp(),
+      'state' => 'validation',
     ]);
     $order->recalculateTotalPrice();
     $order->save();
