@@ -16,5 +16,6 @@ services:
   Drupal\dagplejelager_form\Commands\DayCarerCommands:
     arguments:
       - '@Drupal\dagplejelager_form\Helper\DayCarerHelper'
+      - '@config.factory'
     tags:
       - { name: drush.command }

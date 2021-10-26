@@ -2,6 +2,7 @@
 
 namespace Drupal\dagplejelager_form\Commands;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\dagplejelager_form\Helper\DayCarerHelper;
 use Drush\Commands\DrushCommands;
 use Drush\Drush;
@@ -18,77 +19,89 @@ class DayCarerCommands extends DrushCommands {
   private $helper;
 
   /**
+   * The config.
+   *
+   * @var array|null
+   */
+  private $importConfig;
+
+  /**
    * Constructor.
    */
-  public function __construct(DayCarerHelper $helper) {
+  public function __construct(DayCarerHelper $helper, ConfigFactoryInterface $configFactory) {
     $this->helper = $helper;
+    $this->importConfig = $configFactory->get('dagplejelager_form')->get('import');
   }
 
   /**
-   * The run command.
+   * The import command.
    *
-   * @param string $filename
-   *   CVS filename. Relative paths are resolved from the Drupal root.
    * @param array $options
    *   The options.
    *
-   * @command dagplejelager_form:load-day-carers:file
+   * @command dagplejelager_form:day-carers:import
    *
    * @option dry-run
    *   Don't do anything, but show what will be done.
-   * @usage dagplejelager_form:load-day-carers:file file.csv
-   * @usage dagplejelager_form:load-day-carers:file file.csv --dry-run
+   * @usage dagplejelager_form:day-carers:import
+   * @usage dagplejelager_form:day-carers:import --dry-run
    */
-  public function run(string $filename, array $options = ['dry-run' => FALSE]) {
-    if (!file_exists($filename)) {
-      throw new \RuntimeException(sprintf('Cannot read file %s', $filename));
+  public function import(array $options = ['dry-run' => FALSE]) {
+    try {
+      $connectionString = $this->getConnectionString();
+      $connection = new \PDO(
+        $connectionString,
+        $this->importConfig['database_username'],
+        $this->importConfig['database_password']
+      );
+      $statement = $connection->query('{CALL [dbo].[GetFederation-DPLager-Data]}');
+    }
+    catch (\PDOException $exception) {
+      Drush::output()->writeln($exception->getMessage());
+      return;
     }
 
-    $file = fopen($filename, 'r');
-    $columns = NULL;
-    $items = [];
-    while (($line = fgetcsv($file)) !== FALSE) {
-      if (NULL === $columns) {
-        $columns = $line;
-      }
-      else {
-        $items[] = array_combine($columns, $line);
+    $dayCarers = [];
+    try {
+      while ($item = $statement->fetch(\PDO::FETCH_ASSOC)) {
+        $dayCarer = [];
+        // Most values are padded with spaces.
+        $item = array_map('trim', $item);
+
+        $id = $item['ident'];
+        if (empty($id)) {
+          continue;
+        }
+
+        $dayCarer['id'] = $id;
+        $dayCarer['institution_id'] = $item['instId'];
+        $dayCarer['institution_name'] = $item['instNavn'];
+
+        // Split navn by space and use first part as given name and the rest as
+        // family name.
+        $parts = preg_split('/\s+/', $item['navn'], 2);
+        $dayCarer['given_name'] = $parts[0];
+        $dayCarer['family_name'] = $parts[1] ?? '';
+        $dayCarer['address_line1'] = $item['adresse'];
+        // 'country_code' => $countryCode,
+        // 'langcode' => $item[''],
+        // 'locality' => $item[''],
+        $dayCarer['organization'] = $item['instNavn'];
+        // Split postDist by space and use first part as postal code and the
+        // rest as locality.
+        $parts = preg_split('/\s+/', $item['postDist'], 2);
+        $dayCarer['postal_code'] = $parts[0];
+        $dayCarer['locality'] = $parts[1] ?? '';
+
+        $dayCarers[] = $dayCarer;
       }
     }
-    fclose($file);
-
-    foreach ($items as $item) {
-      $dayCarer = [];
-
-      $id = $item['ident'];
-      if (empty($id)) {
-        continue;
-      }
-
-      $dayCarer['id'] = $id;
-      $dayCarer['institution_id'] = $item['instId'];
-      $dayCarer['institution_name'] = $item['instNavn'];
-
-      // Split navn by space and use first part as given name and the rest as
-      // family name.
-      $parts = preg_split('/\s+/', $item['navn'], 2);
-      $dayCarer['given_name'] = $parts[0];
-      $dayCarer['family_name'] = $parts[1] ?? '';
-      $dayCarer['address_line1'] = $item['adresse'];
-      // 'country_code' => $countryCode,
-      // 'langcode' => $item[''],
-      // 'locality' => $item[''],
-      $dayCarer['organization'] = $item['instNavn'];
-      // Split postDist by space and use first part as postal code and the rest
-      // as locality.
-      $parts = preg_split('/\s+/', $item['postDist'], 2);
-      $dayCarer['postal_code'] = $parts[0];
-      $dayCarer['locality'] = $parts[1] ?? '';
-
-      $dayCarers[] = $dayCarer;
+    catch (\PDOException $exception) {
+      Drush::output()->writeln($exception->getMessage());
+      return;
     }
 
-    if (isset($dayCarers)) {
+    if (!empty($dayCarers)) {
       $result = $this->helper->updateDayCarers($dayCarers);
       Drush::output()->writeln(1 === count($result)
         ? 'One day carer updated.'
@@ -98,6 +111,30 @@ class DayCarerCommands extends DrushCommands {
     else {
       Drush::output()->writeln('No day carers loaded.');
     }
+  }
+
+  /**
+   * Get connection string.
+   */
+  private function getConnectionString(): string {
+    $config = [
+      'sqlsrv:server' => $this->importConfig['database_host'],
+      'database' => $this->importConfig['database_name'],
+      'encrypt' => 'true',
+      'trustServerCertificate' => 'false',
+      'loginTimeout' => 30,
+      'authentication' => 'ActiveDirectoryPassword',
+    ];
+
+    $connectionString = '';
+    array_walk($config, function ($val, $key) use (&$connectionString) {
+      if (!empty($connectionString)) {
+        $connectionString .= '; ';
+      }
+      $connectionString .= "$key=$val";
+    });
+
+    return $connectionString;
   }
 
 }

@@ -64,6 +64,27 @@ COMPOSE_SERVER_DOMAIN=dagplejelager.some.domain
 docker-compose --env-file .env.docker.local --file docker-compose.server.yml up --detach --build
 ```
 
+### Importing day carer info
+
+Use this command to import day carers from the source database:
+
+```sh
+docker-compose exec phpfpm vendor/bin/drush --yes dagplejelager_form:day-carers:import
+```
+
+This should be run regularly by a `cron` job.
+
+#### Remote database configuration
+
+The database connection details must be defined in `settings.local.php`:
+
+```php
+$config['dagplejelager_form']['import']['database_host'] = '…';
+$config['dagplejelager_form']['import']['database_name'] = '…;
+$config['dagplejelager_form']['import']['database_username'] = '…;
+$config['dagplejelager_form']['import']['database_password'] = '…;
+```
+
 ### Development
 
 We use a [custom Dockerfile](.docker/development/phpfpm/Dockerfile) to install
@@ -125,11 +146,11 @@ To load all fixtures, run:
 
 ```sh
 # Enable our fixtures modules
-vendor/bin/drush --yes pm:enable dagplejelager_fixtures
+docker-compose exec phpfpm vendor/bin/drush --yes pm:enable dagplejelager_fixtures
 # Load the fixtures
-vendor/bin/drush --yes content-fixtures:load
+docker-compose exec phpfpm vendor/bin/drush --yes content-fixtures:load
 # Uninstall fixtures modules
-vendor/bin/drush --yes pm:uninstall content_fixtures
+docker-compose exec phpfpm vendor/bin/drush --yes pm:uninstall content_fixtures
 ```
 
 ### GitHub Actions
