@@ -98,6 +98,12 @@ class DagplejelagerActionsController extends ControllerBase {
 
   /**
    * Convert an order to a cart.
+   *
+   * @param \Drupal\commerce_order\Entity\OrderInterface $order
+   *   The order.
+   *
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse
+   *   The redirect.
    */
   public function convertOrderToCart(OrderInterface $order) {
     if ('validation' !== $order->getState()->getId()) {

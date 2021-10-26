@@ -44,6 +44,14 @@ class TwigExtension extends AbstractExtension {
    *
    *   Check for action on order:
    *     dagplejelager_is_granted('convert to cart', order_entity)
+   *
+   * @param string|null $attribute
+   *   The attribute, e.g. 'convert to cart'.
+   * @param mixed|null $object
+   *   The optional object used to check the attribute against.
+   *
+   * @return bool
+   *   True if the attribute is granted.
    */
   public function isGranted(string $attribute = NULL, $object = NULL) {
     if (NULL !== $attribute) {
