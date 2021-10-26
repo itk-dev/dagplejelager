@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Hooks related to the user entity.
+ */
+
+use Drupal\dagplejelager_user\Helper\DaycareUserHelper;
+
+/**
+ * Implements hook_user_local_tasks_alter().
+ *
+ * @see \Drupal\dagplejelager_user\Helper\DaycareUserHelper::localTasksAlter()
+ */
+function dagplejelager_user_local_tasks_alter(&$local_tasks) {
+  Drupal::service(DaycareUserHelper::class)->localTasksAlter($local_tasks);
+}
