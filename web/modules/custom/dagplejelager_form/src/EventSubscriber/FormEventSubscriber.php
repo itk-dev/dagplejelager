@@ -59,6 +59,14 @@ class FormEventSubscriber implements EventSubscriberInterface {
         break;
     }
 
+    if (preg_match('/^state_machine_transition_form_commerce_order_state_(.+)$/', $event->getFormId())) {
+      // Hide "Fulfill order" button (fulfillment is performed by setting
+      // “Fulfillment date“ on the order).
+      if (isset($form['actions']['fulfill'])) {
+        $form['actions']['fulfill']['#access'] = FALSE;
+      }
+    }
+
     // Handle product forms.
     if (preg_match('/^commerce_product_(.+)_(add|edit)_form$/', $event->getFormId())) {
       // Hide product (variation) price.
