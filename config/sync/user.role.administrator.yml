@@ -33,6 +33,7 @@ permissions:
   - 'update default commerce_order'
   - 'use convert to cart action'
   - 'use product bundle action'
+  - 'view any profile'
   - 'view commerce_order'
   - 'view commerce_product'
   - 'view commerce_store'
