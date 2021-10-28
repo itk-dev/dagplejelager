@@ -1,6 +1,6 @@
 uuid: f92f01d8-80b2-40a7-9d7c-28a2ed86278a
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.commerce_order.field_fulfillment_date
