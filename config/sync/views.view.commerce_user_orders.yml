@@ -91,7 +91,6 @@ display:
             field_urgent: field_urgent
             state: state
             field_fulfillment_date: field_fulfillment_date
-            field_delivery_status: field_delivery_status
           info:
             order_id:
               sortable: false
@@ -130,13 +129,6 @@ display:
               responsive: ''
             field_fulfillment_date:
               sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_delivery_status:
-              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
