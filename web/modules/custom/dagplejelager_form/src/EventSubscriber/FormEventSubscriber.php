@@ -60,10 +60,11 @@ class FormEventSubscriber implements EventSubscriberInterface {
     }
 
     if (preg_match('/^state_machine_transition_form_commerce_order_state_(.+)$/', $event->getFormId())) {
-      // Hide "Fulfill order" button (fulfillment is performed by setting
-      // “Fulfillment date“ on the order).
-      if (isset($form['actions']['fulfill'])) {
-        $form['actions']['fulfill']['#access'] = FALSE;
+      // Hide "Validate order" button (validation is performed by setting
+      // “Fulfillment date“ on the order, cf.
+      // Drupal\dagplejelager_actions\EventSubscriber\EntityEventSubscriber::preSaveEntity().).
+      if (isset($form['actions']['validate'])) {
+        $form['actions']['validate']['#access'] = FALSE;
       }
     }
 
