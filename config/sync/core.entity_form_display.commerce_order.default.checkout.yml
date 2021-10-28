@@ -5,7 +5,6 @@ dependencies:
   config:
     - commerce_order.commerce_order_type.default
     - core.entity_form_mode.commerce_order.checkout
-    - field.field.commerce_order.default.field_delivery_status
     - field.field.commerce_order.default.field_fulfillment_date
     - field.field.commerce_order.default.field_order_notes
     - field.field.commerce_order.default.field_urgent
@@ -36,7 +35,6 @@ hidden:
   billing_profile: true
   cart: true
   created: true
-  field_delivery_status: true
   field_fulfillment_date: true
   ip_address: true
   mail: true

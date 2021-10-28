@@ -35,9 +35,6 @@ display:
         field_fulfillment_date:
           label: Leveringsdato
           separator: ', '
-        field_delivery_status:
-          label: Leveringsstatus
-          separator: ', '
         state:
           label: Status
           separator: ', '
