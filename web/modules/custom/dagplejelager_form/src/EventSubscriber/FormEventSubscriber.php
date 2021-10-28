@@ -64,6 +64,10 @@ class FormEventSubscriber implements EventSubscriberInterface {
       // Hide product (variation) price.
       $form['variations']['widget']['entity']['list_price']['#access'] = FALSE;
       $form['variations']['widget']['entity']['price']['#access'] = FALSE;
+      $form['variations']['widget']['entity']['price']['widget'][0]['#default_value'] = [
+        'number' => 0.00,
+        'currency_code' => 'DKK',
+      ];
       // Hide variation status (it's published by default).
       $form['variations']['widget']['entity']['status']['#access'] = FALSE;
     }
