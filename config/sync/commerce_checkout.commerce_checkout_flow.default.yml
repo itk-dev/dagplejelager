@@ -43,6 +43,6 @@ configuration:
       weight: 6
     'order_fields:checkout':
       wrapper_element: fieldset
-      display_label: 'Order fields'
+      display_label: 'Ordre felter'
       step: order_information
       weight: 3

@@ -46,6 +46,8 @@ display:
           label: Haster
         billing_profile__target_id:
           label: Adresse
+        field_fulfillment_date:
+          label: 'Planlagt leveringsdato'
       footer:
         result:
           content: 'Viser @start–@end af @total'

@@ -3,7 +3,6 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
@@ -14,40 +13,22 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-          tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
+          tags: {  }
       fields:
-        commerce_order_bulk_form:
-          action_title: Handling
-        type:
-          label: Type
-          separator: ', '
-        store_id:
-          label: Butik
-          separator: ', '
-        uid:
-          label: Kunde
-          separator: ', '
-        mail:
-          label: E-mail
-          separator: ', '
-        total_price__number:
-          label: 'I alt'
-          separator: ', '
-        changed:
-          label: Opdateret
-          separator: ', '
-        operations:
-          label: Handlinger
+        commerce_order_bulk_form: {  }
+        type: {  }
+        store_id: {  }
+        uid: {  }
+        mail: {  }
+        total_price__number: {  }
+        changed: {  }
+        operations: {  }
       filters:
         type:
-          expose:
-            label: Type
+          expose: {  }
       empty:
-        area_text_custom:
-          content: 'Ingen tilgængelige ordrer'
+        area_text_custom: {  }
+      title: Indkøbsvogne
   page_1:
     display_title: Side
+label: Indkøbsvogne
