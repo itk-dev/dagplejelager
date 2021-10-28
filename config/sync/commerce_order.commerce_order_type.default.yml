@@ -20,7 +20,7 @@ workflow: order_fulfillment_validation
 numberPattern: order_default
 refresh_mode: customer
 refresh_frequency: 300
-sendReceipt: true
+sendReceipt: false
 receiptBcc: ''
 traits: {  }
 locked: false
