@@ -111,6 +111,7 @@ class DayCarerHelper {
           'id' => $item['institution_id'],
           'name' => $item['institution_name'],
         ],
+        'telephone_number' => $item['telephone_number'],
       ];
     }
 
@@ -186,6 +187,12 @@ class DayCarerHelper {
           'mysql_type' => 'datetime',
           'not null' => FALSE,
         ],
+        'telephone_number' => [
+          'description' => '',
+          'type' => 'varchar',
+          'length' => 16,
+          'not null' => FALSE,
+        ],
       ],
       'primary key' => ['id'],
       'indexes' => [
@@ -194,6 +201,24 @@ class DayCarerHelper {
     ];
 
     return $schema;
+  }
+
+  /**
+   * Implements hook_update_N().
+   *
+   * Add telephone_number to daycarer.
+   */
+  public function update9001(): void {
+    $table = 'dagplejelager_form_day_carer';
+    $column = 'telephone_number';
+    $spec = [
+      'description' => 'Telephone number',
+      'type' => 'varchar',
+      'length' => 16,
+      'not null' => FALSE,
+    ];
+
+    $this->database->schema()->addField($table, $column, $spec);
   }
 
   /**

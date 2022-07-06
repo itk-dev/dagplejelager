@@ -18,6 +18,9 @@
               $('[name="billing_information[profile][field_institution_'+key+'][0][value]"]').val(value)
             }
           }
+          if (ui.item.telephone_number) {
+            $('[name="billing_information[profile][field_telephone_number][0][value]"]').val(ui.item.telephone_number)
+          }
         }
       });
   })

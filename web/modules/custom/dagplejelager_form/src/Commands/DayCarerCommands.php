@@ -72,6 +72,10 @@ class DayCarerCommands extends DrushCommands {
         // Most values are padded with spaces.
         $item = array_map('trim', $item);
 
+        if ($options['verbose'] ?? FALSE) {
+          Drush::output()->writeln(json_encode($item, JSON_PRETTY_PRINT));
+        }
+
         $id = $item['ident'];
         if (empty($id)) {
           continue;
@@ -80,6 +84,7 @@ class DayCarerCommands extends DrushCommands {
         $dayCarer['id'] = $id;
         $dayCarer['institution_id'] = $item['instId'];
         $dayCarer['institution_name'] = $item['instNavn'];
+        $dayCarer['telephone_number'] = $item['telefonnr'] ?? '';
 
         // Split navn by space and use first part as given name and the rest as
         // family name.
