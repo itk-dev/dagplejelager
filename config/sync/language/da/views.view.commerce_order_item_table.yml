@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -10,12 +9,10 @@ display:
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       fields:
-        title:
-          label: Titel
-          separator: ', '
-        quantity:
-          label: Mængde
-          separator: ', '
+        title: {  }
+        quantity: {  }
+        field_handling:
+          label: Levering/afhentning
       arguments:
         order_item_id:
           exception:
