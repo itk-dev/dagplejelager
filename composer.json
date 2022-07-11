@@ -63,15 +63,17 @@
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
-        "coding-standards-check/drupal-check": [
+        "code-analysis/drupal-check": [
             "vendor/bin/drupal-check --deprecations --analysis web/modules/custom"
+        ],
+        "code-analysis": [
+            "@code-analysis/drupal-check"
         ],
         "coding-standards-check/phpcs": [
             "vendor/bin/phpcs --standard=phpcs.xml.dist"
         ],
         "coding-standards-check": [
-            "@coding-standards-check/phpcs",
-            "@coding-standards-check/drupal-check"
+            "@coding-standards-check/phpcs"
         ],
         "coding-standards-apply/phpcs": [
             "vendor/bin/phpcbf --standard=phpcs.xml.dist"
