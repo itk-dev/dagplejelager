@@ -8,11 +8,11 @@ dependencies:
     - field.field.profile.customer.field_institution_id
     - field.field.profile.customer.field_telephone_number
     - profile.type.customer
+  module:
+    - address
   enforced:
     module:
       - commerce_order
-  module:
-    - address
 _core:
   default_config_hash: YIL4nZ3a2ByhSU7C9ITZYsmB6l3GSsvLyGlwNF1_hW4
 id: profile.customer.admin
@@ -22,26 +22,26 @@ mode: admin
 content:
   address:
     type: address_default
-    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_institution_id:
     type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 1
     region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_telephone_number:
     type: string
-    weight: 2
-    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   search_api_excerpt: true

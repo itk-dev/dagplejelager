@@ -1,7 +1,23 @@
 uuid: 278fac12-c03c-466f-bc58-84addb5f0a6e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_category
+  module:
+    - commerce
+    - commerce_checkout
+    - commerce_order
+    - commerce_product
+    - commerce_store
+    - dagplejelager_actions
+    - dagplejelager_form
+    - locale
+    - masquerade
+    - profile
+    - system
+    - taxonomy
+    - toolbar
 id: administrator
 label: Administrator
 weight: -7

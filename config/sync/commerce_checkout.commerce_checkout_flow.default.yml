@@ -6,22 +6,22 @@ dependencies:
     - commerce_checkout_order_fields
 _core:
   default_config_hash: 5BYvSDemm8xYwB9rMGFuEuGK6FxVheqtXEUxnpKO2N4
-id: default
 label: Default
+id: default
 plugin: multistep_default
 configuration:
   display_checkout_progress: true
   display_checkout_progress_breadcrumb_links: false
   panes:
     login:
-      allow_guest_checkout: true
-      allow_registration: false
       step: login
       weight: 0
+      allow_guest_checkout: true
+      allow_registration: false
     contact_information:
-      double_entry: true
       step: order_information
       weight: 1
+      double_entry: true
     billing_information:
       step: order_information
       weight: 2
@@ -29,20 +29,20 @@ configuration:
       step: review
       weight: 4
     completion_message:
+      step: complete
+      weight: 5
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
-      step: complete
-      weight: 5
     order_summary:
-      view: null
       step: _sidebar
       weight: 7
+      view: null
     completion_register:
       step: complete
       weight: 6
     'order_fields:checkout':
-      wrapper_element: fieldset
-      display_label: Ordrefelter
       step: order_information
       weight: 3
+      wrapper_element: fieldset
+      display_label: Ordrefelter

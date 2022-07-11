@@ -2,11 +2,11 @@ uuid: be1b97d1-453e-46ac-b1fd-f8c358ad6fc1
 langcode: en
 status: true
 dependencies:
+  module:
+    - profile
   enforced:
     module:
       - commerce_order
-  module:
-    - profile
 _core:
   default_config_hash: rNBHCP7hJFMjP_iDe9-0AsSfkGC98V6Lh_oeOwmLos8
 id: profile.admin

@@ -31,26 +31,854 @@ base_table: commerce_order
 base_field: order_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
+      title: Ordrer
+      fields:
+        commerce_order_bulk_form:
+          id: commerce_order_bulk_form
+          table: commerce_order
+          field: commerce_order_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          plugin_id: bulk_form
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          action_title: Handling
+          include_exclude: exclude
+          selected_actions: {  }
+        order_number:
+          id: order_number
+          table: commerce_order
+          field: order_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: null
+          entity_field: order_number
+          plugin_id: field
+          label: '#'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        placed:
+          id: placed
+          table: commerce_order
+          field: placed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: placed
+          plugin_id: field
+          label: Date
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: N/A
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: short
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_fulfillment_date:
+          id: field_fulfillment_date
+          table: commerce_order__field_fulfillment_date
+          field: field_fulfillment_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'fulfillment date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: html_date
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        type:
+          id: type
+          table: commerce_order
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+          label: Type
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          hide_single_bundle: true
+        store_id:
+          id: store_id
+          table: commerce_order
+          field: store_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: store_id
+          plugin_id: commerce_store
+          label: Store
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          hide_single_store: true
+        uid:
+          id: uid
+          table: commerce_order
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: uid
+          plugin_id: field
+          label: Daycarer
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        mail:
+          id: mail
+          table: commerce_order
+          field: mail
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: mail
+          plugin_id: field
+          label: Email
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        billing_profile__target_id:
+          id: billing_profile__target_id
+          table: commerce_order
+          field: billing_profile__target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: billing_profile
+          plugin_id: field
+          label: Address
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: admin_order_table
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_urgent:
+          id: field_urgent
+          table: commerce_order__field_urgent
+          field: field_urgent
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Urgent
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_false: ''
+            format_custom_true: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        state:
+          id: state
+          table: commerce_order
+          field: state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: status
+          plugin_id: field
+          label: State
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        operations:
+          id: operations
+          table: commerce_order
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          plugin_id: entity_operations
+          label: Operations
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: false
+        order_items_target_id:
+          id: order_items_target_id
+          table: commerce_order__order_items
+          field: order_items_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: order_items
+          plugin_id: field
+          label: 'Order items'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: full
         options:
-          perm: 'access commerce_order overview'
-      cache:
-        type: none
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          offset: 0
+          items_per_page: 50
+          total_pages: null
+          id: 0
+          tags:
+            next: 'næste ›'
+            previous: '‹ forrige'
+            first: '« første'
+            last: 'sidste »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -61,38 +889,312 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-      pager:
-        type: full
+      access:
+        type: perm
         options:
-          items_per_page: 50
-          offset: 0
-          id: 0
-          total_pages: null
+          perm: 'access commerce_order overview'
+      cache:
+        type: none
+        options: {  }
+      empty:
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'No orders match your filters.'
+          empty: true
+          display_id: page_1
+      sorts: {  }
+      arguments: {  }
+      filters:
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: combine
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
           expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
-          quantity: 9
+            operator_id: combine_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              manager: '0'
+              administrator: '0'
+            placeholder: 'Search for order no. or customer'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            order_number: order_number
+            uid: uid
+            mail: mail
+        type:
+          id: type
+          table: commerce_order
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: type
+          plugin_id: commerce_entity_bundle
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+            hide_single_bundle: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_urgent_value:
+          id: field_urgent_value
+          table: commerce_order__field_urgent
+          field: field_urgent_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Urgent
+            description: ''
+            use_operator: false
+            operator: field_urgent_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_urgent_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              manager: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        state:
+          id: state
+          table: commerce_order
+          field: state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_order
+          entity_field: state
+          plugin_id: state_machine_state
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: state_op
+            label: Status
+            description: ''
+            use_operator: false
+            operator: state_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: state
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        placed_1:
+          id: placed_1
+          table: commerce_order
+          field: placed
+          relationship: none
+          group_type: group
+          admin_label: 'Placed (gt)'
+          entity_type: commerce_order
+          entity_field: placed
+          plugin_id: date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: placed_1_op
+            label: 'Date (from)'
+            description: ''
+            use_operator: false
+            operator: placed_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: placed_gt
+            required: false
+            remember: true
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              manager: '0'
+              administrator: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        placed:
+          id: placed
+          table: commerce_order
+          field: placed
+          relationship: none
+          group_type: group
+          admin_label: 'Placed (lt)'
+          entity_type: commerce_order
+          entity_field: placed
+          plugin_id: date
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: placed_op
+            label: 'Date (to)'
+            description: ''
+            use_operator: false
+            operator: placed_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: placed_lt
+            required: false
+            remember: true
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              manager: '0'
+              administrator: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: table
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
           columns:
             commerce_order_bulk_form: commerce_order_bulk_form
             order_number: order_number
@@ -106,6 +1208,7 @@ display:
             state: state
             operations: operations
             order_items_target_id: order_items_target_id
+          default: placed
           info:
             commerce_order_bulk_form:
               align: ''
@@ -185,64 +1288,57 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          default: placed
+          override: true
+          sticky: false
+          summary: ''
           empty_table: true
+          caption: ''
+          description: ''
       row:
         type: fields
-      fields:
-        commerce_order_bulk_form:
-          id: commerce_order_bulk_form
-          table: commerce_order
-          field: commerce_order_bulk_form
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      use_ajax: false
+      group_by: false
+      header: {  }
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          action_title: Handling
-          include_exclude: exclude
-          selected_actions: {  }
-          entity_type: commerce_order
-          plugin_id: bulk_form
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start–@end of @total'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.commerce_order.field_fulfillment_date'
+        - 'config:field.storage.commerce_order.field_urgent'
+      cacheable: false
+  data_export_1:
+    id: data_export_1
+    display_title: 'Data export (CSV)'
+    display_plugin: data_export
+    position: 2
+    display_options:
+      fields:
         order_number:
           id: order_number
           table: commerce_order
@@ -250,6 +1346,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: order_number
+          plugin_id: field
           label: '#'
           exclude: false
           alter:
@@ -305,9 +1404,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: order_number
-          plugin_id: field
         placed:
           id: placed
           table: commerce_order
@@ -315,7 +1411,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Date
+          entity_type: commerce_order
+          entity_field: placed
+          plugin_id: field
+          label: Dato
           exclude: false
           alter:
             alter_text: false
@@ -372,9 +1471,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: placed
-          plugin_id: field
         field_fulfillment_date:
           id: field_fulfillment_date
           table: commerce_order__field_fulfillment_date
@@ -382,6 +1478,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: 'fulfillment date'
           exclude: false
           alter:
@@ -438,7 +1535,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         type:
           id: type
           table: commerce_order
@@ -446,6 +1542,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: type
+          plugin_id: commerce_entity_bundle
           label: Type
           exclude: false
           alter:
@@ -502,9 +1601,6 @@ display:
           separator: ', '
           field_api_classes: false
           hide_single_bundle: true
-          entity_type: commerce_order
-          entity_field: type
-          plugin_id: commerce_entity_bundle
         store_id:
           id: store_id
           table: commerce_order
@@ -512,7 +1608,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Store
+          entity_type: commerce_order
+          entity_field: store_id
+          plugin_id: commerce_store
+          label: Butik
           exclude: false
           alter:
             alter_text: false
@@ -568,9 +1667,6 @@ display:
           separator: ', '
           field_api_classes: false
           hide_single_store: true
-          entity_type: commerce_order
-          entity_field: store_id
-          plugin_id: commerce_store
         uid:
           id: uid
           table: commerce_order
@@ -578,7 +1674,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Daycarer
+          entity_type: commerce_order
+          entity_field: uid
+          plugin_id: field
+          label: Kunde
           exclude: false
           alter:
             alter_text: false
@@ -633,9 +1732,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: uid
-          plugin_id: field
         mail:
           id: mail
           table: commerce_order
@@ -643,7 +1739,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Email
+          entity_type: commerce_order
+          entity_field: mail
+          plugin_id: field
+          label: E-mail
           exclude: false
           alter:
             alter_text: false
@@ -697,139 +1796,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: mail
-          plugin_id: field
-        billing_profile__target_id:
-          id: billing_profile__target_id
-          table: commerce_order
-          field: billing_profile__target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Address
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_revisions_entity_view
-          settings:
-            view_mode: admin_order_table
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: billing_profile
-          plugin_id: field
-        field_urgent:
-          id: field_urgent
-          table: commerce_order__field_urgent
-          field: field_urgent
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Urgent
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         state:
           id: state
           table: commerce_order
@@ -837,7 +1803,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: State
+          entity_type: commerce_order
+          entity_field: status
+          plugin_id: field
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -891,68 +1860,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: status
-          plugin_id: field
-        operations:
-          id: operations
+        total_price__number:
+          id: total_price__number
           table: commerce_order
-          field: operations
+          field: total_price__number
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          destination: false
           entity_type: commerce_order
-          plugin_id: entity_operations
-        order_items_target_id:
-          id: order_items_target_id
-          table: commerce_order__order_items
-          field: order_items_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Order items'
+          entity_field: total_price
+          plugin_id: field
+          label: 'I alt'
           exclude: false
           alter:
             alter_text: false
@@ -993,355 +1911,21 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: number
+          type: commerce_price_default
           settings:
-            link: true
-          group_column: target_id
+            strip_trailing_zeroes: false
+            currency_display: symbol
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: ul
+          multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: order_items
-          plugin_id: field
-      filters:
-        combine:
-          id: combine
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: allwords
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: combine_op
-            label: Search
-            description: ''
-            use_operator: false
-            operator: combine_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: combine
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              manager: '0'
-              administrator: '0'
-            placeholder: 'Search for order no. or customer'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields:
-            order_number: order_number
-            uid: uid
-            mail: mail
-          plugin_id: combine
-        type:
-          id: type
-          table: commerce_order
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: type_op
-            operator_limit_selection: false
-            label: Type
-            description: ''
-            use_operator: false
-            operator: type_op
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-            hide_single_bundle: true
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: commerce_order
-          entity_field: type
-          plugin_id: commerce_entity_bundle
-        field_urgent_value:
-          id: field_urgent_value
-          table: commerce_order__field_urgent
-          field: field_urgent_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: All
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: Urgent
-            description: ''
-            use_operator: false
-            operator: field_urgent_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_urgent_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              manager: '0'
-              administrator: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: boolean
-        state:
-          id: state
-          table: commerce_order
-          field: state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: state_op
-            operator_limit_selection: false
-            label: Status
-            description: ''
-            use_operator: false
-            operator: state_op
-            identifier: state
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: commerce_order
-          entity_field: state
-          plugin_id: state_machine_state
-        placed_1:
-          id: placed_1
-          table: commerce_order
-          field: placed
-          relationship: none
-          group_type: group
-          admin_label: 'Placed (gt)'
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 1
-          exposed: true
-          expose:
-            operator_id: placed_1_op
-            label: 'Date (from)'
-            description: ''
-            use_operator: false
-            operator: placed_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: placed_gt
-            required: false
-            remember: true
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              manager: '0'
-              administrator: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: commerce_order
-          entity_field: placed
-          plugin_id: date
-        placed:
-          id: placed
-          table: commerce_order
-          field: placed
-          relationship: none
-          group_type: group
-          admin_label: 'Placed (lt)'
-          operator: '<='
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 1
-          exposed: true
-          expose:
-            operator_id: placed_op
-            label: 'Date (to)'
-            description: ''
-            use_operator: false
-            operator: placed_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: placed_lt
-            required: false
-            remember: true
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              manager: '0'
-              administrator: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: commerce_order
-          entity_field: placed
-          plugin_id: date
-      sorts: {  }
-      title: Ordrer
-      header: {  }
-      footer:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: 'Displaying @start–@end of @total'
-          plugin_id: result
-      empty:
-        display_link:
-          id: display_link
-          table: views
-          field: display_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          display_id: page_1
-          label: 'No orders match your filters.'
-          plugin_id: display_link
-      relationships: {  }
-      arguments: {  }
-      display_extenders: {  }
-      use_ajax: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      group_by: false
-    cache_metadata:
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user.permissions
-      cacheable: false
-      max-age: 0
-      tags:
-        - 'config:field.storage.commerce_order.field_fulfillment_date'
-        - 'config:field.storage.commerce_order.field_urgent'
-  data_export_1:
-    display_plugin: data_export
-    id: data_export_1
-    display_title: 'Data export (CSV)'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      displays:
-        page_1: page_1
-        default: '0'
       style:
         type: data_export
         options:
@@ -1368,14 +1952,38 @@ display:
               category: ''
               manager: ''
               company: ''
+      defaults:
+        fields: false
+      display_description: ''
+      display_extenders: {  }
       path: admin/commerce/orders/export
+      displays:
+        page_1: page_1
+        default: '0'
       filename: 'dagplejelager-orders-[date:raw].csv'
       automatic_download: true
+      export_method: batch
+      export_batch_size: 1000
       store_in_public_file_directory: null
-      redirect_to_display: page_1
       custom_redirect_path: false
+      redirect_to_display: page_1
       include_query_params: true
-      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - user.permissions
+      tags:
+        - 'config:field.storage.commerce_order.field_fulfillment_date'
+  data_export_2:
+    id: data_export_2
+    display_title: 'Data export (XLSX)'
+    display_plugin: data_export
+    position: 3
+    display_options:
       fields:
         order_number:
           id: order_number
@@ -1384,6 +1992,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: order_number
+          plugin_id: field
           label: '#'
           exclude: false
           alter:
@@ -1439,9 +2050,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: order_number
-          plugin_id: field
         placed:
           id: placed
           table: commerce_order
@@ -1449,6 +2057,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: placed
+          plugin_id: field
           label: Dato
           exclude: false
           alter:
@@ -1506,9 +2117,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: placed
-          plugin_id: field
         field_fulfillment_date:
           id: field_fulfillment_date
           table: commerce_order__field_fulfillment_date
@@ -1516,6 +2124,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: 'fulfillment date'
           exclude: false
           alter:
@@ -1572,7 +2181,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         type:
           id: type
           table: commerce_order
@@ -1580,6 +2188,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: type
+          plugin_id: commerce_entity_bundle
           label: Type
           exclude: false
           alter:
@@ -1636,9 +2247,6 @@ display:
           separator: ', '
           field_api_classes: false
           hide_single_bundle: true
-          entity_type: commerce_order
-          entity_field: type
-          plugin_id: commerce_entity_bundle
         store_id:
           id: store_id
           table: commerce_order
@@ -1646,6 +2254,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: store_id
+          plugin_id: commerce_store
           label: Butik
           exclude: false
           alter:
@@ -1702,9 +2313,6 @@ display:
           separator: ', '
           field_api_classes: false
           hide_single_store: true
-          entity_type: commerce_order
-          entity_field: store_id
-          plugin_id: commerce_store
         uid:
           id: uid
           table: commerce_order
@@ -1712,6 +2320,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: uid
+          plugin_id: field
           label: Kunde
           exclude: false
           alter:
@@ -1767,9 +2378,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: uid
-          plugin_id: field
         mail:
           id: mail
           table: commerce_order
@@ -1777,6 +2385,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: mail
+          plugin_id: field
           label: E-mail
           exclude: false
           alter:
@@ -1831,9 +2442,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: mail
-          plugin_id: field
         state:
           id: state
           table: commerce_order
@@ -1841,6 +2449,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: status
+          plugin_id: field
           label: Status
           exclude: false
           alter:
@@ -1895,9 +2506,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: status
-          plugin_id: field
         total_price__number:
           id: total_price__number
           table: commerce_order
@@ -1905,6 +2513,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: commerce_order
+          entity_field: total_price
+          plugin_id: field
           label: 'I alt'
           exclude: false
           alter:
@@ -1961,30 +2572,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_order
-          entity_field: total_price
-          plugin_id: field
-      defaults:
-        fields: false
-      export_method: batch
-      export_batch_size: 1000
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - request_format
-        - url
-        - user.permissions
-      tags:
-        - 'config:field.storage.commerce_order.field_fulfillment_date'
-  data_export_2:
-    display_plugin: data_export
-    id: data_export_2
-    display_title: 'Data export (XLSX)'
-    position: 3
-    display_options:
-      display_extenders: {  }
       style:
         type: data_export
         options:
@@ -2011,609 +2598,22 @@ display:
               category: ''
               manager: ''
               company: ''
-      path: admin/commerce/orders/export
-      filename: 'dagplejelager-orders-[date:raw].xlsx'
-      automatic_download: true
-      store_in_public_file_directory: null
-      redirect_to_display: page_1
-      custom_redirect_path: false
-      include_query_params: true
+      defaults:
+        fields: false
       display_description: ''
+      display_extenders: {  }
+      path: admin/commerce/orders/export
       displays:
         page_1: page_1
         default: '0'
-      fields:
-        order_number:
-          id: order_number
-          table: commerce_order
-          field: order_number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: '#'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: null
-          entity_field: order_number
-          plugin_id: field
-        placed:
-          id: placed
-          table: commerce_order
-          field: placed
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Dato
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: N/A
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: short
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: placed
-          plugin_id: field
-        field_fulfillment_date:
-          id: field_fulfillment_date
-          table: commerce_order__field_fulfillment_date
-          field: field_fulfillment_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'fulfillment date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_default
-          settings:
-            timezone_override: ''
-            format_type: html_date
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        type:
-          id: type
-          table: commerce_order
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Type
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          hide_single_bundle: true
-          entity_type: commerce_order
-          entity_field: type
-          plugin_id: commerce_entity_bundle
-        store_id:
-          id: store_id
-          table: commerce_order
-          field: store_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Butik
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          hide_single_store: true
-          entity_type: commerce_order
-          entity_field: store_id
-          plugin_id: commerce_store
-        uid:
-          id: uid
-          table: commerce_order
-          field: uid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Kunde
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: uid
-          plugin_id: field
-        mail:
-          id: mail
-          table: commerce_order
-          field: mail
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: E-mail
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: mail
-          plugin_id: field
-        state:
-          id: state
-          table: commerce_order
-          field: state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Status
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: status
-          plugin_id: field
-        total_price__number:
-          id: total_price__number
-          table: commerce_order
-          field: total_price__number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'I alt'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: number
-          type: commerce_price_default
-          settings:
-            strip_trailing_zeroes: false
-            currency_display: symbol
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: commerce_order
-          entity_field: total_price
-          plugin_id: field
-      defaults:
-        fields: false
+      filename: 'dagplejelager-orders-[date:raw].xlsx'
+      automatic_download: true
       export_method: batch
       export_batch_size: 1000
+      store_in_public_file_directory: null
+      custom_redirect_path: false
+      redirect_to_display: page_1
+      include_query_params: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -2625,9 +2625,9 @@ display:
       tags:
         - 'config:field.storage.commerce_order.field_fulfillment_date'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
@@ -2636,25 +2636,25 @@ display:
         type: 'default tab'
         title: Ordrer
         description: ''
-        expanded: false
-        parent: ''
         weight: -10
-        context: '0'
+        expanded: false
         menu_name: main
+        parent: ''
+        context: '0'
       tab_options:
         type: normal
         title: Ordrer
         description: 'Manage your orders.'
         weight: 0
     cache_metadata:
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
-      cacheable: false
-      max-age: 0
       tags:
         - 'config:field.storage.commerce_order.field_fulfillment_date'
         - 'config:field.storage.commerce_order.field_urgent'
+      cacheable: false

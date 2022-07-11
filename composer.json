@@ -86,6 +86,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "discard-changes": true,
         "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,

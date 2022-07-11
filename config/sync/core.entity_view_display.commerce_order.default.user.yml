@@ -19,28 +19,28 @@ mode: user
 content:
   field_order_notes:
     type: basic_string
-    weight: 1
-    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_urgent:
     type: boolean
-    weight: 2
-    region: content
     label: inline
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
+    weight: 2
+    region: content
   order_items:
     type: commerce_order_item_table
-    weight: 0
-    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   balance: true
   billing_profile: true

@@ -2,11 +2,11 @@ uuid: dde1ce48-e05e-4838-93ae-e5f6f7c26608
 langcode: en
 status: true
 dependencies:
+  module:
+    - profile
   enforced:
     module:
       - profile
-  module:
-    - profile
 _core:
   default_config_hash: i6SUyw-h9LthgtmTiKGbqFIh-JXnBtXLG2NCV7CkI3M
 id: profile_unpublish_action
