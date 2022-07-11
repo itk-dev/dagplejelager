@@ -9,6 +9,8 @@ services:
     tags:
       - { name: event_subscriber }
 
+  Drupal\dagplejelager_form\Helper\Helper:
+
   Drupal\dagplejelager_form\Helper\DayCarerHelper:
     arguments:
       - '@database'
