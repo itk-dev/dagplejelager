@@ -20,6 +20,8 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
+  handler: 'default:file'
+  handler_settings: {  }
   file_directory: products/images
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
@@ -35,6 +37,4 @@ settings:
     title: 'Baby carriage'
     width: 227
     height: 225
-  handler: 'default:file'
-  handler_settings: {  }
 field_type: image

@@ -4,22 +4,7 @@ display:
   default:
     display_title: Standard
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filter
-          reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
-          sort_asc_label: Stigende
-          sort_desc_label: Faldende
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
-            offset_label: Forskydning
-          tags:
-            previous: ‹‹
-            next: ››
+      title: 'Seneste logmeddelelser'
       fields:
         nothing:
           admin_label: Ikon
@@ -40,6 +25,26 @@ display:
           separator: ', '
         link:
           label: Handlinger
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      empty:
+        area:
+          admin_label: 'Ingen logbeskeder til rådighed.'
+          content: 'Ingen logbeskeder til rådighed.'
       filters:
         type:
           expose:
@@ -47,10 +52,5 @@ display:
         severity:
           expose:
             label: Grad
-      title: 'Seneste logmeddelelser'
-      empty:
-        area:
-          admin_label: 'Ingen logbeskeder til rådighed.'
-          content: 'Ingen logbeskeder til rådighed.'
   page:
     display_title: Side

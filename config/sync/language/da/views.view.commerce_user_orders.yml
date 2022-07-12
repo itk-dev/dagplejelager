@@ -1,6 +1,25 @@
 display:
   default:
     display_options:
+      fields:
+        field_urgent:
+          label: Haster
+          separator: ', '
+        field_fulfillment_date:
+          label: Leveringsdato
+          separator: ', '
+        order_id:
+          label: ID
+          separator: ', '
+        order_number:
+          label: Ordrenummer
+          separator: ', '
+        placed:
+          label: Dato
+          separator: ', '
+        state:
+          label: Status
+          separator: ', '
       exposed_form:
         options:
           submit_button: Udfør
@@ -19,25 +38,6 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-      fields:
-        order_id:
-          label: ID
-          separator: ', '
-        order_number:
-          label: Ordrenummer
-          separator: ', '
-        placed:
-          label: Dato
-          separator: ', '
-        field_urgent:
-          label: Haster
-          separator: ', '
-        field_fulfillment_date:
-          label: Leveringsdato
-          separator: ', '
-        state:
-          label: Status
-          separator: ', '
       title: Ordrer
       empty:
         area:
@@ -47,6 +47,7 @@ display:
         uid:
           exception:
             title: Alle
+    display_title: Master
   order_page:
     display_options:
       menu:

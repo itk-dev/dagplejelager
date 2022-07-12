@@ -6,12 +6,13 @@ use Drupal\commerce_cart\CartManagerInterface;
 use Drupal\commerce_cart\CartProviderInterface;
 use Drupal\commerce_order\Entity\OrderInterface;
 use Drupal\commerce_product\Entity\ProductInterface;
+use Drupal\commerce_store\Entity\StoreInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provide actions for Dagplejelager.
@@ -48,7 +49,7 @@ class DagplejelagerActionsController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container) {
+  public static function create(ContainerInterface $container): self {
     return new static(
       $container->get('commerce_cart.cart_manager'),
       $container->get('commerce_cart.cart_provider'),
@@ -74,6 +75,7 @@ class DagplejelagerActionsController extends ControllerBase {
     assert($stores instanceof EntityReferenceFieldItemList);
     $stores = $stores->referencedEntities();
     $store = reset($stores);
+    assert($store instanceof StoreInterface);
     $cart = $this->cartProvider->getCart('default', $store);
     if (!$cart) {
       $cart = $this->cartProvider->createCart('default', $store);
@@ -82,6 +84,7 @@ class DagplejelagerActionsController extends ControllerBase {
     if ($commerce_product->hasField('field_product_reference')) {
       $products = $commerce_product->get('field_product_reference');
       assert($products instanceof EntityReferenceFieldItemList);
+      /** @var \Drupal\commerce_product\Entity\ProductInterface[] $products */
       $products = $products->referencedEntities();
 
       foreach ($products as $product) {
@@ -137,9 +140,10 @@ class DagplejelagerActionsController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  private function addProductVariationToCart(ProductInterface $product, OrderInterface $cart) {
+  private function addProductVariationToCart(ProductInterface $product, OrderInterface $cart): void {
     $productVariations = $product->get('variations');
     assert($productVariations instanceof EntityReferenceFieldItemList);
+    /** @var \Drupal\commerce\PurchasableEntityInterface[] $productVariations */
     $productVariations = $productVariations->referencedEntities();
     $this->cartManager->addEntity($cart, reset($productVariations));
   }

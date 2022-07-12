@@ -1,5 +1,6 @@
 display:
   default:
+    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -12,14 +13,8 @@ display:
         title:
           label: Titel
           separator: ', '
-        unit_price__number:
-          label: Enhedspris
-          separator: ', '
         quantity:
           label: Mængde
-          separator: ', '
-        total_price__number:
-          label: 'Pris i alt'
           separator: ', '
       arguments:
         order_item_id:

@@ -1,20 +1,22 @@
 display:
   default:
+    display_title: Master
     display_options:
       exposed_form:
         options:
           submit_button: Udfør
-          reset_button_label: Nulstil
+          reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       fields:
         purchased_entity:
           label: Titel
+          separator: ', '
+        edit_quantity:
+          label: Mængde
         remove_button:
           label: Fjern
-        edit_quantity:
-          label: Antal
       arguments:
         order_id:
           exception:

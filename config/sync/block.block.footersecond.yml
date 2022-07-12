@@ -19,8 +19,8 @@ plugin: 'system_menu_block:footer-second'
 settings:
   id: 'system_menu_block:footer-second'
   label: 'Footer second'
-  provider: system
   label_display: visible
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false

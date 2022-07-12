@@ -1,18 +1,6 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Nulstil
-          exposed_sorts_label: 'Sortér efter'
-          sort_asc_label: Stigende
-          sort_desc_label: Faldende
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
-            offset_label: Forskydning
       empty:
         display_link:
           label: 'Ingen ordrer matcher dine filtre.'
@@ -27,36 +15,79 @@ display:
         placed:
           expose:
             label: 'Dato (til)'
+        type:
+          expose:
+            label: Type
+        state:
+          expose:
+            label: Status
       fields:
-        placed:
-          label: Dato
-        store_id:
-          label: Butik
-        uid:
-          label: Dagplejer
-        mail:
-          label: E-mail
-        operations:
-          label: Handlinger
         order_items_target_id:
           label: Produkter
-        state:
-          label: Status
         field_urgent:
           label: Haster
         billing_profile__target_id:
           label: Adresse
         field_fulfillment_date:
           label: 'Planlagt leveringsdato'
+        commerce_order_bulk_form:
+          action_title: Handling
+        order_number:
+          label: '#'
+          separator: ', '
+        placed:
+          label: Dato
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        store_id:
+          label: Butik
+          separator: ', '
+        uid:
+          label: Kunde
+          separator: ', '
+        mail:
+          label: E-mail
+          separator: ', '
+        state:
+          label: Status
+          separator: ', '
+        operations:
+          label: Handlinger
       footer:
         result:
           content: 'Viser @start–@end af @total'
-  page_1:
-    display_title: Side
-    display_options:
-      tab_options:
-        description: 'Behandl dine ordrer.'
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+          tags:
+            previous: '‹ forrige'
+            next: 'næste ›'
+            first: '« første'
+            last: 'sidste »'
+      title: Ordrer
+    display_title: Master
   data_export_1:
     display_title: 'Dateeksport (CSV)'
   data_export_2:
     display_title: 'Dataeksport (XLSX)'
+  page_1:
+    display_title: Side
+    display_options:
+      menu:
+        title: Ordrer
+      tab_options:
+        title: Ordrer
+        description: 'Behandl dine ordrer.'
+label: Ordrer

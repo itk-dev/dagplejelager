@@ -4,9 +4,9 @@ status: true
 dependencies: {  }
 id: bundle
 label: Bundle
+traits: {  }
+locked: false
 description: ''
 variationType: default
 multipleVariations: false
 injectVariationFields: false
-traits: {  }
-locked: false

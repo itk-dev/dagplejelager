@@ -4,6 +4,7 @@ display:
   default:
     display_title: Standard
     display_options:
+      title: 'Hvem er online'
       exposed_form:
         options:
           submit_button: Udfør
@@ -11,20 +12,19 @@ display:
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
+      empty:
+        area_text_custom:
+          content: 'Der er i øjeblikket 0 brugere online.'
       filters:
         access:
           expose:
             label: 'Seneste tilgang'
             description: 'En bruger bliver opfattet som online i dette tidsrum efter hun sidst har set en side.'
-      title: 'Hvem er online'
       header:
         result:
           content: 'Der er i øjeblikket @total brugere online.'
-      empty:
-        area_text_custom:
-          content: 'Der er i øjeblikket 0 brugere online.'
   who_s_online_block:
     display_title: 'Hvem er online'
     display_options:
-      block_description: 'Hvem er online'
       display_description: 'En liste af indloggede brugere.'
+      block_description: 'Hvem er online'

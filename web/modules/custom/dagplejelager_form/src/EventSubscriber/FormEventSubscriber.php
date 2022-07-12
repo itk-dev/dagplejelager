@@ -84,8 +84,10 @@ class FormEventSubscriber implements EventSubscriberInterface {
 
   /**
    * Alter billing profile form.
+   *
+   * @phpstan-param array<string, mixed> $form
    */
-  private function alterBillingInformationProfileForm(array &$form) {
+  private function alterBillingInformationProfileForm(array &$form): void {
     $form['dagplejelager_form'] = [
       '#weight' => -9999,
 

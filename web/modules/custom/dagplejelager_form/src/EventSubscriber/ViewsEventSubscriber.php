@@ -56,6 +56,7 @@ class ViewsEventSubscriber implements EventSubscriberInterface {
           $productIds = array_column($productIds, 'target_id');
           // Find orders containing all products.
           foreach ($productIds as $productId) {
+            /** @var \Drupal\commerce_order\Entity\OrderItemInterface[] $items */
             $items = $this->orderItemStorage->loadByProperties(['purchased_entity' => $productId]);
             $orderIds[] = array_map(static function (OrderItemInterface $item) {
               return $item->getOrderId();
@@ -72,6 +73,7 @@ class ViewsEventSubscriber implements EventSubscriberInterface {
           foreach ($productCategoryIds as $productCategoryId) {
             // Find order items mathing the product category.
             $products = $this->productStorage->loadByProperties(['field_category' => $productCategoryId]);
+            /** @var \Drupal\commerce_order\Entity\OrderItemInterface[] $items */
             $items = $this->orderItemStorage->loadByProperties(['purchased_entity' => array_keys($products)]);
             $orderIds[] = array_map(static function (OrderItemInterface $item) {
               return $item->getOrderId();

@@ -29,14 +29,14 @@ class DayCarerAutoCompleteController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container) {
+  public static function create(ContainerInterface $container): self {
     return new static($container->get(DayCarerHelper::class));
   }
 
   /**
    * Handler for autocomplete request.
    */
-  public function autocomplete(Request $request) {
+  public function autocomplete(Request $request): JsonResponse {
     $results = [];
     $query = $request->query->get('q') ?? '';
 

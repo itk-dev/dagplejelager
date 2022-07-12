@@ -4,6 +4,10 @@ display:
   default:
     display_title: Standard
     display_options:
+      title: 'Seneste indhold'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Udfør
@@ -11,10 +15,6 @@ display:
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
-      fields:
-        changed:
-          separator: ', '
-      title: 'Seneste indhold'
       empty:
         area_text_custom:
           content: 'Der er intet indhold at vise.'

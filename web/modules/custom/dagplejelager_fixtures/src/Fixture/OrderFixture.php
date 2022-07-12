@@ -32,7 +32,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'type' => 'default',
       'purchased_entity' => $product->id(),
       'title' => $product->getTitle(),
-      'unit_price' => new Price(0, 'DKK'),
+      'unit_price' => new Price('0.00', 'DKK'),
       'quantity' => 1,
     ]);
     $item->save();
@@ -57,7 +57,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'type' => 'default',
       'purchased_entity' => $product->id(),
       'title' => $product->getTitle(),
-      'unit_price' => new Price(0, 'DKK'),
+      'unit_price' => new Price('0.00', 'DKK'),
       'quantity' => 1,
     ]);
     $item0->save();
@@ -68,7 +68,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'type' => 'default',
       'purchased_entity' => $product->id(),
       'title' => $product->getTitle(),
-      'unit_price' => new Price(0, 'DKK'),
+      'unit_price' => new Price('0.00', 'DKK'),
       'quantity' => 2,
     ]);
     $item1->save();
@@ -109,7 +109,7 @@ class OrderFixture extends AbstractFixture implements DependentFixtureInterface,
       'type' => 'default',
       'purchased_entity' => $product->id(),
       'title' => $product->getTitle(),
-      'unit_price' => new Price(0, 'DKK'),
+      'unit_price' => new Price('0.00', 'DKK'),
       'quantity' => 3,
     ]);
     $item->save();

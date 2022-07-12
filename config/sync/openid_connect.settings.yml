@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: yb6wo2M1jLJ_sG3dDzfjXLSMUFIEDNh5j59LWsHzcV0
+langcode: en
 always_save_userinfo: true
 connect_existing_users: true
 override_registration_settings: true
@@ -7,9 +10,6 @@ redirect_login: /
 redirect_logout: /user
 userinfo_mappings:
   timezone: zoneinfo
-_core:
-  default_config_hash: yb6wo2M1jLJ_sG3dDzfjXLSMUFIEDNh5j59LWsHzcV0
-langcode: en
 role_mappings:
   administrator: {  }
   manager: {  }

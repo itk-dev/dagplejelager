@@ -4,6 +4,7 @@ display:
   default:
     display_title: Standard
     display_options:
+      title: 'Nye brugere'
       exposed_form:
         options:
           submit_button: Udfør
@@ -11,7 +12,6 @@ display:
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
-      title: 'Nye brugere'
   block_1:
     display_title: 'Nye brugere'
     display_options:

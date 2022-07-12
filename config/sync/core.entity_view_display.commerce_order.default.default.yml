@@ -23,122 +23,122 @@ mode: default
 content:
   balance:
     type: commerce_price_default
-    weight: 13
-    region: content
     label: inline
     settings:
       strip_trailing_zeroes: false
       currency_display: symbol
     third_party_settings: {  }
+    weight: 13
+    region: content
   billing_profile:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    region: content
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
+    region: content
   changed:
     type: timestamp
-    weight: 8
     label: inline
     settings:
       date_format: short
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 8
     region: content
   completed:
-    label: inline
     type: timestamp
-    weight: 6
+    label: inline
     settings:
       date_format: short
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 6
     region: content
   field_fulfillment_date:
-    weight: 2
+    type: datetime_default
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
-    type: datetime_default
+    weight: 2
     region: content
   field_order_notes:
-    weight: 3
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 3
     region: content
   field_urgent:
-    weight: 4
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 4
     region: content
   ip_address:
-    label: inline
     type: string
-    weight: 11
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 11
     region: content
   mail:
-    label: inline
     type: basic_string
-    weight: 10
+    label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   order_items:
     type: commerce_order_item_table
-    weight: 5
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    label: hidden
+    weight: 5
     region: content
   order_number:
     type: string
-    weight: 0
-    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
   placed:
-    label: inline
     type: timestamp
-    weight: 7
+    label: inline
     settings:
       date_format: short
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    weight: 7
     region: content
   state:
-    label: hidden
     type: state_transition_form
-    weight: 12
+    label: hidden
     settings:
       require_confirmation: false
     third_party_settings: {  }
+    weight: 12
     region: content
   uid:
-    label: inline
     type: author
-    weight: 9
+    label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 9
     region: content
 hidden:
   search_api_excerpt: true

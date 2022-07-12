@@ -1,36 +1,61 @@
 display:
   default:
     display_options:
+      fields:
+        field_category:
+          label: Kategori
+        commerce_product_bulk_form:
+          action_title: Handling
+        title:
+          label: Titel
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        status:
+          label: Status
+          settings:
+            format_custom_true: Udgivet
+            format_custom_false: 'Ikke udgivet'
+          separator: ', '
+        changed:
+          label: Opdateret
+          separator: ', '
+        operations:
+          label: Handlinger
+      footer:
+        result:
+          content: 'Viser @start–@end af @total'
       exposed_form:
         options:
-          reset_button_label: Nulstil
+          submit_button: Filter
+          reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
           sort_desc_label: Faldende
-          submit_button: Filtrér
       pager:
         options:
           expose:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-      fields:
-        field_category:
-          label: Kategori
+          tags:
+            previous: '‹ forrige'
+            next: 'næste ›'
+            first: '« første'
+            last: 'sidste »'
+      filters:
+        type:
+          expose:
+            label: Type
         title:
-          label: Titel
-        status:
-          label: Status
-        changed:
-          label: Opdateret
-        operations:
-          label: Handlinger
+          expose:
+            label: Titel
+      title: Produkter
       empty:
         area_text_custom:
           content: 'Ingen produkter matcher dit filter.'
-      footer:
-        result:
-          content: 'Viser @start–@end af @total'
+    display_title: Master
   page_1:
     display_title: Side
-label: Producter
+label: Produkter

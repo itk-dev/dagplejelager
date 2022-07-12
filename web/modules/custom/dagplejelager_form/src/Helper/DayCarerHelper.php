@@ -37,6 +37,9 @@ class DayCarerHelper {
    *
    * @return array|null
    *   The result.
+   *
+   * @phpstan-param array<int, mixed> $dayCarers
+   * @phpstan-return array<int, mixed>|null
    */
   public function updateDayCarers(array $dayCarers): ?array {
     $this->database->update($this->table)
@@ -62,6 +65,8 @@ class DayCarerHelper {
    *
    * @return array
    *   The day carer matching the query.
+   *
+   * @phpstan-return array<int, mixed>
    */
   public function searchDayCarers(string $terms): array {
     $terms = preg_split('/\s+/', $terms);
@@ -114,8 +119,10 @@ class DayCarerHelper {
 
   /**
    * Implements hook_schema().
+   *
+   * @phpstan-return array<string, mixed>
    */
-  public function schema() {
+  public function schema(): array {
     $schema['dagplejelager_form_day_carer'] = [
       'description' => 'Day carers.',
       'fields' => [
@@ -192,7 +199,7 @@ class DayCarerHelper {
   /**
    * Get search fields.
    *
-   * @return array
+   * @return string[]|array
    *   The search fields.
    */
   private function getSearchFields(): array {

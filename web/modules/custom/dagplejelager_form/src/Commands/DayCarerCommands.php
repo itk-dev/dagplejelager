@@ -22,6 +22,8 @@ class DayCarerCommands extends DrushCommands {
    * The config.
    *
    * @var array|null
+   *
+   * @phpstan-var array<string, mixed>|null
    */
   private $importConfig;
 
@@ -45,8 +47,10 @@ class DayCarerCommands extends DrushCommands {
    *   Don't do anything, but show what will be done.
    * @usage dagplejelager_form:day-carers:import
    * @usage dagplejelager_form:day-carers:import --dry-run
+   *
+   * @phpstan-param array<string, mixed> $options
    */
-  public function import(array $options = ['dry-run' => FALSE]) {
+  public function import(array $options = ['dry-run' => FALSE]): void {
     try {
       $connectionString = $this->getConnectionString();
       $connection = new \PDO(

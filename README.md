@@ -127,7 +127,7 @@ Use `docker-compose up --detach --build` to (re)build the custom docker image.
 
 ```sh
 docker-compose up --detach --build
-docker-compose exec phpfpm composer install
+docker-compose exec phpfpm composer install --no-interaction
 docker-compose exec phpfpm vendor/bin/drush --yes site:install minimal --existing-config
 # Get the site url
 echo "http://$(docker-compose port nginx 80)"
@@ -148,7 +148,7 @@ echo "http://$(docker-compose port mailhog 8025)"
 
 ```sh
 docker-compose up --detach
-symfony composer install
+symfony composer install --no-interaction
 symfony php vendor/bin/drush --yes site:install minimal --existing-config
 # Start the server
 symfony local:server:start --port=8000 --daemon

@@ -8,11 +8,11 @@ dependencies:
     - field.field.profile.customer.field_institution_id
     - field.field.profile.customer.field_telephone_number
     - profile.type.customer
+  module:
+    - address
   enforced:
     module:
       - commerce_order
-  module:
-    - address
 _core:
   default_config_hash: zA0MBGUGdWqnBBoC762uDcH92qRZHC8KllbkpOjNUcs
 id: profile.customer.admin_order_table
@@ -22,10 +22,10 @@ mode: admin_order_table
 content:
   address:
     type: address_default
-    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   field_institution_id: true

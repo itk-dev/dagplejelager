@@ -11,7 +11,9 @@ use Drupal\dagplejelager_form\Helper\DayCarerHelper;
  * Implements hook_schema().
  *
  * @see \Drupal\dagplejelager_form\Helper\DayCarerHelper::schema()
+ *
+ * @phpstan-return array<string, mixed>
  */
-function dagplejelager_form_schema() {
+function dagplejelager_form_schema(): array {
   return Drupal::service(DayCarerHelper::class)->schema();
 }

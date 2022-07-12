@@ -7,11 +7,11 @@ dependencies:
     - field.field.profile.customer.field_institution_id
     - field.field.profile.customer.field_telephone_number
     - profile.type.customer
+  module:
+    - address
   enforced:
     module:
       - commerce_order
-  module:
-    - address
 _core:
   default_config_hash: 3LyHGK7R4HxqejbxONet1S9j9ekqLJuFpwT-MNJygvo
 id: profile.customer.default
@@ -22,24 +22,24 @@ content:
   address:
     type: address_default
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_institution_id:
+    type: string_textfield
     weight: 27
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_telephone_number:
+    type: string_textfield
     weight: 26
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   is_default: true
