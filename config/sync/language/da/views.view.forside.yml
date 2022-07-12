@@ -36,11 +36,11 @@ display:
         area_text_custom:
           content: '<h3>Produktsamlinger</h3>'
       fields:
-        field_product_reference:
-          label: Produkter
         title:
           label: Titel
         nothing:
           alter:
             text: '<a class="button button--primary btn-success btn" href="/dagplejelager_actions/add_bundle/{{ product_id }}">Læg i kurv</a>'
+        body:
+          label: Beskrivelse
 label: Forside
