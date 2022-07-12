@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Module file for module dagplejelager_form.
+ */
+
+use Drupal\dagplejelager_form\Helper\Helper;
+
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ *
+ * @see Helper::inlineEntityFormTableFieldsAlter()
+ *
+ * @phpstan-param array<string, mixed> $fields
+ * @phpstan-param array<string, mixed> $context
+ */
+function dagplejelager_form_inline_entity_form_table_fields_alter(array &$fields, array $context): void {
+  Drupal::service(Helper::class)->inlineEntityFormTableFieldsAlter($fields, $context);
+}
