@@ -1,0 +1,18 @@
+uuid: 113c3b21-2408-48b1-85dd-4dc5a70f8c41
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+id: commerce_order.field_urgent
+field_name: field_urgent
+entity_type: commerce_order
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

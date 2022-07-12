@@ -1,0 +1,23 @@
+services:
+  Drupal\dagplejelager_form\EventSubscriber\FormEventSubscriber:
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\dagplejelager_form\EventSubscriber\ViewsEventSubscriber:
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\dagplejelager_form\Helper\Helper:
+
+  Drupal\dagplejelager_form\Helper\DayCarerHelper:
+    arguments:
+      - '@database'
+
+  Drupal\dagplejelager_form\Commands\DayCarerCommands:
+    arguments:
+      - '@Drupal\dagplejelager_form\Helper\DayCarerHelper'
+      - '@config.factory'
+    tags:
+      - { name: drush.command }

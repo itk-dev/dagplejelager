@@ -1,0 +1,25 @@
+uuid: 9cd35b16-f8d5-44f3-9651-88ffac390ddc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: hMfQl6CMpriwtgN9kPcmtOvzKv7ri_YfAcPgUzXaX6M
+id: dagplejelager_theme_branding
+theme: dagplejelager_theme
+region: left_middle_header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

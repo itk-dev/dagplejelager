@@ -1,0 +1,7 @@
+name: 'Dagplejens fælleslager store'
+type: module
+description: 'Dagplejelager store'
+core_version_requirement: ^9
+package: Dagplejelager
+dependencies:
+  - commerce:commerce_store

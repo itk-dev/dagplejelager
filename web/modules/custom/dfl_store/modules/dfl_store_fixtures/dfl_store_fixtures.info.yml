@@ -1,0 +1,9 @@
+name: 'Dagplejens fælleslager store fixtures'
+type: module
+description: 'Dagplejens fælleslager store fixtures'
+core_version_requirement: ^9
+hidden: true
+package: Dagplejelager
+dependencies:
+  - drupal:dfl_store
+  - drupal:content_fixtures

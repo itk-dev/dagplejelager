@@ -1,0 +1,25 @@
+langcode: da
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.t_shirt
+    - field.storage.commerce_product.body
+  module:
+    - text
+  enforced:
+    module:
+      - dfl_product_example
+id: commerce_product.t_shirt.body
+field_name: body
+entity_type: commerce_product
+bundle: t_shirt
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

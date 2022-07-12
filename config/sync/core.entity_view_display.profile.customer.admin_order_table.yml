@@ -1,0 +1,33 @@
+uuid: ff39661d-c1f6-4319-a365-9f6ac8e2b8be
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.profile.admin_order_table
+    - field.field.profile.customer.address
+    - field.field.profile.customer.field_institution_id
+    - field.field.profile.customer.field_telephone_number
+    - profile.type.customer
+  module:
+    - address
+  enforced:
+    module:
+      - commerce_order
+_core:
+  default_config_hash: zA0MBGUGdWqnBBoC762uDcH92qRZHC8KllbkpOjNUcs
+id: profile.customer.admin_order_table
+targetEntityType: profile
+bundle: customer
+mode: admin_order_table
+content:
+  address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_institution_id: true
+  field_telephone_number: true
+  search_api_excerpt: true

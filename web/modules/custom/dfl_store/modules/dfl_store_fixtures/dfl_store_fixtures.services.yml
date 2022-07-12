@@ -1,0 +1,7 @@
+services:
+  dfl_store_fixtures.dfl_store_fixture:
+    class: Drupal\dfl_store_fixtures\Fixture\StoreFixture
+    tags:
+      - { name: content_fixture }
+    arguments:
+      - '@entity_type.manager'

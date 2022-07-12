@@ -1,0 +1,45 @@
+uuid: 145a1ac8-2859-4047-9217-6d57ea203f07
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.bundle
+    - field.field.commerce_product.bundle.body
+    - field.field.commerce_product.bundle.field_product_reference
+  module:
+    - text
+id: commerce_product.bundle.default
+targetEntityType: commerce_product
+bundle: bundle
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_product_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  stores: true
+  uid: true
+  variations: true

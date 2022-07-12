@@ -1,0 +1,11 @@
+'use product bundle action':
+  title: Use product bundle action.
+  restrict access: true
+
+'use convert to cart action':
+  title: Use convert to cart action.
+  restrict access: true
+
+'change order workflow states':
+  title: Change workflow states of an order.
+  restrict access: true

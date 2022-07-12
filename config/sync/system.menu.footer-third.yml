@@ -1,0 +1,10 @@
+uuid: 4540be16-3a17-417b-8c22-59b0c13a9dc7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xrEFn7f9HGHg5aGLpEZ7PQ0VsGCRzGYMTOiM3NQ5eSw
+id: footer-third
+label: 'Sidefod tredje'
+description: ''
+locked: true

@@ -1,0 +1,27 @@
+uuid: fb8fa95f-8ae5-47cb-9270-27d1ff6b4784
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-second
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: p5wwECbXysmA1Pjs4gimcXBxTl7FyixATwYYfxo2E3U
+id: dagplejelager_theme_footersecond
+theme: dagplejelager_theme
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-second'
+settings:
+  id: 'system_menu_block:footer-second'
+  label: 'Footer second'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

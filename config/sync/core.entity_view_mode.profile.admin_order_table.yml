@@ -1,0 +1,10 @@
+uuid: 6544b264-fd2d-462e-bc96-7571df2def1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.admin_order_table
+label: 'Admin order table'
+targetEntityType: profile
+cache: true

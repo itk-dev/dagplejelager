@@ -1,0 +1,5 @@
+name: 'Dagplejelager user'
+type: module
+description: 'Alters display of user profile and related pages'
+core_version_requirement: ^9
+package: Dagplejelager

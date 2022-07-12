@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$script_dir"/inc/functions
+
+read -p "Really install site ([yN])? " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  exit
+fi
+
+docker-compose up --detach --build --remove-orphans
+composer install --no-dev --optimize-autoloader \
+         --ignore-platform-reqs
+# Using --ignore-platform-reqs is a bad idea! https://stackoverflow.com/a/55431247
+
+drush --yes site:install minimal --existing-config
+
+"$script_dir"/update

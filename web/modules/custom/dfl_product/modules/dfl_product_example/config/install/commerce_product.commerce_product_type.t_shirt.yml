@@ -1,0 +1,14 @@
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - dfl_product_example
+id: t_shirt
+label: T-shirt
+description: ''
+variationType: t_shirt
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

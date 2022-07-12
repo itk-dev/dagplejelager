@@ -1,0 +1,28 @@
+uuid: db9624ff-75f9-4945-a16e-8e6121a57d86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.product_category.field_image
+    - taxonomy.vocabulary.product_category
+_core:
+  default_config_hash: 76M0S5ycs-9eeofVRqLwINmiNHZDK2WEphTJracjN9M
+id: taxonomy_term.product_category.default
+targetEntityType: taxonomy_term
+bundle: product_category
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_image: true
+  langcode: true
+  path: true
+  status: true

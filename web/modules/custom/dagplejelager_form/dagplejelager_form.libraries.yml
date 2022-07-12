@@ -1,0 +1,4 @@
+billing-information-profile:
+  version: VERSION
+  js:
+    js/billing-information-profile.js: {}

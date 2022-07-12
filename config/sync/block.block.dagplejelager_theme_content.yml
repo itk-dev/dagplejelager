@@ -1,0 +1,22 @@
+uuid: c7b86527-b9e6-4570-8fbe-b1a5067a54bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: p9UmXGPmQyDcvjpp8YHlhuRMPojsM6c9r836rCQFhmM
+id: dagplejelager_theme_content
+theme: dagplejelager_theme
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

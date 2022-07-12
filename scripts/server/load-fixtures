@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$script_dir"/inc/functions
+
+read -p "Really load fixtures ([yN])? " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  exit
+fi
+
+# Install development stuff
+composer install \
+         --ignore-platform-reqs
+# Using --ignore-platform-reqs is a bad idea! https://stackoverflow.com/a/55431247
+
+# Load fixtures
+drush --yes pm:enable dagplejelager_fixtures
+drush --yes content-fixtures:load
+
+# Clean up
+drush --yes pm:uninstall content_fixtures
+"$script_dir"/update

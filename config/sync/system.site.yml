@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: 68461a3b-fdcb-45c3-9925-1bb562cf75d5
+name: 'Dagplejens fælleslager'
+mail: itkdev@mkb.aarhus.dk
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /forside
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: da

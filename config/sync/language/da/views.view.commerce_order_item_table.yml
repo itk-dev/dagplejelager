@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Udfør
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      fields:
+        title: {  }
+        quantity: {  }
+        field_handling:
+          label: Levering/afhentning
+      arguments:
+        order_item_id:
+          exception:
+            title: Alle

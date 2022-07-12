@@ -1,0 +1,10 @@
+name: 'Dagplejelager fixtures'
+type: module
+description: 'Dagplejelager fixtures'
+# Used only for development and testing.
+hidden: true
+core_version_requirement: ^9
+package: Dagplejelager
+# version: VERSION
+dependencies:
+  - drupal:content_fixtures

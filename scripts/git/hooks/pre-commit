@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-if ! composer coding-standards-check; then
-  cat >&2 << EOF
-Please fix any coding standards issues before commit'ing!
-EOF
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+no_color='\033[0m'
+
+if ! docker-compose exec phpfpm composer coding-standards-check; then
+  >&2 echo -e "${red}Please fix any coding standards issues before commit'ing!${no_color}"
   exit 1
 fi
 
-if ! yarn coding-standards-check; then
-  cat >&2 << EOF
-Please fix any coding standards issues before commit'ing!
-EOF
+if ! docker-compose run node yarn --cwd /app coding-standards-check; then
+  >&2 echo -e "${red}Please fix any coding standards issues before commit'ing!${no_color}"
   exit 1
 fi
+
+echo -e "\n${yellow}Have your changes been added to CHANGELOG.md? Should they?${no_color}\n"
 
 exit 0

@@ -1,0 +1,22 @@
+uuid: 54e6cabd-03bd-444e-b708-25ae7c644664
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dagplejelager_theme
+_core:
+  default_config_hash: hKkeUU91cnDp5MWJtOC5xELq_5Avc6rHm3TGRlXLDsk
+id: dagplejelager_theme_local_tasks
+theme: dagplejelager_theme
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

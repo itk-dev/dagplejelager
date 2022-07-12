@@ -1,0 +1,6 @@
+label: Standard
+configuration:
+  panes:
+    completion_message:
+      message:
+        value: 'Dit ordrenummer er [commerce_order:order_number].'
