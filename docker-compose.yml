@@ -36,6 +36,18 @@ services:
       - PHP_MAIL=1 # Uncomment to enable mailhog.
       - DOCKER_HOST_DOMAIN=${COMPOSE_DOMAIN}
       - COMPOSER_VERSION=2
+    extra_hosts:
+      # Used by ssh tunnel to Azure SQL Server
+      #
+      # Run these commands to make it actually work:
+      #
+      # $ # Copy ssh keys to container
+      # $ docker-compose exec phpfpm mkdir -p /root/.ssh
+      # $ docker-compose cp ~/.ssh/id_rsa phpfpm:/root/.ssh/id_rsa
+      # $ docker-compose cp ~/.ssh/id_rsa-cert.pub phpfpm:/root/.ssh/id_rsa-cert.pub
+      # $ # Create ssh tunnel using IPv4 (`-4`)
+      # $ docker-compose exec phpfpm ssh -4 -f deploy@dp-lager.aarhuskommune.dk -L 1433:aadsrvb2c.database.windows.net:1433 -N
+      - "aadsrvb2c.database.windows.net:127.0.0.1"
     depends_on:
       - mariadb
       - memcached

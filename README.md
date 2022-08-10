@@ -135,6 +135,17 @@ echo "http://$(docker-compose port nginx 80)"
 docker-compose exec phpfpm vendor/bin/drush --yes --uri="http://$(docker-compose port nginx 80)" user:login
 ```
 
+#### Accessing the Azure SQL Database
+
+```sh
+# Copy ssh keys to container
+docker-compose exec phpfpm mkdir -p /root/.ssh
+docker-compose cp ~/.ssh/id_rsa phpfpm:/root/.ssh/id_rsa
+docker-compose cp ~/.ssh/id_rsa-cert.pub phpfpm:/root/.ssh/id_rsa-cert.pub
+# Create ssh tunnel using IPv4 (`-4`) (Note: This will ask for your ssh key password twice)
+docker-compose exec phpfpm ssh -4 -f deploy@dp-lager.aarhuskommune.dk -L 1433:aadsrvb2c.database.windows.net:1433 -N
+```
+
 #### Mails
 
 Mails are caught by [MailHog](https://github.com/mailhog/MailHog) and can be
