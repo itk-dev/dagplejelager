@@ -17,3 +17,10 @@ use Drupal\dagplejelager_form\Helper\DayCarerHelper;
 function dagplejelager_form_schema(): array {
   return Drupal::service(DayCarerHelper::class)->schema();
 }
+
+/**
+ * Add telephone number to daycarer.
+ */
+function dagplejelager_form_update_9001(): void {
+  Drupal::service(DayCarerHelper::class)->update9001();
+}
