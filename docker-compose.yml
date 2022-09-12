@@ -25,7 +25,7 @@ services:
       com.symfony.server.service-prefix: 'DATABASE'
 
   phpfpm:
-    build: itkdev/php7.4-fpm:latest
+    image: itkdev/php7.4-fpm:latest
     networks:
       - app
     environment:
