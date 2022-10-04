@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Module file for module dagplejelager_commerce.
+ */
+
+use Drupal\dagplejelager_commerce\Helper\Helper;
+
+/**
+ * Implements hook_menu_local_actions_alter().
+ *
+ * @phpstan-param array<string, mixed> $local_actions
+ */
+function dagplejelager_commerce_menu_local_actions_alter(array &$local_actions): void {
+  Drupal::service(Helper::class)->menuLocalActionsAlter($local_actions);
+}

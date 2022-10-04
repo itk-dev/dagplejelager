@@ -22,6 +22,7 @@ module:
   core_event_dispatcher: 0
   csv_serialization: 0
   dagplejelager_actions: 0
+  dagplejelager_commerce: 0
   dagplejelager_form: 0
   dagplejelager_user: 0
   date_popup: 0
