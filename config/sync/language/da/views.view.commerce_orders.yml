@@ -16,11 +16,12 @@ display:
           expose:
             label: 'Dato (til)'
         type:
-          expose:
-            label: Type
+          expose: {  }
         state:
+          expose: {  }
+        field_urgent_value:
           expose:
-            label: Status
+            label: Haster
       fields:
         order_items_target_id:
           label: Produkter
@@ -30,29 +31,19 @@ display:
           label: Adresse
         field_fulfillment_date:
           label: 'Planlagt leveringsdato'
-        commerce_order_bulk_form:
-          action_title: Handling
-        order_number:
-          label: '#'
-          separator: ', '
+        commerce_order_bulk_form: {  }
+        order_number: {  }
         placed:
           label: Dato
-          separator: ', '
-        type:
-          label: Type
-          separator: ', '
+        type: {  }
         store_id:
           label: Butik
-          separator: ', '
         uid:
           label: Kunde
-          separator: ', '
         mail:
           label: E-mail
-          separator: ', '
         state:
           label: Status
-          separator: ', '
         operations:
           label: Handlinger
       footer:
@@ -60,7 +51,6 @@ display:
           content: 'Viser @start–@end af @total'
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende
@@ -71,13 +61,7 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-          tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
-      title: Ordrer
-    display_title: Master
+          tags: {  }
   data_export_1:
     display_title: 'Dateeksport (CSV)'
   data_export_2:
@@ -85,9 +69,7 @@ display:
   page_1:
     display_title: Side
     display_options:
-      menu:
-        title: Ordrer
+      menu: {  }
       tab_options:
-        title: Ordrer
         description: 'Behandl dine ordrer.'
 label: Ordrer
