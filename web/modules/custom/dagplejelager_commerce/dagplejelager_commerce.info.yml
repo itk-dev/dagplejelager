@@ -1,0 +1,9 @@
+name: 'Dagplejelager commerce'
+type: module
+description: 'Dagplejelager commerce'
+core_version_requirement: ^9
+package: Dagplejelager
+# version: VERSION
+
+dependencies:
+  - drupal:commerce
