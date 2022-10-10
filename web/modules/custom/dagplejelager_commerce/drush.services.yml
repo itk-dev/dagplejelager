@@ -1,0 +1,6 @@
+services:
+  Drupal\dagplejelager_commerce\Commands\OrdersCommands:
+    arguments:
+      - '@Drupal\dagplejelager_commerce\Helper\Helper'
+    tags:
+      - { name: drush.command }
