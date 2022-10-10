@@ -19,6 +19,12 @@ display:
           expose: {  }
         state:
           expose: {  }
+          group_info:
+            group_items:
+              1:
+                title: 'I gang'
+              3:
+                title: Afsluttet
         field_urgent_value:
           expose:
             label: Haster

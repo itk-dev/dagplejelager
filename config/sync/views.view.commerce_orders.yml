@@ -1066,25 +1066,46 @@ display:
             operator_list: {  }
             identifier: state
             required: false
-            remember: false
-            multiple: false
+            remember: true
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              manager: '0'
               administrator: '0'
             reduce: false
-          is_grouped: false
+          is_grouped: true
           group_info:
-            label: ''
+            label: Status
             description: ''
-            identifier: ''
+            identifier: state
             optional: true
             widget: select
             multiple: false
-            remember: false
-            default_group: All
+            remember: true
+            default_group: '1'
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1:
+                title: 'In progress'
+                operator: in
+                value:
+                  draft: draft
+                  validation: validation
+                  fulfillment: fulfillment
+                  all: '0'
+                  completed: '0'
+                  canceled: '0'
+              3:
+                title: Completed
+                operator: in
+                value:
+                  completed: completed
+                  canceled: canceled
+                  all: '0'
+                  draft: '0'
+                  validation: '0'
+                  fulfillment: '0'
         placed_1:
           id: placed_1
           table: commerce_order
