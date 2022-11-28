@@ -1,5 +1,4 @@
 services:
   Drupal\dagplejelager_commerce\Helper\Helper:
     arguments:
-      - '@config.factory'
       - '@entity_type.manager'

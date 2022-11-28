@@ -3,6 +3,7 @@
 namespace Drupal\dagplejelager_commerce\Helper;
 
 use Drupal\commerce_order\Entity\OrderInterface;
+use Drupal\commerce_order\OrderStorage;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Site\Settings;
@@ -16,16 +17,14 @@ class Helper {
    *
    * @var \Drupal\commerce_order\OrderStorage
    */
-  private $orderStorage;
+  private OrderStorage $orderStorage;
 
   /**
-   *
+   * Constructor.
    */
-  public function __construct(ConfigFactoryInterface $configFactory, EntityTypeManagerInterface $entityTypeManager) {
-    $this->config = $configFactory->get('dagplejelager_commerce')->get('anonymize');
-
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+    // @phpstan-ignore-next-line
     $this->orderStorage = $entityTypeManager->getStorage('commerce_order');
-
   }
 
   /**
@@ -40,9 +39,11 @@ class Helper {
   }
 
   /**
+   * Anonymize orders.
    *
+   * @phpstan-param  array<string, mixed> $options
    */
-  public function anonymizeOrders(array $options) {
+  public function anonymizeOrders(array $options): void {
     $options += $this->getSettings();
     $anonymizeAfter = $options['anonymize_after'] ?? '30 days';
 
@@ -76,15 +77,17 @@ class Helper {
   }
 
   /**
-   *
+   * Anonymize order.
    */
-  public function anonymizeOrder(OrderInterface $order) {
+  public function anonymizeOrder(OrderInterface $order): void {
     $order->getState()->applyTransitionById('anonymize');
     $order->save();
   }
 
   /**
+   * Get settings.
    *
+   * @phpstan-return array<string, mixed>
    */
   private function getSettings(): array {
     $settings = (array) Settings::get('dagplejelager_commerce');
