@@ -3,127 +3,127 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-05 13:17+0000\n"
-"PO-Revision-Date: 2021-10-05 15:19+0200\n"
+"POT-Creation-Date: 2023-01-30 13:48+0000\n"
+"PO-Revision-Date: 2023-01-30 13:48+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: da\n"
-"X-Generator: Poedit 2.4.2\n"
 
-msgid "Title"
-msgstr "Title"
+msgid "User account menu"
+msgstr "Brugerkontomenu"
 
-msgid "Status"
-msgstr "Status"
+msgid "Breadcrumbs"
+msgstr "Brødkrummer"
 
-msgid "Operations"
-msgstr "Handlinger"
+msgid "Main page content"
+msgstr "Primært sideindhold"
+
+msgid "Footer menu"
+msgstr "Footer-menu"
+
+msgid "Primary admin actions"
+msgstr "Primære administratorhandlinger"
+
+msgid "Tabs"
+msgstr "Faner"
+
+msgid "Main navigation"
+msgstr "Primær navigation"
+
+msgid "Status messages"
+msgstr "Statusmeddelelser"
+
+msgid "Page title"
+msgstr "Sidetitel"
+
+msgid "Powered by Drupal"
+msgstr "Drives af Drupal"
+
+msgid "Tools"
+msgstr "Værktøjer"
+
+msgid "Cart"
+msgstr "Indkøbskurv"
+
+msgid "Footer second"
+msgstr "Sidefod anden"
+
+msgid "Footer third"
+msgstr "Sidefod tredje"
+
+msgid "Primary tabs"
+msgstr "Primære faneblade"
+
+msgid "Secondary tabs"
+msgstr "Sekundære faneblade"
+
+msgid "Checkout"
+msgstr "Til kassen"
 
 msgid "Reset"
-msgstr "Nulstil"
-
-msgid "Updated"
-msgstr "Opdateret"
+msgstr "Gendan"
 
 msgid "Filter"
 msgstr "Filter"
 
-msgid "Add to cart"
-msgstr "Læg i kurv"
+msgid "Title"
+msgstr "Titel"
 
-msgid "Cart block"
-msgstr "Indkøbskurvblok"
+msgid "Body"
+msgstr "Brødtekst"
 
 msgid "Item"
 msgstr "Titel"
 
 msgid "Quantity"
-msgstr "Antal"
-
-msgid "With selection"
-msgstr "Handling"
-
-msgid "Store"
-msgstr "Butik"
+msgstr "Mængde"
 
 msgid "Customer"
 msgstr "Kunde"
 
-msgid "Total"
-msgstr "I alt"
-
-msgid "No orders available."
-msgstr "Ingen tilgængelige ordrer."
-
-msgid ""
-"Your order number is [commerce_order:order_number].\r\n"
-"You can view your order on your account page when "
-"logged in."
-msgstr "Dit ordrenummer er [commerce_order:order_number]."
-
-msgid "Checkout"
-msgstr "Til kassen"
-
-msgid "Billing"
-msgstr "Fakturering"
-
-msgid "Admin"
-msgstr "Administration"
-
-msgid "Address"
-msgstr "Adresse"
-
-msgid "Customer information"
-msgstr "Kundeoplysninger"
-
-msgid "Unit price"
-msgstr "Enhedspris"
-
-msgid "Total price"
-msgstr "Pris i alt"
-
-msgid "Orders"
-msgstr "Ordrer"
-
-msgid "Order number"
-msgstr "Ordrenummer"
-
-msgid "Manage your orders."
-msgstr "Behandl dine ordrer."
-
-msgid "You have not placed any orders with us yet."
-msgstr "Du har ikke handlet hos os endnu."
-
-msgid "Delete product"
-msgstr "Slet produkt"
-
-msgid "Publish product"
-msgstr "Publicér produkt"
-
-msgid "Unpublish product"
-msgstr "Afpublicér produkt"
+msgid "Add to cart"
+msgstr "Læg i kurv"
 
 msgid "Products"
 msgstr "Produkter"
 
+msgid "Orders"
+msgstr "Ordrer"
+
 msgid "No products available."
 msgstr "Ingen produkter matcher dit filter."
 
-msgid "Profiles"
-msgstr "Profiler"
+msgid "True"
+msgstr "Ja"
 
-msgid "User page"
-msgstr "Brugerside"
+msgid "False"
+msgstr "Nej "
 
-msgid "Cart"
-msgstr "Indkøbskurv"
+msgid "Carts"
+msgstr "Carts"
 
-msgid "Images"
-msgstr "Billeder"
+msgid ""
+"Your order number is [commerce_order:order_number].\r\n"
+"You can view "
+"your order on your account page when logged in."
+msgstr "Dit ordrenummer er [commerce_order:order_number]."
 
-msgid "Update cart"
-msgstr "Opdater kurv"
+msgid "Manage your orders."
+msgstr "Behandl dine ordrer."
+
+msgid "Product category"
+msgstr "Produktkategori"
+
+msgid "Handling"
+msgstr "Levering/afhentning"
+
+msgid "delivery"
+msgstr "Levering"
+
+msgid "pickup"
+msgstr "Afhentning"
+
+
