@@ -1,6 +1,6 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "name": "itk-dev/dagplejelager",
+    "description": "Dagplejelager",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -10,16 +10,12 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/hook_event_dispatcher-3199174"
-        },
-        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
     ],
     "require": {
-        "php": "~7.4.0 || ~8.0.0",
+        "php": "^8.1",
         "adodb/adodb-php": "^5.21",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -34,10 +30,10 @@
         "drupal/date_popup": "^1.1",
         "drupal/estore": "^1.14",
         "drupal/facets": "^1.8",
-        "drupal/gin": "^3.0@alpha",
-        "drupal/gin_toolbar": "^1.0@beta",
-        "drupal/hook_event_dispatcher": "dev-3199174-drupal-9.1-",
-        "drupal/masquerade": "^2.0@beta",
+        "drupal/gin": "^3.0",
+        "drupal/gin_toolbar": "^1.0",
+        "drupal/hook_event_dispatcher": "^3.3",
+        "drupal/masquerade": "^2.0",
         "drupal/openid_connect": "^2.0",
         "drupal/search_api": "^1.20",
         "drupal/search_api_autocomplete": "^1.5",

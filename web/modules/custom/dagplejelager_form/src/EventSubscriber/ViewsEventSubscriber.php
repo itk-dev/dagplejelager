@@ -4,9 +4,9 @@ namespace Drupal\dagplejelager_form\EventSubscriber;
 
 use Drupal\commerce_order\Entity\OrderItemInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
 use Drupal\views\Plugin\views\query\Sql;
 use Drupal\views_event_dispatcher\Event\Views\ViewsQueryAlterEvent;
+use Drupal\views_event_dispatcher\ViewsHookEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -103,7 +103,7 @@ class ViewsEventSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents(): array {
     return [
-      HookEventDispatcherInterface::VIEWS_QUERY_ALTER => 'alterViewsQuery',
+      ViewsHookEvents::VIEWS_QUERY_ALTER => 'alterViewsQuery',
     ];
   }
 
