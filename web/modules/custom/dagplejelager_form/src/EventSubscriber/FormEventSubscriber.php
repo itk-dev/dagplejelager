@@ -4,7 +4,7 @@ namespace Drupal\dagplejelager_form\EventSubscriber;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\core_event_dispatcher\Event\Form\FormAlterEvent;
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+use Drupal\core_event_dispatcher\FormHookEvents;
 use Drupal\views\ViewExecutable;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -110,7 +110,7 @@ class FormEventSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents(): array {
     return [
-      HookEventDispatcherInterface::FORM_ALTER => 'alterForm',
+      FormHookEvents::FORM_ALTER => 'alterForm',
     ];
   }
 

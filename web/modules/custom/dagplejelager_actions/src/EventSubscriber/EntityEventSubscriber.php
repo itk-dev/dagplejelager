@@ -4,8 +4,8 @@ namespace Drupal\dagplejelager_actions\EventSubscriber;
 
 use Drupal\commerce_order\Entity\Order;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\core_event_dispatcher\EntityHookEvents;
 use Drupal\core_event_dispatcher\Event\Entity\EntityPresaveEvent;
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -42,7 +42,7 @@ class EntityEventSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents(): array {
     return [
-      HookEventDispatcherInterface::ENTITY_PRE_SAVE => 'preSaveEntity',
+      EntityHookEvents::ENTITY_PRE_SAVE => 'preSaveEntity',
     ];
   }
 
