@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD024 -->
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -8,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- [SUPP0RT-943](https://jira.itkdev.dk/browse/SUPP0RT-943)
+  Updated facets module
+- [SUPP0RT-943](https://jira.itkdev.dk/browse/SUPP0RT-943)
+  Upgraded to PHP 8.1
 - [DAGPLEJ-62](https://jira.itkdev.dk/browse/DAGPLEJ-62)
   Added day carer name and address lookup.
 - [DAGPLEJ-20](https://jira.itkdev.dk/browse/DAGPLEJ-20):
