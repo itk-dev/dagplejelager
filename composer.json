@@ -29,7 +29,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/date_popup": "^1.1",
         "drupal/estore": "^1.14",
-        "drupal/facets": "^1.8",
+        "drupal/facets": "^2.0",
         "drupal/gin": "^3.0",
         "drupal/gin_toolbar": "^1.0",
         "drupal/hook_event_dispatcher": "^3.3",
