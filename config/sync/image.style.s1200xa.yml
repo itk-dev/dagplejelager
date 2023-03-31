@@ -1,0 +1,17 @@
+uuid: df209a51-40aa-4853-be1e-4c2219003567
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3T5oOuCJ6RxpH97wrnQoWvDkHgyXYQGrCzxaAgQWSxM
+name: s1200xa
+label: s1200xA
+effects:
+  1c87150f-da50-4256-a9ba-0e4bd83633cd:
+    uuid: 1c87150f-da50-4256-a9ba-0e4bd83633cd
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

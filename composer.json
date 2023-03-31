@@ -1,6 +1,6 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "name": "itk-dev/dagplejelager",
+    "description": "Dagplejelager",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -15,39 +15,61 @@
         }
     ],
     "require": {
-        "php": "^7.4.0",
+        "php": "^8.1",
+        "adodb/adodb-php": "^5.21",
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/coffee": "^1.2",
         "drupal/commerce": "^2.24",
+        "drupal/commerce_checkout_order_fields": "^1.1",
+        "drupal/config_ignore": "^2.3",
         "drupal/console": "^1.9",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
-        "drupal/gin": "^3.0@alpha",
-        "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/date_popup": "^1.1",
+        "drupal/estore": "^1.14",
+        "drupal/facets": "^2.0",
+        "drupal/gin": "^3.0",
+        "drupal/gin_toolbar": "^1.0",
+        "drupal/hook_event_dispatcher": "^3.3",
+        "drupal/masquerade": "^2.0",
+        "drupal/openid_connect": "^2.0",
+        "drupal/search_api": "^1.20",
+        "drupal/search_api_autocomplete": "^1.5",
         "drupal/twig_tweak": "^3.1",
+        "drupal/views_data_export": "^1.0",
+        "drupal/xls_serialization": "^1.2",
         "drush/drush": "^10.5"
     },
     "scripts": {
         "post-install-cmd": [
-            "ln -sf ../../scripts/git/hooks/pre-commit .git/hooks/pre-commit",
-            "@install-codestandards"
+            "@install-codestandards",
+            "@install-estore-libraries"
         ],
+        "//": "https://www.drupal.org/docs/contributed-themes/estore-user-guide/installation#installation--expanded",
+        "install-estore-libraries": [
+            "mkdir -p web/libraries",
+            "curl --silent --location https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip > web/libraries/bootstrap.zip",
+            "(cd web/libraries && rm -fr bootstrap && unzip -q bootstrap.zip && mv *bootstrap-* bootstrap && rm bootstrap.zip)",
+            "curl --silent --location https://github.com/johnpolacek/stacktable.js/zipball/master/ > web/libraries/stacktable.js.zip",
+            "(cd web/libraries && rm -fr stacktable.js && unzip -q stacktable.js.zip && mv *stacktable.js-* stacktable.js && rm stacktable.js.zip)"
+        ],
+
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
-        "coding-standards-check/drupal-check": [
+        "code-analysis/drupal-check": [
             "vendor/bin/drupal-check --deprecations --analysis web/modules/custom"
+        ],
+        "code-analysis": [
+            "@code-analysis/drupal-check"
         ],
         "coding-standards-check/phpcs": [
             "vendor/bin/phpcs --standard=phpcs.xml.dist"
         ],
-        "coding-standards-check/twigcs": [
-            "twigcs web/themes/custom/dagplejelager_theme/templates"
-        ],
         "coding-standards-check": [
-            "@coding-standards-check/phpcs",
-            "@coding-standards-check/drupal-check",
-            "@coding-standards-check/twigcs"
+            "@coding-standards-check/phpcs"
         ],
         "coding-standards-apply/phpcs": [
             "vendor/bin/phpcbf --standard=phpcs.xml.dist"
@@ -62,7 +84,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "discard-changes": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/console-extend-plugin": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -119,6 +150,18 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/content_fixtures": {
+                "Disable access check when purging content": "https://gist.githubusercontent.com/rimi-itk/4e012bf9bf28bbd0ef0a6cdcd4a76359/raw/4dabb36ac30c236e3e24b16531e4812c0df3614f/content_fixtures.purge.access.patch"
+            },
+            "drupal/openid_connect": {
+                "Revoking group access does not reflect on applied roles (https://www.drupal.org/project/openid_connect/issues/3224128)": "https://git.drupalcode.org/project/openid_connect/-/merge_requests/31.diff"
+            },
+            "drupal/core": {
+                "Disable forced configuration langcode (https://www.drupal.org/project/drupal/issues/3150540)": "https://www.drupal.org/files/issues/2020-06-10/locale-config-langcodes.patch"
+            }
         }
     },
     "require-dev": {

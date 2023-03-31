@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for dagplejelager_form.
+ */
+
+use Drupal\dagplejelager_form\Helper\DayCarerHelper;
+
+/**
+ * Implements hook_schema().
+ *
+ * @see \Drupal\dagplejelager_form\Helper\DayCarerHelper::schema()
+ *
+ * @phpstan-return array<string, mixed>
+ */
+function dagplejelager_form_schema(): array {
+  return Drupal::service(DayCarerHelper::class)->schema();
+}
+
+/**
+ * Add telephone number to daycarer.
+ */
+function dagplejelager_form_update_9001(): void {
+  Drupal::service(DayCarerHelper::class)->update9001();
+}

@@ -1,0 +1,29 @@
+uuid: 05cd523b-5102-4aa3-9b5a-ea5be8ce6251
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce
+    - commerce_checkout
+    - commerce_order
+    - commerce_product
+    - dagplejelager_actions
+    - dagplejelager_form
+    - system
+id: manager
+label: Manager
+weight: -8
+is_admin: null
+permissions:
+  - 'access checkout'
+  - 'access commerce administration pages'
+  - 'access content'
+  - 'access day carer lookup'
+  - 'create default commerce_order'
+  - 'delete default commerce_order'
+  - 'update default commerce_order'
+  - 'use convert to cart action'
+  - 'use product bundle action'
+  - 'view commerce_product'
+  - 'view default commerce_order'
+  - 'view own commerce_order'

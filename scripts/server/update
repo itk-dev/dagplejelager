@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$script_dir"/inc/functions
+
+cd "$script_dir"/../..
+
+docker-compose up --detach --build --remove-orphans
+composer install --no-dev --optimize-autoloader \
+         --ignore-platform-reqs
+# Using --ignore-platform-reqs is a bad idea! https://stackoverflow.com/a/55431247
+
+# # Build theme assets
+# # docker run -v ${PWD}/web/themes/custom/dagplejelager_theme:/app node:14 yarn --cwd /app install
+# # docker run -v ${PWD}/web/themes/custom/dagplejelager_theme:/app node:14 yarn --cwd /app encore prod
+
+drush --yes cache:rebuild
+drush --yes config:import
+drush --yes updatedb
+(cd web && drush locale:import --type=customized --override=none da ../translations/translations.da.po)

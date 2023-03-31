@@ -1,0 +1,21 @@
+uuid: 99584d82-b17e-4f53-893a-39b84ae18e0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_telephone_number
+field_name: field_telephone_number
+entity_type: profile
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

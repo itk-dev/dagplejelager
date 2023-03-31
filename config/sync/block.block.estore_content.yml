@@ -1,0 +1,22 @@
+uuid: 264b71d1-8438-4509-b2c0-b077bb1cf825
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: p9UmXGPmQyDcvjpp8YHlhuRMPojsM6c9r836rCQFhmM
+id: estore_content
+theme: estore
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

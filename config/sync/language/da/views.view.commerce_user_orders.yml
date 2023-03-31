@@ -1,0 +1,54 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_urgent:
+          label: Haster
+          separator: ', '
+        field_fulfillment_date:
+          label: Leveringsdato
+          separator: ', '
+        order_id:
+          label: ID
+          separator: ', '
+        order_number:
+          label: Ordrenummer
+          separator: ', '
+        placed:
+          label: Dato
+          separator: ', '
+        state:
+          label: Status
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Udfør
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      pager:
+        options:
+          tags:
+            previous: '‹ Forrige'
+            next: 'Næste ›'
+            first: '« Første'
+            last: 'Sidste »'
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+      title: Ordrer
+      empty:
+        area:
+          content:
+            value: 'Du har ikke handlet hos os endnu.'
+      arguments:
+        uid:
+          exception:
+            title: Alle
+    display_title: Master
+  order_page:
+    display_options:
+      menu:
+        title: Ordrer

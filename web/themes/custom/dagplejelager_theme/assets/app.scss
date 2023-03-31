@@ -1,0 +1,36 @@
+.field--name-field-handling {
+  legend {
+    display: none;
+  }
+
+  .form-type-radio {
+    display: inline-block;
+
+    & + .form-type-radio {
+      margin-left: 1em;
+    }
+  }
+}
+
+.checkout-order-summary {
+  table {
+    width: 100%;
+  }
+}
+
+.middle-header-wrapper .region-left-middle-header .branding-block {
+  width: 100%;
+  margin: 0;
+}
+
+.middle-header-wrapper .region-left-middle-header .branding-block .site-title {
+  float: none;
+
+  .name {
+    padding: 0;
+  }
+}
+
+.middle-header-wrapper .region-left-middle-header .branding-block .logo {
+  margin-right: 1em;
+}

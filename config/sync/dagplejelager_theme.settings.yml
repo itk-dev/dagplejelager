@@ -1,0 +1,31 @@
+schemas:
+  bootstrap: 8000
+  estore: 8000
+  dagplejelager_theme: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: ''
+  use_default: 1
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+  node_user_picture: true
+logo:
+  path: themes/custom/dagplejelager_theme/logo.png
+  url: ''
+  use_default: 0
+cdn_theme: ''
+cdn_cache_ttl_versions: 0
+cdn_cache_ttl_themes: 0
+cdn_cache_ttl_assets: 0
+cdn_cache_ttl_library: 0
+reset_http_request_cache: ''
+table: ''
+header_email: ''
+header_phone: ''
+header_location: ''
+header_shop_opens: ''
+copyright_text: ''
+display_theme_credits: 0

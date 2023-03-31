@@ -1,0 +1,81 @@
+display:
+  default:
+    display_options:
+      empty:
+        display_link:
+          label: 'Ingen ordrer matcher dine filtre.'
+      filters:
+        combine:
+          expose:
+            label: Søg
+            placeholder: 'Søg på ordrenr. eller kunde'
+        placed_1:
+          expose:
+            label: 'Dato (fra)'
+        placed:
+          expose:
+            label: 'Dato (til)'
+        type:
+          expose: {  }
+        state:
+          expose: {  }
+          group_info:
+            group_items:
+              1:
+                title: 'I gang'
+              3:
+                title: Afsluttet
+        field_urgent_value:
+          expose:
+            label: Haster
+      fields:
+        order_items_target_id:
+          label: Produkter
+        field_urgent:
+          label: Haster
+        billing_profile__target_id:
+          label: Adresse
+        field_fulfillment_date:
+          label: 'Planlagt leveringsdato'
+        commerce_order_bulk_form: {  }
+        order_number: {  }
+        placed:
+          label: Dato
+        type: {  }
+        store_id:
+          label: Butik
+        uid:
+          label: Kunde
+        mail:
+          label: E-mail
+        state:
+          label: Status
+        operations:
+          label: Handlinger
+      footer:
+        result:
+          content: 'Viser @start–@end af @total'
+      exposed_form:
+        options:
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+          tags: {  }
+  data_export_1:
+    display_title: 'Dateeksport (CSV)'
+  data_export_2:
+    display_title: 'Dataeksport (XLSX)'
+  page_1:
+    display_title: Side
+    display_options:
+      menu: {  }
+      tab_options:
+        description: 'Behandl dine ordrer.'
+label: Ordrer

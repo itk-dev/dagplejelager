@@ -1,0 +1,8 @@
+name: 'Dagplejelager actions'
+type: module
+description: 'Provides actions related to dagplejelager'
+core_version_requirement: ^9
+package: Dagplejelager
+
+dependencies:
+  - drupal:core_event_dispatcher

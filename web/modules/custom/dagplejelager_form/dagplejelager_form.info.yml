@@ -1,0 +1,11 @@
+name: 'Dagplejelager form'
+type: module
+description: 'Dagplejelager form helper'
+core_version_requirement: ^9
+package: Dagplejelager
+# version: VERSION
+
+dependencies:
+  - drupal:commerce_checkout_order_fields
+  - drupal:core_event_dispatcher
+  - drupal:views_event_dispatcher

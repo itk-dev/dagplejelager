@@ -1,0 +1,60 @@
+uuid: 278fac12-c03c-466f-bc58-84addb5f0a6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_category
+  module:
+    - commerce
+    - commerce_checkout
+    - commerce_order
+    - commerce_product
+    - commerce_store
+    - dagplejelager_actions
+    - dagplejelager_form
+    - locale
+    - masquerade
+    - profile
+    - system
+    - taxonomy
+    - toolbar
+id: administrator
+label: Administrator
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access checkout'
+  - 'access commerce administration pages'
+  - 'access commerce_order overview'
+  - 'access commerce_product overview'
+  - 'access content'
+  - 'access day carer lookup'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'change order workflow states'
+  - 'create bundle commerce_product'
+  - 'create default commerce_order'
+  - 'create default commerce_product'
+  - 'create terms in product_category'
+  - 'delete any bundle commerce_product'
+  - 'delete any default commerce_product'
+  - 'delete default commerce_order'
+  - 'delete terms in product_category'
+  - 'edit terms in product_category'
+  - 'masquerade as authenticated'
+  - 'masquerade as manager'
+  - 'translate interface'
+  - 'update any bundle commerce_product'
+  - 'update any default commerce_product'
+  - 'update default commerce_order'
+  - 'use convert to cart action'
+  - 'use product bundle action'
+  - 'view any profile'
+  - 'view commerce_order'
+  - 'view commerce_product'
+  - 'view commerce_store'
+  - 'view default commerce_order'
+  - 'view own commerce_order'
+  - 'view own unpublished commerce_product'
+  - 'view the administration theme'

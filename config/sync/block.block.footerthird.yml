@@ -1,0 +1,27 @@
+uuid: 5cea1753-837a-4af4-a6c5-8c02137bf495
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-third
+  module:
+    - system
+  theme:
+    - estore
+_core:
+  default_config_hash: L84eslnjPTbuW053G4oubBIi9QcUFp-0S7bdkD984eg
+id: footerthird
+theme: estore
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-third'
+settings:
+  id: 'system_menu_block:footer-third'
+  label: 'Footer third'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
