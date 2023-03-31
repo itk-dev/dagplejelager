@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.0]
+
 - [SUPP0RT-943](https://jira.itkdev.dk/browse/SUPP0RT-943)
   Updated facets module
 - [SUPP0RT-943](https://jira.itkdev.dk/browse/SUPP0RT-943)
@@ -23,3 +25,6 @@ Versioning](https://semver.org/spec/v2.0.0.html).
   - Added eStore theme, and default product entity.
   - Added front page view
   - Added product category
+
+[Unreleased]: https://github.com/itk-dev/dagplejelager/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/itk-dev/dagplejelager/releases/tag/1.0.0
