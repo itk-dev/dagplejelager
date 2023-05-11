@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- Added anonymization of completed orders
+  (<https://github.com/itk-dev/dagplejelager/pull/50>)
 - [PR-57](https://github.com/itk-dev/dagplejelager/pull/57)
   Updated docker compose setup
 

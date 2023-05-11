@@ -242,3 +242,21 @@ file.
 See
 <https://medium.com/limoengroen/how-to-deploy-drupal-interface-translations-5653294c4af6>
 for further details.
+
+## Anonymizing orders
+
+```php
+# settings.local.php:
+$settings['dagplejelager_commerce']['anonymize']['anonymize_after'] = '28 days';
+```
+
+The Drush commmand `dagplejelager_commerce:orders:anonymize` should be run
+regularly by a cron job, e.g. daily:
+
+```cron
+0 0 * * * docker compose exec phpfpm vendor/bin/drush dagplejelager_commerce:orders:anonymize
+```
+
+```sh
+docker compose exec phpfpm vendor/bin/drush dagplejelager_commerce:orders:anonymize --help
+```
