@@ -15,6 +15,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
   (<https://github.com/itk-dev/dagplejelager/pull/50>)
 - [PR-57](https://github.com/itk-dev/dagplejelager/pull/57)
   Updated docker compose setup
+- [PR-56](https://github.com/itk-dev/dagplejelager/pull/56)
+  Added OIDC IdP service
 
 ## [1.0.0]
 
