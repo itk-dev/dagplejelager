@@ -9,6 +9,9 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- [PR-57](https://github.com/itk-dev/dagplejelager/pull/57)
+  Updated docker compose setup
+
 ## [1.0.0]
 
 - [SUPP0RT-943](https://jira.itkdev.dk/browse/SUPP0RT-943)
