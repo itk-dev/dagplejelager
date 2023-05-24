@@ -13,6 +13,7 @@ use Drupal\state_machine\Plugin\Workflow\WorkflowTransition;
  * Change order state guard.
  */
 class ChangeOrderStateGuard implements GuardInterface {
+  public const PERMISSION_CHANGE_ORDER_WORKFLOW_STATES = 'change order workflow states';
 
   /**
    * The current user.
@@ -36,7 +37,7 @@ class ChangeOrderStateGuard implements GuardInterface {
    */
   public function allowed(WorkflowTransition $transition, WorkflowInterface $workflow, EntityInterface $entity) {
     if ($entity instanceof OrderInterface) {
-      if ($this->currentUser->hasPermission('change order workflow states')) {
+      if ($this->currentUser->hasPermission(self::PERMISSION_CHANGE_ORDER_WORKFLOW_STATES)) {
         return TRUE;
       }
 

@@ -1,0 +1,26 @@
+{
+    "name": "custom/dagplejelager_commerce",
+    "description": "Dagplejelager commerce",
+    "type": "drupal-custom-module",
+    "license": "proprietary",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "drush/drush": "^10",
+        "drupal/commerce_order": "^2.0",
+        "symfony/options-resolver": "^6.2"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "//": "https://docs.drush.org/en/9.x/commands/#specifying-the-services-file",
+        "drush": {
+            "services": {
+                "drush.services.yml": "^10"
+            }
+        }
+    }
+}

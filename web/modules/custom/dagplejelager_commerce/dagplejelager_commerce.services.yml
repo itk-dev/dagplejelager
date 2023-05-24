@@ -1,2 +1,10 @@
 services:
+  logger.channel.dagplejelager_commerce:
+    parent: logger.channel_base
+    arguments: [ 'dagplejelager_commerce' ]
+
   Drupal\dagplejelager_commerce\Helper\Helper:
+
+  Drupal\dagplejelager_commerce\Helper\AnonymizeOrderHelper:
+    arguments:
+      - '@entity_type.manager'

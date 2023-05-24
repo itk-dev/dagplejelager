@@ -1,0 +1,9 @@
+services:
+  Drupal\dagplejelager_commerce\Commands\OrdersCommands:
+    arguments:
+      - '@Drupal\dagplejelager_commerce\Helper\AnonymizeOrderHelper'
+      - '@entity_type.manager'
+      - '@account_switcher'
+      - '@logger.channel.dagplejelager_commerce'
+    tags:
+      - { name: drush.command }

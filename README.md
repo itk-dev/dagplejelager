@@ -92,7 +92,7 @@ COMPOSE_SERVER_DOMAIN=dagplejelager.some.domain
 ```
 
 ```sh
-docker-compose --env-file .env.docker.local --file docker-compose.server.yml up --detach --build
+docker compose --env-file .env.docker.local --file docker compose.server.yml up --detach --build
 ```
 
 ### Importing day carer info
@@ -100,7 +100,7 @@ docker-compose --env-file .env.docker.local --file docker-compose.server.yml up 
 Use this command to import day carers from the source database:
 
 ```sh
-docker-compose exec phpfpm vendor/bin/drush --yes dagplejelager_form:day-carers:import
+docker compose exec phpfpm vendor/bin/drush --yes dagplejelager_form:day-carers:import
 ```
 
 This should be run regularly by a `cron` job.
@@ -123,16 +123,16 @@ We use a [custom Dockerfile](.docker/development/phpfpm/Dockerfile) to install
 (PDO_SQLSRV)](https://www.php.net/manual/en/ref.pdo-sqlsrv.php) in the `phpfpm`
 container.
 
-Use `docker-compose up --detach --build` to (re)build the custom docker image.
+Use `docker compose up --detach --build` to (re)build the custom docker image.
 
 ```sh
-docker-compose up --detach --build
-docker-compose exec phpfpm composer install --no-interaction
-docker-compose exec phpfpm vendor/bin/drush --yes site:install minimal --existing-config
+docker compose up --detach --build
+docker compose exec phpfpm composer install --no-interaction
+docker compose exec phpfpm vendor/bin/drush --yes site:install minimal --existing-config
 # Get the site url
-echo "http://$(docker-compose port nginx 80)"
+echo "http://$(docker compose port nginx 80)"
 # Get admin sign in url
-docker-compose exec phpfpm vendor/bin/drush --yes --uri="http://$(docker-compose port nginx 80)" user:login
+docker compose exec phpfpm vendor/bin/drush --yes --uri="http://$(docker compose port nginx 80)" user:login
 ```
 
 #### Mails
@@ -141,13 +141,13 @@ Mails are caught by [MailHog](https://github.com/mailhog/MailHog) and can be
 read on the url reported by
 
 ```sh
-echo "http://$(docker-compose port mailhog 8025)"
+echo "http://$(docker compose port mailhog 8025)"
 ```
 
 #### Using `symfony` binary
 
 ```sh
-docker-compose up --detach
+docker compose up --detach
 symfony composer install --no-interaction
 symfony php vendor/bin/drush --yes site:install minimal --existing-config
 # Start the server
@@ -159,14 +159,14 @@ symfony php vendor/bin/drush --uri=https://127.0.0.1:8000 user:login
 ## Coding standards
 
 ```sh
-docker-compose exec phpfpm composer coding-standards-check
-docker-compose exec phpfpm composer coding-standards-apply
+docker compose exec phpfpm composer coding-standards-check
+docker compose exec phpfpm composer coding-standards-apply
 ```
 
 ```sh
-docker-compose run node yarn --cwd /app install
-docker-compose run node yarn --cwd /app coding-standards-check
-docker-compose run node yarn --cwd /app coding-standards-apply
+docker compose run --rm node yarn --cwd /app install
+docker compose run --rm node yarn --cwd /app coding-standards-check
+docker compose run --rm node yarn --cwd /app coding-standards-apply
 ```
 
 ### Fixtures
@@ -177,11 +177,11 @@ To load all fixtures, run:
 
 ```sh
 # Enable our fixtures modules
-docker-compose exec phpfpm vendor/bin/drush --yes pm:enable dagplejelager_fixtures
+docker compose exec phpfpm vendor/bin/drush --yes pm:enable dagplejelager_fixtures
 # Load the fixtures
-docker-compose exec phpfpm vendor/bin/drush --yes content-fixtures:load
+docker compose exec phpfpm vendor/bin/drush --yes content-fixtures:load
 # Uninstall fixtures modules
-docker-compose exec phpfpm vendor/bin/drush --yes pm:uninstall content_fixtures
+docker compose exec phpfpm vendor/bin/drush --yes pm:uninstall content_fixtures
 ```
 
 ### GitHub Actions
@@ -242,3 +242,21 @@ file.
 See
 <https://medium.com/limoengroen/how-to-deploy-drupal-interface-translations-5653294c4af6>
 for further details.
+
+## Anonymizing orders
+
+```php
+# settings.local.php:
+$settings['dagplejelager_commerce']['anonymize']['anonymize_after'] = '28 days';
+```
+
+The Drush commmand `dagplejelager_commerce:orders:anonymize` should be run
+regularly by a cron job, e.g. daily:
+
+```cron
+0 0 * * * docker compose exec phpfpm vendor/bin/drush dagplejelager_commerce:orders:anonymize
+```
+
+```sh
+docker compose exec phpfpm vendor/bin/drush dagplejelager_commerce:orders:anonymize --help
+```
