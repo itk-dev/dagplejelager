@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\hoeringsportal_base_fixtures\Fixture;
+namespace Drupal\dagplejelager_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\content_fixtures\Fixture\FixtureGroupInterface;
@@ -10,7 +10,7 @@ use Drupal\node\NodeInterface;
 /**
  * Page fixture.
  *
- * @package Drupal\hoeringsportal_base_fixtures\Fixture
+ * @package Drupal\dagplejelager_fixtures\Fixture
  */
 class ContentFixture extends AbstractFixture implements  FixtureGroupInterface {
 
