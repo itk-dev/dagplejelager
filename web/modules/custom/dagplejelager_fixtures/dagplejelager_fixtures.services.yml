@@ -29,3 +29,6 @@ services:
     tags:
       - { name: content_fixture }
 
+  Drupal\dagplejelager_fixtures\Fixture\ProductAttributeFixture:
+    tags:
+      - { name: content_fixture }
