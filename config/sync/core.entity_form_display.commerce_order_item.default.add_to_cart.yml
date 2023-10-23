@@ -32,9 +32,11 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  adjustments: true
   created: true
   field_type: true
   quantity: true
   status: true
+  total_price: true
   uid: true
   unit_price: true
