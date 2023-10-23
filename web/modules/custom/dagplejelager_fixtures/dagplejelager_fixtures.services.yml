@@ -28,5 +28,3 @@ services:
   Drupal\dagplejelager_fixtures\Fixture\ContentFixture:
     tags:
       - { name: content_fixture }
-
-

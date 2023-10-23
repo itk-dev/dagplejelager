@@ -12,7 +12,7 @@ use Drupal\node\NodeInterface;
  *
  * @package Drupal\dagplejelager_fixtures\Fixture
  */
-class ContentFixture extends AbstractFixture implements  FixtureGroupInterface {
+class ContentFixture extends AbstractFixture implements FixtureGroupInterface {
 
   /**
    * {@inheritdoc}
@@ -26,7 +26,9 @@ class ContentFixture extends AbstractFixture implements  FixtureGroupInterface {
     ]);
     $this->addReference('basic_page:fixture-1', $node);
     $node->save();
+
   }
+
   /**
    * {@inheritdoc}
    */
