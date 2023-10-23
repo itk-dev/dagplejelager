@@ -1,14 +1,11 @@
 <?php
 
-/**
- * @file
- * Enum for order states.
- */
-
 namespace Drupal\dagplejelager_commerce\Helper;
 
-enum OrderState: string
-{
+/**
+ * Available order states.
+ */
+enum OrderState: string {
   case Draft = 'draft';
   case Validation = 'validation';
   case Fulfillment = 'fulfillment';

@@ -1,14 +1,11 @@
 <?php
 
-/**
- * @file
- * Enum for order transitions.
- */
-
 namespace Drupal\dagplejelager_commerce\Helper;
 
-enum OrderTransition: string
-{
+/**
+ * Available order transistion.
+ */
+enum OrderTransition: string {
   case PlaceOrder = 'place';
   case ValidateOrder = 'validate';
   case FulfillOrder = 'fulfill';
