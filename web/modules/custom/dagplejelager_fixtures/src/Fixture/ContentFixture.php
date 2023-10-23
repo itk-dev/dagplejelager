@@ -20,7 +20,7 @@ class ContentFixture extends AbstractFixture implements  FixtureGroupInterface {
   public function load() {
     $node = Node::create([
       'type' => 'basic_page',
-      'title' => 'Statisk side 223232323',
+      'title' => 'Statisk side',
       'status' => NodeInterface::PUBLISHED,
       'body' => ['value' => 'dette er en tekst'],
     ]);
