@@ -25,3 +25,4 @@ refresh_mode: customer
 refresh_frequency: 300
 sendReceipt: false
 receiptBcc: ''
+receiptSubject: ''
