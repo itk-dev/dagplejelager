@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-11-27
+
 - [DAGPLEJ-102](https://github.com/itk-dev/dagplejelager/pull/59)
   Added fixtures
 - Added anonymization of completed orders
