@@ -31,7 +31,7 @@
         "custom/dagplejelager_commerce": "^1.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/coffee": "^1.2",
-        "drupal/commerce": "^2.24",
+        "drupal/commerce": "^2.36",
         "drupal/commerce_checkout_order_fields": "^1.1",
         "drupal/config_ignore": "^2.3",
         "drupal/console": "^1.9",
