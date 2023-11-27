@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Autocomplete controller.
  */
-class DayCarerAutoCompleteController extends ControllerBase {
+final class DayCarerAutoCompleteController extends ControllerBase {
   /**
    * The day carer helper.
    *

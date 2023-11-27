@@ -1,7 +1,7 @@
 name: 'Dagplejelager form'
 type: module
 description: 'Dagplejelager form helper'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 package: Dagplejelager
 # version: VERSION
 

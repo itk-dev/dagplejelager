@@ -38,20 +38,33 @@
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
+        "drupal/csv_serialization": "^3.0 || ^4.0",
         "drupal/date_popup": "^1.1",
         "drupal/estore": "^1.14",
         "drupal/facets": "^2.0",
         "drupal/gin": "^3.0",
         "drupal/gin_toolbar": "^1.0",
-        "drupal/hook_event_dispatcher": "^3.3",
+        "drupal/hook_event_dispatcher": "^3.3 || ^4.0-rc1",
         "drupal/masquerade": "^2.0",
-        "drupal/openid_connect": "^2.0",
+        "drupal/openid_connect": "^3.0@alpha",
         "drupal/search_api": "^1.20",
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/twig_tweak": "^3.1",
+        "drupal/upgrade_status": "^4.0",
         "drupal/views_data_export": "^1.0",
         "drupal/xls_serialization": "^1.2",
         "drush/drush": "^10.5"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "drupal/coder": "^8.3",
+        "drupal/content_fixtures": "^3.1",
+        "drupal/core-dev": "^9.1",
+        "friendsoftwig/twigcs": "^5.0",
+        "mglaman/phpstan-drupal": "^1.1",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpstan/extension-installer": "^1.2",
+        "phpstan/phpstan-deprecation-rules": "^1.1"
     },
     "scripts": {
         "post-install-cmd": [
@@ -70,11 +83,11 @@
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
-        "code-analysis/drupal-check": [
-            "vendor/bin/drupal-check --deprecations --analysis --exclude-dir='*/vendor/*' web/modules/custom"
+        "code-analysis/phpstan": [
+            "phpstan analyse --configuration=phpstan.neon --memory-limit=256M"
         ],
         "code-analysis": [
-            "@code-analysis/drupal-check"
+            "@code-analysis/phpstan"
         ],
         "coding-standards-check/phpcs": [
             "vendor/bin/phpcs --standard=phpcs.xml.dist"
@@ -103,7 +116,8 @@
             "cweagans/composer-patches": true,
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
@@ -164,9 +178,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/content_fixtures": {
-                "Disable access check when purging content": "https://gist.githubusercontent.com/rimi-itk/4e012bf9bf28bbd0ef0a6cdcd4a76359/raw/4dabb36ac30c236e3e24b16531e4812c0df3614f/content_fixtures.purge.access.patch"
-            },
             "drupal/openid_connect": {
                 "Revoking group access does not reflect on applied roles (https://www.drupal.org/project/openid_connect/issues/3224128)": "https://git.drupalcode.org/project/openid_connect/-/merge_requests/31.diff"
             },
@@ -174,14 +185,5 @@
                 "Disable forced configuration langcode (https://www.drupal.org/project/drupal/issues/3150540)": "https://www.drupal.org/files/issues/2023-05-24/3150540-36.patch"
             }
         }
-    },
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "drupal/coder": "^8.3",
-        "drupal/core-dev": "^9.1",
-        "friendsoftwig/twigcs": "^5.0",
-        "mglaman/drupal-check": "^1.1",
-        "phpspec/prophecy-phpunit": "^2.0",
-        "drupal/content_fixtures": "^2.0"
     }
 }
