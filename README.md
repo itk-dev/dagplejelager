@@ -260,3 +260,21 @@ regularly by a cron job, e.g. daily:
 ```sh
 docker compose exec phpfpm vendor/bin/drush dagplejelager_commerce:orders:anonymize --help
 ```
+
+## Test OIDC login
+
+Edit `settings.local.php` and insert
+
+```php
+// https://idp-admin.dagplejelager.local.itkdev.dk/.well-known/openid-configuration
+$config['openid_connect.client.generic']['settings']['authorization_endpoint'] = 'http://idp-admin.dagplejelager.local.itkdev.dk/connect/authorize';
+$config['openid_connect.client.generic']['settings']['token_endpoint'] = 'http://idp-admin.dagplejelager.local.itkdev.dk/connect/token';
+// Makes local test easier.
+$config['openid_connect.client.generic']['settings']['end_session_endpoint'] = 'http://idp-admin.dagplejelager.local.itkdev.dk/connect/endsession';
+$config['openid_connect.client.generic']['settings']['client_id'] = 'client-id';
+$config['openid_connect.client.generic']['settings']['client_secret'] = 'client-secret';
+```
+
+Update users under `USERS_CONFIGURATION_INLINE` in
+`docker-compose.override.yml`. Beware of JSON inside [YAML inside
+YAML](https://yaml.org/spec/1.2.2/#812-literal-style)! edit
