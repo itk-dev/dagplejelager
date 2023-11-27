@@ -1,0 +1,38 @@
+dagplejelager_commerce_default:
+  id: dagplejelager_commerce_default
+  group: commerce_order
+  label: 'Dagplejelager'
+  states:
+    draft:
+      label: Draft
+    validation:
+      label: Validation
+    fulfillment:
+      label: Fulfillment
+    completed:
+      label: Completed
+    canceled:
+      label: Canceled
+    anonymized:
+      label: Anonymized
+  transitions:
+    place:
+      label: 'Place order'
+      from: [draft]
+      to: validation
+    validate:
+      label: 'Validate order'
+      from: [validation]
+      to: fulfillment
+    fulfill:
+      label: 'Fulfill order'
+      from: [fulfillment]
+      to: completed
+    cancel:
+      label: 'Cancel order'
+      from: [draft, validation, fulfillment]
+      to: canceled
+    anonymize:
+      label: 'Anonymize order'
+      from: [canceled, completed]
+      to: anonymized

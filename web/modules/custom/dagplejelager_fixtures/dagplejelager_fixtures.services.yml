@@ -24,3 +24,7 @@ services:
   Drupal\dagplejelager_fixtures\Fixture\UserFixture:
     tags:
       - { name: content_fixture }
+
+  Drupal\dagplejelager_fixtures\Fixture\ContentFixture:
+    tags:
+      - { name: content_fixture }

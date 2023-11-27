@@ -1,0 +1,13 @@
+- SubjectId: administrator-x
+  Username: administrator-x
+  Password: administrator-x
+  Claims:
+    - Type: name
+      Value: Admin Jensen
+      ValueType: string
+    - Type: email
+      Value: administrator@example.com
+      ValueType: string
+    - Type: groups
+      Value: '["GG-Rolle-dplager-admin"]'
+      ValueType: json

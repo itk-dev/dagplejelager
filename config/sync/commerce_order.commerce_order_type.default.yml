@@ -5,6 +5,7 @@ dependencies:
   module:
     - commerce_cart
     - commerce_checkout
+    - dagplejelager_commerce
 third_party_settings:
   commerce_cart:
     cart_block_view: commerce_cart_block
@@ -18,9 +19,10 @@ id: default
 label: Default
 traits: {  }
 locked: false
-workflow: order_fulfillment_validation
+workflow: dagplejelager_commerce_default
 numberPattern: order_default
 refresh_mode: customer
 refresh_frequency: 300
 sendReceipt: false
 receiptBcc: ''
+receiptSubject: ''
