@@ -15,7 +15,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "custom/dagplejelager_commerce": "1.1"
+                    "custom/dagplejelager_commerce": "^1.1"
                 }
             }
         },
