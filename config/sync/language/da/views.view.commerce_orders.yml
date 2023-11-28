@@ -15,11 +15,6 @@ display:
         placed:
           expose:
             label: 'Dato (til)'
-        state:
-          group_info:
-            group_items:
-              1:
-                title: 'I gang'
         field_urgent_value:
           expose:
             label: Haster

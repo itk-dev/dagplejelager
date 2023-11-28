@@ -16,7 +16,6 @@ dependencies:
     - options
     - rest
     - serialization
-    - state_machine
     - user
     - views_data_export
     - xls_serialization
@@ -1165,83 +1164,59 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        state:
-          id: state
-          table: commerce_order
-          field: state
+        combine_1:
+          id: combine_1
+          table: views
+          field: combine
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: commerce_order
-          entity_field: state
-          plugin_id: state_machine_state
-          operator: in
-          value: {  }
+          plugin_id: combine
+          operator: '='
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: state_op
-            label: Status
-            description: ''
+            operator_id: combine_1_op
+            label: 'Kombinér felter filter'
+            description: null
             use_operator: false
-            operator: state_op
+            operator: combine_1_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: state
+            identifier: combine_1
             required: false
-            remember: true
-            multiple: true
+            remember: false
+            multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              manager: '0'
-              administrator: '0'
-            reduce: false
+            placeholder: null
           is_grouped: true
           group_info:
             label: Status
             description: ''
-            identifier: state
+            identifier: status
             optional: true
-            widget: radios
+            widget: select
             multiple: false
-            remember: true
+            remember: false
             default_group: '1'
             default_group_multiple: {  }
             group_items:
               1:
-                title: 'In progress'
-                operator: in
-                value:
-                  draft: draft
-                  validation: validation
-                  fulfillment: fulfillment
-                  all: '0'
-                  completed: '0'
-                  canceled: '0'
-                  anonymized: '0'
+                title: Igang
+                operator: word
+                value: 'draft, validation, fulfillment'
               2:
-                title: Completed
-                operator: in
-                value:
-                  completed: completed
-                  canceled: canceled
-                  all: '0'
-                  draft: '0'
-                  validation: '0'
-                  fulfillment: '0'
-                  anonymized: '0'
+                title: Afsluttet
+                operator: word
+                value: 'canceled, completed'
               3:
                 title: ''
-                operator: in
-                value:
-                  all: '0'
-                  draft: '0'
-                  validation: '0'
-                  fulfillment: '0'
-                  completed: '0'
-                  canceled: '0'
-                  anonymized: '0'
+                operator: '='
+                value: ''
+          fields:
+            state: state
         placed_1:
           id: placed_1
           table: commerce_order
