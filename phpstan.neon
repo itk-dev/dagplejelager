@@ -3,5 +3,4 @@ parameters:
     - web/modules/custom
   level: 6
   customRulesetUsed: true
-  ignoreErrors:
   reportUnmatchedIgnoredErrors: false
