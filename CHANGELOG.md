@@ -12,8 +12,9 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Prepare for drupal 10 upgrade
 - Upgrade custom module info files
 - Disable Bartik
-- Set update_default_config_langcodes to false (Config
-language will not follow site default language)
+- Set update_default_config_langcodes to false (Config language will not follow
+  site default language)
+- Fixed issue with profile (address) editing and autocompletion
 
 ## [1.2.0] - 2023-11-27
 
