@@ -9,6 +9,14 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [2.0.0] - 2024-02-05
+
+- Release drupal 10
+- Upgrade custom module info files
+- Disable Bartik
+- Set update_default_config_langcodes to false (Config
+language will not follow site default language)
+
 ## [1.2.0] - 2023-11-27
 
 - [DAGPLEJ-102](https://github.com/itk-dev/dagplejelager/pull/59)

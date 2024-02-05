@@ -1,0 +1,6 @@
+parameters:
+  paths:
+    - web/modules/custom
+  level: 6
+  customRulesetUsed: true
+  reportUnmatchedIgnoredErrors: false

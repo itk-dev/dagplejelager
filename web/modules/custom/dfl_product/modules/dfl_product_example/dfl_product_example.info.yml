@@ -1,7 +1,7 @@
 name: 'Dagplejelager product example'
 type: module
 description: 'Dagplejelager product example'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 hidden: true
 package: Dagplejelager
 dependencies:

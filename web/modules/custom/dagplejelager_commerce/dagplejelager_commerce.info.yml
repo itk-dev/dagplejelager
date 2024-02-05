@@ -1,7 +1,7 @@
 name: 'Dagplejelager commerce'
 type: module
 description: 'Dagplejelager commerce'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 package: Dagplejelager
 # version: VERSION
 
