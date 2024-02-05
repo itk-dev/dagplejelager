@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Provide actions for Dagplejelager.
  */
-class DagplejelagerActionsController extends ControllerBase {
+final class DagplejelagerActionsController extends ControllerBase {
 
   /**
    * The cart manager.

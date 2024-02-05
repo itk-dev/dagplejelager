@@ -77,7 +77,6 @@ module:
   minimal: 1000
 theme:
   claro: 0
-  bartik: 0
   gin: 0
   bootstrap: 0
   estore: 0

@@ -1,6 +1,15 @@
 on: pull_request
 name: PR Review
 jobs:
+  fail-for-do-not-merge:
+    if: contains(github.event.pull_request.labels.*.name, 'not ready for merge')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if PR is labeled with not ready for merge
+        run: |
+          echo "This PR can't be merged, due to the 'not ready for merge' label."
+          exit 1
+
   changelog:
     runs-on: ubuntu-latest
     name: Changelog should be updated

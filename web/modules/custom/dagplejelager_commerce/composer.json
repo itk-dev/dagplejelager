@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "drush/drush": "^10",
+        "drush/drush": "^11.6",
         "drupal/commerce_order": "^2.0",
         "symfony/options-resolver": "^6.2"
     },

@@ -1,7 +1,7 @@
 name: 'Dagplejens fælleslager store fixtures'
 type: module
 description: 'Dagplejens fælleslager store fixtures'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 hidden: true
 package: Dagplejelager
 dependencies:
