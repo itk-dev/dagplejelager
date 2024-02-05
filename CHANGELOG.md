@@ -9,7 +9,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- Drupal 10.2.2 
+- Drupal 10.2.2
 
 ## [2.0.0] - 2024-02-05
 
