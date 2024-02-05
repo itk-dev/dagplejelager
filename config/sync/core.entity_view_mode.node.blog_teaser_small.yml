@@ -8,5 +8,6 @@ _core:
   default_config_hash: PR5gkJnLrv-4jBEwO5LxITprtMjnTJrdP5BHkOhkhNo
 id: node.blog_teaser_small
 label: 'Blog teaser small'
+description: ''
 targetEntityType: node
 cache: true
