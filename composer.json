@@ -34,9 +34,9 @@
         "drupal/commerce": "^2.36",
         "drupal/commerce_checkout_order_fields": "^1.1",
         "drupal/config_ignore": "^2.3",
-        "drupal/core-composer-scaffold": "^10.1",
-        "drupal/core-project-message": "^10.1",
-        "drupal/core-recommended": "^10.1",
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-project-message": "^10.2",
+        "drupal/core-recommended": "^10.2",
         "drupal/csv_serialization": "^4.0",
         "drupal/date_popup": "^1.1",
         "drupal/estore": "^1.14",
@@ -115,7 +115,8 @@
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
@@ -178,9 +179,6 @@
         "patches": {
             "drupal/openid_connect": {
                 "Revoking group access does not reflect on applied roles (https://www.drupal.org/project/openid_connect/issues/3224128)": "https://git.drupalcode.org/project/openid_connect/-/merge_requests/31.diff"
-            },
-            "drupal/core": {
-                "Disable forced configuration langcode (https://www.drupal.org/project/drupal/issues/3150540)": "https://www.drupal.org/files/issues/2023-05-24/3150540-36.patch"
             }
         }
     }
