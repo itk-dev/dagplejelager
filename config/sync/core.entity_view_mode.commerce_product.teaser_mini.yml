@@ -8,5 +8,6 @@ _core:
   default_config_hash: 7J7IBbAmWlQCLSh7HnHv6pZwSqxM-GOiyDDKJ6VQCdY
 id: commerce_product.teaser_mini
 label: 'Teaser mini'
+description: ''
 targetEntityType: commerce_product
 cache: true

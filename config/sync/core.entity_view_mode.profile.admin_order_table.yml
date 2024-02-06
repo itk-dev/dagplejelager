@@ -6,5 +6,6 @@ dependencies:
     - profile
 id: profile.admin_order_table
 label: 'Admin order table'
+description: ''
 targetEntityType: profile
 cache: true

@@ -12,5 +12,6 @@ _core:
   default_config_hash: xtrHHgI_SwA-1npf3GB0ntU65fMvm4mxImBtkbmZWSk
 id: commerce_product_variation.cart
 label: Indkøbskurv
+description: ''
 targetEntityType: commerce_product_variation
 cache: true

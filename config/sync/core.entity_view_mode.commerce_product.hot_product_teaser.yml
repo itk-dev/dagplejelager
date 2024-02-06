@@ -8,5 +8,6 @@ _core:
   default_config_hash: id469J0fIkqYOhws5vR1Debv6A0u4uduaHeWEkjCTPM
 id: commerce_product.hot_product_teaser
 label: 'Hot product teaser'
+description: ''
 targetEntityType: commerce_product
 cache: true
