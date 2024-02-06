@@ -9,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [2.0.2] - 2024-02-06
+
+- Fixed issue with profile (address) editing and autocompletion
+
 ## [2.0.1] - 2024-02-06
 
 - Drupal 10.2.2
