@@ -9,7 +9,13 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- Prepare for drupal 10 upgrade
+## [2.0.1] - 2024-02-06
+
+- Drupal 10.2.2
+
+## [2.0.0] - 2024-02-05
+
+- Release drupal 10
 - Upgrade custom module info files
 - Disable Bartik
 - Set update_default_config_langcodes to false (Config language will not follow
