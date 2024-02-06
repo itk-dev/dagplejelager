@@ -183,7 +183,10 @@
             },
             "drupal/core": {
                 "Disable forced configuration langcode (https://www.drupal.org/project/drupal/issues/3150540)": "https://www.drupal.org/files/issues/2024-01-25/3150540-40.patch"
-            }
+            },
+            "drupal/hook_event_dispatcher": {
+                "Circular reference detected for service \"hook_event_dispatcher.module_handler\" (https://www.drupal.org/project/hook_event_dispatcher/issues/3385203)": "https://www.drupal.org/files/issues/2023-11-17/hook_event_dispatcher-circular_reference_error-3385203-7.patch"
+           }
         }
     }
 }
